@@ -1,0 +1,36 @@
+{
+    "name": "gudhub-website",
+    "version": "1.0.0",
+    "description": "",
+    "author": "",
+    "main": "index.js",
+    "type": "module",
+    "devDependencies": {
+        "@gudhub/webserver": "^1.2.2",
+        "clean-webpack-plugin": "^4.0.0",
+        "concurrently": "^8.0.1",
+        "copy-webpack-plugin": "^11.0.0",
+        "css-loader": "^6.7.1",
+        "glob": "^8.0.3",
+        "html-loader": "^4.2.0",
+        "mini-css-extract-plugin": "^2.7.6",
+        "sass": "^1.55.0",
+        "sass-loader": "^13.1.0",
+        "style-loader": "^3.3.1",
+        "webpack": "^5.74.0",
+        "webpack-cli": "^4.10.0",
+        "webpack-merge": "^5.8.0"
+    },
+    "scripts": {
+        "build": "webpack --config webpack.prod.js && webpack --config webpack.bundle.js --mode production",
+        "dev": "concurrently \"webpack --watch --config webpack.dev.js\" \"webpack --config webpack.bundle.js --mode development --watch\" --kill-others --names \"dev|bundle\" --name-separator=\"|\"",
+        "start": "webpack --watch --config webpack.dev.js & gudhub-web-server",
+        "bundle": "webpack --config webpack.bundle.js --mode production"
+    },
+    "engines": {
+        "node": "16.18.0"
+    },
+    "dependencies": {
+        "@gudhub/gh-component": "^2.0.3"
+    }
+}

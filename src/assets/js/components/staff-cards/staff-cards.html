@@ -1,0 +1,31 @@
+<section class="staff_cards">
+    <div class="container">
+        <h2 gh-id="${ghId}.title"> TITLE </h2>
+        <div class="cards_list">
+            ${
+                cards.reduce((acc, item, index) => {
+                return acc + `
+                    <div class="card">
+                        <div class="card_top">
+                            <div class="image">
+                                <image-component width="130" height="130" lazyload src="${item.image.src}" alt="${item.image.alt}" title="${item.image.title}"></image-component>
+                            </div>
+                            <div class="top_text">
+                                <h3 class="card_title" gh-id="${ghId}.staff.${index}.name">
+                                    NAME
+                                </h3>
+                                <div class="position" gh-id="${ghId}.staff.${index}.position">
+                                    POSITION
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card_bottom">
+                            <p gh-id="${ghId}.staff.${index}.text"> TEXT </p>
+                        </div>
+                    </div>
+                    `
+                }, '')
+            }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,143 @@
+[
+    {
+        "type": "property",
+        "id": 3,
+        "property_name": "title",
+        "property_type": "field_value",
+        "field_id": "717953",
+        "interpretation": 1,
+        "$$hashKey": "object:43007"
+    },
+    {
+        "type": "property",
+        "id": 3,
+        "property_name": "intro",
+        "property_type": "field_value",
+        "field_id": "717955",
+        "interpretation": 0
+    },
+    {
+        "type": "property",
+        "id": 3,
+        "property_name": "author",
+        "property_type": "field_value",
+        "field_id": "717968",
+        "interpretation": 1
+    },
+    {
+        "type": "property",
+        "id": 3,
+        "property_name": "time_to_read",
+        "property_type": "field_value",
+        "field_id": "717959",
+        "interpretation": 1
+    },
+    {
+        "type": "property",
+        "id": 4,
+        "property_name": "author_id",
+        "property_type": "field_value",
+        "field_id": "717968"
+    },
+    {
+        "type": "property",
+        "id": 4,
+        "property_name": "slug",
+        "property_type": "field_value",
+        "field_id": "717956",
+        "interpretation": 1,
+        "$$hashKey": "object:43008"
+    },
+    {
+        "type": "property",
+        "id": 3,
+        "property_name": "id",
+        "property_type": "variable",
+        "variable_type": "current_item"
+    },
+    {
+        "type": "property",
+        "id": 4,
+        "property_name": "intro_id",
+        "property_type": "field_id",
+        "field_id": "717955"
+    },
+    {
+        "type": "property",
+        "id": 4,
+        "property_name": "h1",
+        "property_type": "field_value",
+        "field_id": "744779",
+        "interpretation": 1
+    },
+    {
+        "type": "property",
+        "id": 5,
+        "property_name": "categories",
+        "property_type": "function",
+        "field_id": "717969",
+        "interpretation": 1,
+        "function": "function(item, appId) {\n  const app = await gudhub.getApp(appId);\n  const categoryField = item.fields.find(field => field.field_id == 717969);\n  if(categoryField) {\n    const categoryItems = categoryField.field_value.split(',');\n    const categoryItemsIds = categoryItems.map(item => Number(item.split('.')[1]));\n    return app.items_list.filter(item => categoryItemsIds.includes(Number(item.item_id)));\n  }\n  return null;\n}",
+        "$$hashKey": "object:43009"
+    },
+    {
+        "type": "property",
+        "id": 6,
+        "property_name": "thumbnail_src",
+        "property_type": "field_value",
+        "field_id": "717964",
+        "interpretation": 1,
+        "$$hashKey": "object:43010"
+    },
+    {
+        "type": "property",
+        "id": 4,
+        "property_name": "rating",
+        "property_type": "function",
+        "function": "function(item, appId, gudhub) {\n  const app = await gudhub.getApp(appId);\n  let ratings = item.fields.find(field => field.field_id == 717965);\n  let summ = 0;\n  if(ratings) {\n    ratings = ratings.field_value.split(',');\n    ratings.forEach(item => summ += Number(item));\n  }\n  return {\n    count: ratings.length || 0,\n    avg: summ / ratings.length\n  };\n}"
+    },
+    {
+        "type": "property",
+        "id": 3,
+        "property_name": "thumbnail",
+        "property_type": "field_value",
+        "field_id": "717961",
+        "interpretation": 1,
+        "$$hashKey": "object:43011"
+    },
+    {
+        "type": "property",
+        "id": 7,
+        "property_name": "thumbnail_alt",
+        "property_type": "field_value",
+        "field_id": "717963",
+        "interpretation": 1,
+        "$$hashKey": "object:43012"
+    },
+    {
+        "type": "property",
+        "id": 8,
+        "property_name": "thumbnail_title",
+        "property_type": "field_value",
+        "field_id": "717962",
+        "interpretation": 1,
+        "$$hashKey": "object:43013"
+    },
+    {
+        "type": "property",
+        "id": 9,
+        "property_name": "posted_at",
+        "property_type": "field_value",
+        "field_id": "717958",
+        "interpretation": 0,
+        "$$hashKey": "object:43014"
+    },
+    {
+        "type": "property",
+        "id": 3,
+        "property_name": "views",
+        "property_type": "field_value",
+        "field_id": "717966",
+        "interpretation": 1
+    }
+]

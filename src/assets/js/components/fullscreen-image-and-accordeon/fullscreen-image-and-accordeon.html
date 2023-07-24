@@ -1,0 +1,32 @@
+<section class="fullscreen_image_and_accordeon">
+    <div class="image">
+        <image-component lazyload src="${image.src}" alt="${image.alt}" title="${image.title}"></image-component>
+    </div>
+    <div class="container">
+        <h2 gh-id="${ghId}.title"> TITLE </h2>
+        ${withoutSubtitle == 'true' ? `
+            <div class="subtitle">
+                <p gh-id="${ghId}.subtitle"> SUBTITLE </p>
+            </div>
+        ` : ''}
+        <div class="accordeon">
+            ${
+                items.reduce((acc, item, index) => {
+                    return acc + `
+                    <div class="accordeon_item ${index === 0 ? 'active' : ''}" onclick="openItem()">
+                        <div class="accordeon_title">
+                            <div class="accordeon_title_left"> 
+                                <span>Step ${index + 1}. </span> <h3 gh-id="${ghId}.items.${index}.title"> ACCORDEON TITLE </h3> 
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 16 20" fill="none"><path d="M14.25 7.82532L11.5048 18.0705M11.5048 18.0705L1.25962 15.3253M11.5048 18.0705L1.50481 0.749997" stroke="#141616" stroke-width="2"/></svg>
+                        </div>
+                        <div class="accordeon_content">
+                            <p gh-id="${ghId}.items.${index}.text"> ACCORDEON TEXT </p>
+                        </div>
+                    </div>
+                    `
+                }, '')
+            }
+        </div>
+    </div>
+</section>

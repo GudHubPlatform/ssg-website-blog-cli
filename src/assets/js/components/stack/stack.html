@@ -1,0 +1,32 @@
+<section class="stack">
+    <div class="container">
+        <h2 gh-id="${ghId}.title"> TITLE </h2>
+        <p class="subtitle" gh-id="${ghId}.subtitle">
+            SUBTITLE
+        </p>
+        <div class="raws_wrapper">
+            ${
+                stackList.reduce((acc, item, index) => {
+                    return acc + `
+                    <div class="raw" onclick="openItem()">
+                        <div class="occupation">
+                            <div class="stack_raw_left">
+                                <img src="${item.icon.src}" alt="${item.icon.alt}" title="${item.icon.title}">
+                                <h3 gh-id="${ghId}.stack_list.${index}.stack_name">Programming Languages</h3>
+                            </div>
+                            <svg class="arrow_mobile" xmlns="http://www.w3.org/2000/svg" width="14" height="9" viewBox="0 0 14 9" fill="none"><path d="M12.7773 1L6.88928 7L1.00122 0.999999" stroke="#00BFD6" stroke-width="2"/></svg>
+                        </div>
+                        <ul class="list">
+                            ${ item.stack_tech.reduce((accu, tech, techIndex) => {
+                                return accu + `
+                                <li gh-id="${ghId}.stack_list.${index}.stack_tech.${techIndex}.label">C#</li>
+                                `
+                            }, '') }
+                        </ul>
+                    </div>
+                    `
+                }, '')
+            }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,46 @@
+<header>
+    <div class="container">
+        <div class="header_left">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo.svg" width="160" height="43" alt="Logo" title="Strand Managment Solutions, Inc.">
+            </a>
+        </div>
+        <div class="header_right">
+            <nav>
+                <ul class="menu">
+                    ${
+                        menu.reduce((acc, item) => {
+                            return acc + `
+                                <li class="menu__item ${item.childs ? 'megamenu' : ''}">
+                                    <${item.link ? `a href="${item.link}"` : 'span'} ${item.childs ? `onclick='openChild()'` : ''}>${ item.name }</${item.link ? `a` : 'span'}>
+                                    ${ item.childs ? `
+                                        <div class="megamenu_wrapper item_${item.name.toLowerCase()}">
+                                            <div class="menu_title">${item.name}</div>
+                                            <div class="childs_wrapper">
+                                                <ul class="child">
+                                                    ${
+                                                        item.childs.reduce((acc, item) => {
+                                                        return acc + `
+                                                            <li>
+                                                                <a href="${item.link}">${ item.name }</a>
+                                                            </li>
+                                                        `
+                                                        }, '')
+                                                    }
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    ` : ''}
+                                </li>
+                            `
+                        }, '')
+                    }
+                </ul>
+            </nav>
+        </div>
+        <div class="hamburger" onclick="toogleMenu()">
+            <div></div>
+        </div>
+    </div>
+</header>
+<div class="shadow" onclick="toogleMenu()"></div>

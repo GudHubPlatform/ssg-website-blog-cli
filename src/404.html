@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <style data-webpack-style="true">
+        /* HEADER */
+        .shadow {
+            position: fixed;
+            top: 0;
+            left: -200%;
+            background: rgba(0, 0, 0, 0);
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            transition: background 0.5s ease;
+        }
+
+        header {
+            background-color: #141616;
+            height: 96px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 10;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        header .header_right {
+            height: 100%;
+        }
+
+        header .logo {
+            max-width: 160px;
+            min-width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header nav {
+            height: 100%;
+        }
+
+        header nav ul {
+            height: 100%;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        header nav ul li {
+            position: relative;
+            height: 100%;
+        }
+
+        header nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        header nav ul li.megamenu>a,
+        header nav ul li.megamenu>span {
+            cursor: pointer;
+        }
+
+        header nav ul li.megamenu>a::before,
+        header nav ul li.megamenu>span::before {
+            content: "";
+            position: absolute;
+            top: calc(50% - 2px);
+            right: 10px;
+            width: 10px;
+            height: 10px;
+            transition: all 0.2s ease;
+            background-repeat: no-repeat;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9' fill='none'%3E%3Cpath d='M13 1.5L7 7.5L1 1.5' stroke='%2300BFD6' stroke-width='2'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+
+        header nav ul li a,
+        header nav ul li span {
+            padding: 0 25px;
+            position: relative;
+            white-space: nowrap;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 25px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        header nav ul li.menu__item a:hover::after,
+        header nav ul li.menu__item span:hover::after {
+            width: calc(100% - 50px);
+        }
+
+        header nav ul li.menu__item a::after,
+        header nav ul li.menu__item span::after {
+            content: '';
+            position: absolute;
+            bottom: 32px;
+            left: 25px;
+            width: 0;
+            height: 1px;
+            background-color: #00bfd6;
+            transition: all 0.2s ease;
+        }
+
+        header nav ul li .child a:after {
+            content: none;
+        }
+
+        header nav ul li .menu_title {
+            font-size: 24px;
+            line-height: 30px;
+            color: #4d555b;
+            padding-bottom: 10px;
+        }
+
+        header nav ul li .megamenu_wrapper {
+            box-shadow: 0px 2px 20px #000;
+            width: 800px;
+            transition: all 0.2s ease;
+            max-height: 0;
+            position: absolute;
+            z-index: 12;
+            height: 100%;
+            top: 96px;
+            left: -125px;
+            background-color: #fefefe;
+            overflow: hidden;
+            padding: 0 60px;
+        }
+
+        header nav ul li .megamenu_wrapper.item_company {
+            width: 530px;
+            left: -270px;
+        }
+
+        header nav ul li .childs_wrapper {
+            color: red;
+            border-top: 1px solid #dbe2e7;
+        }
+
+        header nav ul li .childs_wrapper ul {
+            height: auto;
+        }
+
+        header nav ul li .childs_wrapper .child {
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        header nav ul li .childs_wrapper .child li {
+            margin-right: 0;
+            width: 50%;
+        }
+
+        header nav ul li .childs_wrapper .child a,
+        header nav ul li .childs_wrapper .child span {
+            font-size: 16px;
+            line-height: 22px;
+            color: #4d555b;
+            padding: 12px;
+            transition: all 0.2s ease;
+        }
+
+        header nav ul li .childs_wrapper .child a:hover,
+        header nav ul li .childs_wrapper .child span:hover {
+            color: #00bfd6;
+        }
+
+        .hamburger {
+            display: block;
+            position: relative;
+            z-index: 2;
+            width: 28px;
+            height: 18px;
+            transition: all 0.2s ease;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .hamburger::before {
+            z-index: 3;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 28px;
+            height: 2px;
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger::after {
+            content: "";
+            position: absolute;
+            top: calc(100% - 1px);
+            left: 0;
+            width: 28px;
+            height: 2px;
+            background: #fff;
+            transition: all 0.3s ease;
+            z-index: 3;
+        }
+
+        .hamburger>div {
+            position: absolute;
+            top: calc(50% - 1px);
+            left: 0;
+            width: 28px;
+            height: 2px;
+            background: #fff;
+            transition: all 0.5s ease;
+            opacity: 1;
+        }
+
+        @media screen and (max-width: 1250px) {
+
+            header nav ul li a,
+            header nav ul li span {
+                padding: 0 16px;
+            }
+
+            header nav ul li.megamenu>a::before,
+            header nav ul li.megamenu>span::before {
+                right: 0;
+            }
+        }
+
+        @media screen and (min-width: 1150px) {
+            .hamburger {
+                display: none;
+            }
+
+            header nav ul li:hover .megamenu_wrapper {
+                height: 280px;
+                padding: 30px 60px;
+                max-height: 500px;
+            }
+
+            header nav ul li:hover .megamenu_wrapper.item_company {
+                height: 190px;
+            }
+
+            header nav ul li.megamenu:hover>a::before,
+            header nav ul li.megamenu:hover>span::before {
+                transform: rotate(180deg);
+                top: calc(50% - 7px);
+            }
+        }
+
+        @media screen and (max-width: 1150px) {
+
+            header nav ul li a::after,
+            header nav ul li span::after {
+                content: none;
+            }
+
+            header nav ul li.menu__item a::after,
+            header nav ul li.menu__item span::after {
+                content: none;
+            }
+
+            header nav ul li .childs_wrapper {
+                background-color: transparent;
+                box-shadow: none;
+            }
+
+            header nav ul li .childs_wrapper .child a,
+            header nav ul li .childs_wrapper .child span {
+                color: #fff;
+                padding-left: 30px;
+                font-size: 16px;
+            }
+
+            header .container {
+                position: relative;
+                justify-content: space-between;
+            }
+
+            header .header_right {
+                position: absolute;
+                top: 68px;
+                left: -200%;
+                width: 100%;
+                max-width: 500px;
+                height: calc(100vh - 68px);
+                background: #141616;
+                transition: all 0.5s ease;
+            }
+
+            header .header_right nav {
+                padding: 20px;
+            }
+
+            header .header_right nav ul {
+                align-items: flex-start;
+            }
+
+            header .header_right nav ul li {
+                height: auto;
+                width: 100%;
+            }
+
+            header .header_right nav ul li .menu_title {
+                display: none;
+            }
+
+            header .header_right nav ul li.active .megamenu_wrapper {
+                max-height: 1000px;
+            }
+
+            header .header_right nav ul li .megamenu_wrapper {
+                position: static;
+                padding: 0;
+                background-color: transparent;
+                width: auto;
+                box-shadow: none;
+            }
+
+            header .header_right nav ul li a,
+            header .header_right nav ul li span {
+                font-size: 20px;
+                line-height: 30px;
+                padding: 5px 0;
+                height: auto;
+            }
+
+            header nav ul {
+                flex-direction: column;
+            }
+
+            .active .shadow {
+                background: rgba(0, 0, 0, .5);
+                left: 0;
+            }
+
+            .active header .header_right {
+                left: 0;
+            }
+
+            .active .hamburger {
+                height: 28px;
+            }
+
+            .active .hamburger>div {
+                opacity: 0;
+                left: 100px;
+            }
+
+            .active .hamburger::before {
+                top: calc(50% - 1px);
+                transform: rotate(-45deg);
+            }
+
+            .active .hamburger::after {
+                top: calc(50% - 1px);
+                transform: rotate(45deg);
+            }
+        }
+
+        /* END HEADER */
+        /* BODY */
+        .container.body {
+            max-width: 710px;
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .big_error {
+            color: #0C6980;
+            text-align: center;
+            font-size: 128px;
+            font-weight: 600;
+            line-height: 100%;
+            margin-bottom: 45px;
+        }
+
+        .bold {
+            color: #4D555B;
+            text-align: center;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 120%;
+            margin-bottom: 45px;
+        }
+
+        .text {
+            color: #4D555B;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 30px;
+            margin-bottom: 45px;
+        }
+
+        .btn {
+            border-radius: 50px;
+            border: 1px solid #0C6980;
+            background: #0C6980;
+            color: #FFF;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 36px;
+            text-decoration: none;
+            padding: 10px 50px;
+            display: block;
+            max-width: 205px;
+        }
+
+        .btn_wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* END BODY */
+        /* FOOTER */
+        footer {
+            background-color: #141616;
+        }
+
+        footer .footer_top {
+            padding: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #4d555b;
+        }
+
+        footer .footer_top .logo {
+            width: 100%;
+            max-width: 160px;
+        }
+
+        footer .footer_top .footer_subtitle {
+            font-size: 16px;
+            line-height: 22px;
+            width: 100%;
+            max-width: 340px;
+            color: #878787;
+        }
+
+        footer .footer_top .footer_menu ul {
+            display: flex;
+            list-style: none;
+        }
+
+        footer .footer_top .footer_menu ul li {
+            margin-right: 30px;
+        }
+
+        footer .footer_top .footer_menu ul li a {
+            padding-right: 30px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 21px;
+            color: #00bfd6;
+            position: relative;
+        }
+
+        footer .footer_top .footer_menu ul li a::after {
+            content: '';
+            position: absolute;
+            top: calc(50% - 6px);
+            right: 0;
+            width: 1px;
+            height: 12px;
+            background-color: #4d555b;
+        }
+
+        footer .footer_top .footer_menu ul li:last-child {
+            margin-right: 0;
+        }
+
+        footer .footer_top .footer_menu ul li:last-child a {
+            padding-right: 0;
+        }
+
+        footer .footer_top .footer_menu ul li:last-child a::after {
+            content: none;
+        }
+
+        footer .footer_top .footer_right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        footer .footer_middle {
+            padding-top: 45px;
+            padding-bottom: 30px;
+        }
+
+        footer .footer_middle .like_a_title {
+            font-size: 24px;
+            line-height: 40px;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        footer .footer_middle .column {
+            margin-right: 5px;
+            width: 100%;
+        }
+
+        footer .footer_middle .column:first-child {
+            max-width: 608px;
+        }
+
+        footer .footer_middle .column ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        footer .footer_middle .column li {
+            width: 48%;
+        }
+
+        footer .footer_middle .column:nth-child(2) {
+            max-width: 400px;
+        }
+
+        footer .footer_middle .column:last-child {
+            margin-right: 0;
+        }
+
+        footer .footer_middle .column ul {
+            list-style: none;
+        }
+
+        footer .footer_middle .column li {
+            margin-bottom: 20px;
+        }
+
+        footer .footer_middle .column li a {
+            color: #dbe2e7;
+            font-size: 16px;
+            line-height: 22px;
+            transition: all 0.2s ease;
+        }
+
+        footer .footer_middle .column li a:hover {
+            color: #00bfd6;
+        }
+
+        footer .footer_middle .column li:last-child {
+            margin-bottom: 0;
+        }
+
+        footer .footer_middle .footer_contact {
+            max-width: 340px;
+        }
+
+        footer .footer_middle .footer_contact_item {
+            margin-bottom: 15px;
+        }
+
+        footer .footer_middle .footer_contact_item a {
+            font-size: 16px;
+            line-height: 22px;
+            color: #fff;
+            transition: all 0.2s ease;
+        }
+
+        footer .footer_middle .footer_contact_item a:hover {
+            color: #00bfd6;
+        }
+
+        footer .footer_middle .footer_contact_item a span {
+            color: #00bfd6;
+        }
+
+        footer .footer_middle .footer_columns {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        footer .footer_cities {
+            margin-top: 45px;
+        }
+
+        footer .footer_cities .top_title {
+            font-size: 20px;
+            line-height: 40px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        footer .footer_cities .city {
+            color: #fff;
+            font-size: 16px;
+            line-height: 22px;
+            margin-bottom: 10px;
+        }
+
+        footer .footer_cities .city_services {
+            margin-bottom: 20px;
+        }
+
+        footer .footer_cities .city_services:last-child {
+            margin-bottom: 0;
+        }
+
+        footer .footer_cities .city_services a {
+            color: #dbe2e7;
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: -0.14px;
+            transition: all 0.2s ease;
+            margin-right: 10px;
+        }
+
+        footer .footer_cities .city_services a:hover {
+            color: #00bfd6;
+        }
+
+        footer .footer_bottom {
+            border-top: 1px solid #4d555b;
+            padding: 24px 0;
+        }
+
+        footer .footer_bottom .bottom_flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        footer .footer_bottom .bottom_flex .left {
+            display: flex;
+            align-items: center;
+        }
+
+        footer .footer_bottom .bottom_flex .left .copyright {
+            margin-right: 10px;
+            color: #878787;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+
+        footer .footer_bottom .bottom_flex .right .soc_list {
+            display: flex;
+            align-items: center;
+            list-style: none;
+        }
+
+        footer .footer_bottom .bottom_flex .right .soc_list svg path {
+            transition: all 0.2s ease;
+        }
+
+        footer .footer_bottom .bottom_flex .right .soc_list li {
+            margin-right: 40px;
+        }
+
+        footer .footer_bottom .bottom_flex .right .soc_list li a:hover svg path {
+            fill: #00bfd6;
+        }
+
+        footer .footer_bottom .bottom_flex .right .soc_list li:last-child {
+            margin-right: 0;
+        }
+
+        @media screen and (max-width: 1200px) {
+            footer .footer_cities {
+                margin-top: 15px;
+            }
+
+            footer .footer_middle {
+                padding-top: 30px;
+            }
+
+            footer .footer_middle .footer_columns {
+                flex-wrap: wrap;
+                justify-content: initial;
+            }
+
+            footer .footer_middle .column {
+                width: 47%;
+                max-width: 100% !important;
+                margin-bottom: 20px;
+                margin-right: 15px;
+            }
+
+            footer .footer_middle .column:nth-child(2n) {
+                margin-right: 0;
+            }
+
+            footer .footer_middle .column li {
+                margin-bottom: 15px;
+            }
+
+            footer .footer_middle .column li a {
+                display: block;
+            }
+
+            footer .footer_middle .like_a_title {
+                margin-bottom: 15px;
+            }
+        }
+
+        @media screen and (max-width: 850px) {
+            footer .footer_middle .footer_columns {
+                flex-direction: column;
+            }
+
+            footer .footer_middle .column {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 740px) {
+            footer .footer_top {
+                flex-direction: column;
+            }
+
+            footer .footer_left {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            footer .footer_bottom .bottom_flex {
+                flex-direction: column;
+            }
+
+            footer .footer_bottom .bottom_flex .left {
+                width: 100%;
+            }
+
+            footer .footer_bottom .bottom_flex .right {
+                width: 100%;
+            }
+
+            footer .footer_bottom .bottom_flex .right .soc_list {
+                justify-content: flex-end;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            footer .footer_cities .top_title {
+                margin-bottom: 15px;
+            }
+
+            footer .footer_middle .column {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            footer .footer_middle .column li a {
+                display: block;
+            }
+
+            footer .footer_middle .column:first-child ul {
+                flex-direction: column;
+            }
+
+            footer .footer_middle .column:first-child ul li {
+                width: 100%;
+            }
+
+            footer .footer_middle .column:nth-child(2),
+            footer .footer_middle .column:nth-child(2) {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            footer .footer_middle .column.footer_contact {
+                margin-bottom: 0;
+            }
+
+            footer .footer_middle .footer_contact_item:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        @media screen and (max-width: 450px) {
+            footer .footer_top .footer_menu ul {
+                flex-direction: column;
+            }
+
+            footer .footer_top .footer_menu ul li {
+                margin-bottom: 10px;
+            }
+
+            footer .footer_top .footer_menu ul li a {
+                padding-right: 0;
+            }
+
+            footer .footer_top .footer_menu ul li a::after {
+                content: none;
+            }
+
+            footer .footer_top .footer_right {
+                width: 100%;
+                align-items: flex-start;
+            }
+
+            footer .footer_cities .city_services a {
+                line-height: 30px;
+            }
+
+            footer .footer_middle .column:nth-child(2) ul {
+                flex-direction: column;
+            }
+
+            footer .footer_middle .column:nth-child(2) ul li {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            footer .footer_bottom .bottom_flex .right .soc_list {
+                justify-content: flex-start;
+            }
+        }
+
+        /*END FOOTER */
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header_left">
+                <a href="/" class="logo">
+                    <img src="/assets/images/logo.svg" alt="Logo" title="Logo">
+                </a>
+            </div>
+            <div class="header_right">
+                <nav>
+                    <ul class="menu">
+                        <li class="menu__item megamenu">
+                            <span onclick="openChild()">Services</span>
+                            <div class="megamenu_wrapper item_services">
+                                <div class="menu_title">Services</div>
+                                <div class="childs_wrapper">
+                                    <ul class="child">
+                                        <li>
+                                            <a href="/services/custom-software-development/">Custom Software
+                                                Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/dot-net-services/">.Net Development</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="/services/saas-development-services/">Saas Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/business-technology-consulting-services/">Business
+                                                Technology Consulting</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/system-integration-services/">System Integration</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/data-migration-services/">Data Migration</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/microsoft-access-programming-services/">Microsoft Access
+                                                Programming</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/database-development-services/">Database Development
+                                                Services</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu__item ">
+                            <a href="/our-difference/">Our Difference</a>
+                        </li>
+                        <li class="menu__item ">
+                            <a href="/technologies-we-support/">Technologies We Support</a>
+                        </li>
+                        <li class="menu__item ">
+                            <a href="/blog/">Blog</a>
+                        </li>
+                        <li class="menu__item megamenu">
+                            <span onclick="openChild()">Company</span>
+                            <div class="megamenu_wrapper item_company">
+                                <div class="menu_title">Company</div>
+                                <div class="childs_wrapper">
+                                    <ul class="child">
+                                        <li>
+                                            <a href="/mission-statement/">Mission Statement</a>
+                                        </li>
+                                        <li>
+                                            <a href="/principal-consultants/">Principal Consultants</a>
+                                        </li>
+                                        <li>
+                                            <a href="/opportunities/">Opportunities</a>
+                                        </li>
+                                        <li>
+                                            <a href="/about-us/">About Us</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu__item ">
+                            <a href="/contact-us/">Contact Us</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="hamburger" onclick="toogleMenu()">
+                <div></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container body">
+        <div class="big_error">404</div>
+        <div class="bold">Page Not Found</div>
+        <div class="text">
+            The page you are looking for is not available or has been moved.
+            Try a different page or go to homepage with the button below.
+        </div>
+        <div class="btn_wrapper">
+            <a href="/" class="btn">Go Home</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer_top">
+                <div class="footer_left">
+                    <div class="logo">
+                        <img src="/assets/images/logo.svg" alt="">
+                    </div>
+                </div>
+                <div class="footer_right">
+                    <nav class="footer_menu">
+                        <ul>
+
+                            <li class="menu__item">
+                                <a href="/contact-us/">Contact Us</a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer_middle">
+                <div class="footer_columns">
+                    <div class="column">
+                        <div class="like_a_title">Services</div>
+                        <ul>
+
+                            <li class="service__item">
+                                <a href="/services/custom-software-development/">Custom Software Development
+                                    Services</a>
+                            </li>
+
+                            <li class="service__item">
+                                <a href="/services/dot-net-services/">.NET Development Services</a>
+                            </li>
+
+                            <li class="service__item">
+                                <a href="/services/saas-development-services/">SaaS Development Services</a>
+                            </li>
+
+                            <li class="service__item">
+                                <a href="/services/business-technology-consulting-services/">Business Technology
+                                    Consulting Services</a>
+                            </li>
+
+                            <li class="service__item">
+                                <a href="/services/system-integration-services/">System Integration Services</a>
+                            </li>
+
+                            <li class="service__item">
+                                <a href="/services/data-migration-services/">Data Migration Services</a>
+                            </li>
+
+                            <li class="service__item">
+                                <a href="/services/microsoft-access-programming-services/">Microsoft Access Programming
+                                    Services</a>
+                            </li>
+
+                            <li class="service__item">
+                                <a href="/services/database-development-services/">Database Development Services</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <div class="like_a_title">Company</div>
+                        <ul>
+
+                            <li class="companyPage__item">
+                                <a href="/about-us/">About Us</a>
+                            </li>
+
+                            <li class="companyPage__item">
+                                <a href="/contact-us/">Contact Us</a>
+                            </li>
+
+                            <li class="companyPage__item">
+                                <a href="/technologies-we-support/">Technologies We Support</a>
+                            </li>
+
+                            <li class="companyPage__item">
+                                <a href="/our-difference/">Our Difference</a>
+                            </li>
+
+                            <li class="companyPage__item">
+                                <a href="/principal-consultants/">Principal Consultants</a>
+                            </li>
+
+                            <li class="companyPage__item">
+                                <a href="/mission-statement/">Mission Statement</a>
+                            </li>
+
+                            <li class="companyPage__item">
+                                <a href="/opportunities/">Opportunities</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="column footer_contact">
+                        <div class="like_a_title">Contact us</div>
+                        <div class="footer_contact_item">
+                            <a href="tel:6097316629"><span>Phone:</span> (609) 731-6629</a>
+                        </div>
+                        <div class="footer_contact_item">
+                            <a href="mailto:dkrumholz@strandmanagement.com"><span>Email:</span>
+                                dkrumholz@strandmanagement.com</a>
+                        </div>
+                        <div class="footer_contact_item">
+                            <a href="https://goo.gl/maps/oUZgBEC3zQ8gHTuk6" target="_blank"
+                                rel="noreferrer noopener nofollow"><span>Adress:</span> 3525 Quakerbridge Road Suite
+                                6325Hamilton, NJ 08619</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_cities">
+                    <div class="top_title">Cities we operate in</div>
+                    <div class="city">New Jersey</div>
+                    <div class="city_services">
+
+                        <a href="/services/dot-net-services-new-jersey/">.NET Development Services In New Jersey</a>
+
+                        <a href="/services/custom-software-development-new-jersey/">Custom Software Development Services
+                            in New Jersey</a>
+
+                        <a href="/services/saas-development-services-new-jersey/">SaaS Development Services in New
+                            Jersey</a>
+
+                        <a href="/services/data-migration-services-new-jersey/">Data Migration Services in New
+                            Jersey</a>
+
+                        <a href="/services/business-technology-consulting-services-new-jersey/">IT Consulting NJ</a>
+
+                        <a href="/services/system-integration-services-new-jersey/">System Integration Services New
+                            Jersey</a>
+
+                        <a href="/services/microsoft-access-programming-services-new-jersey/">Microsoft Access
+                            Programming Services in New Jersey</a>
+
+                        <a href="/services/database-development-services-new-jersey/">Database Development Services in
+                            New Jersey</a>
+
+                    </div>
+                    <div class="city">New York</div>
+                    <div class="city_services">
+
+                        <a href="/services/dot-net-services-nyc/">.NET Development Services In New York</a>
+
+                        <a href="/services/custom-software-development-nyc/">Custom Software Development Services in New
+                            York</a>
+
+                        <a href="/services/saas-development-services-nyc/">SaaS Development Services in New York</a>
+
+                        <a href="/services/data-migration-services-nyc/">Data Migration Services in New York</a>
+
+                        <a href="/services/business-technology-consulting-services-nyc/">IT Consulting New York</a>
+
+                        <a href="/services/system-integration-services-nyc/">System Integration Services New York</a>
+
+                        <a href="/services/microsoft-access-programming-services-nyc/">Microsoft Access Programming
+                            Services in New York</a>
+
+                        <a href="/services/database-development-services-nyc/">Database Development Services in New
+                            York</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="bottom_flex">
+                    <div class="left">
+                        <div class="copyright">© 2023 StrandManagment Inc.</div>
+                    </div>
+                    <div class="right">
+                        <ul class="soc_list">
+                            <li>
+                                <a href="https://www.facebook.com/strandmanagementsolutions/" class="facebook"
+                                    rel="noreferrer noopener nofollow" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"
+                                        fill="none">
+                                        <path
+                                            d="M10.1016 13.8004C10.0266 13.8004 8.37656 13.8004 7.62656 13.8004C7.22656 13.8004 7.10156 13.6504 7.10156 13.2754C7.10156 12.2754 7.10156 11.2504 7.10156 10.2504C7.10156 9.85039 7.25156 9.72539 7.62656 9.72539H10.1016C10.1016 9.65039 10.1016 8.20039 10.1016 7.52539C10.1016 6.52539 10.2766 5.57539 10.7766 4.70039C11.3016 3.80039 12.0516 3.20039 13.0016 2.85039C13.6266 2.62539 14.2516 2.52539 14.9266 2.52539H17.3766C17.7266 2.52539 17.8766 2.67539 17.8766 3.02539V5.87539C17.8766 6.22539 17.7266 6.37539 17.3766 6.37539C16.7016 6.37539 16.0266 6.37539 15.3516 6.40039C14.6766 6.40039 14.3266 6.72539 14.3266 7.42539C14.3016 8.17539 14.3266 8.90039 14.3266 9.67539H17.2266C17.6266 9.67539 17.7766 9.82539 17.7766 10.2254V13.2504C17.7766 13.6504 17.6516 13.7754 17.2266 13.7754C16.3266 13.7754 14.4016 13.7754 14.3266 13.7754V21.9254C14.3266 22.3504 14.2016 22.5004 13.7516 22.5004C12.7016 22.5004 11.6766 22.5004 10.6266 22.5004C10.2516 22.5004 10.1016 22.3504 10.1016 21.9754C10.1016 19.3504 10.1016 13.8754 10.1016 13.8004Z"
+                                            fill="#DBE2E7"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/company/strand-management-solutions-inc./"
+                                    class="linkedin" rel="noreferrer noopener nofollow" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25"
+                                        fill="none">
+                                        <path
+                                            d="M22.5031 22.4992V15.1742C22.5031 11.5742 21.7281 8.82422 17.5281 8.82422C15.5031 8.82422 14.1531 9.92422 13.6031 10.9742H13.5531V9.14922H9.57812V22.4992H13.7281V15.8742C13.7281 14.1242 14.0531 12.4492 16.2031 12.4492C18.3281 12.4492 18.3531 14.4242 18.3531 15.9742V22.4742H22.5031V22.4992Z"
+                                            fill="#DBE2E7"></path>
+                                        <path d="M2.82812 9.15039H6.97812V22.5004H2.82812V9.15039Z" fill="#DBE2E7">
+                                        </path>
+                                        <path
+                                            d="M4.9 2.5C3.575 2.5 2.5 3.575 2.5 4.9C2.5 6.225 3.575 7.325 4.9 7.325C6.225 7.325 7.3 6.225 7.3 4.9C7.3 3.575 6.225 2.5 4.9 2.5Z"
+                                            fill="#DBE2E7"></path>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <cookies-popup></cookies-popup>
+<script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

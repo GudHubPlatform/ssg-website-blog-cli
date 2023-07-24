@@ -1,0 +1,49 @@
+<section class="pricing_cards">
+    <div class="container">
+        <h2 gh-id="${ghId}.title"> TITLE </h2>
+        <p class="subtitle" gh-id="${ghId}.subtitle">
+            SUBTITLE
+        </p>
+        <div class="pricing_cards_wrapper">
+            ${
+                items.reduce((acc, item, index) => {
+                return acc + `
+                    <div class="card_item">
+                        <div class="top_group">
+                            <div class="item_top">
+                                <div class="item_top_left">
+                                    <img class="card_icon" src="${item.icon.src}" alt="${item.icon.alt}" title="${item.icon.title}">
+                                    <h3 gh-id="${ghId}.cards.${index}.title"> H3 TITLE </h3>
+                                </div>
+                                ${item.popular ? `
+                                    <div class="popular">${item.popular}</div>    
+                                ` : ''}
+                            </div>
+                            <div class="item_middle">
+                                <ul class="item_list">
+                                    ${
+                                        item.list.reduce((acc, li, indexLi) => {
+                                            return acc + `
+                                                <li gh-id="${ghId}.cards.${index}.list.${indexLi}.text"></li>
+                                            `
+                                        }, '')
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item_bottom">
+                            <div class="button_and_popup" onclick="openPopup()">
+                                <div class="popup_button">Get started</div>
+                                <div class="popup_shadow" onclick="closePopup()">
+                                    <popup-form data-form-name="${item.title}"></popup-form>
+                                    <popup-success></popup-success>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `
+                }, '')
+            }
+        </div>
+    </div>
+</section>

@@ -1,0 +1,24 @@
+<section class="services-tech">
+    <div class="container">
+        <h2 gh-id="${ghId}.title"> TITLE </h2>
+        <p class="subtitle" gh-id="${ghId}.subtitle">
+            SUBTITLE
+        </p>
+        <div class="tech_wrapper">
+            ${
+                techList.reduce((acc, item, index) => {
+                    return acc + `
+                    <div class="tech_item">
+                        <div class="show">
+                            <image-component lazyload src="${item.image.src}" alt="${item.image.alt}" title="${item.image.title}"></image-component>
+                        </div>
+                        <div class="hide">
+                            <div class="tech_name" gh-id="${ghId}.tech_list.${index}.tech_name"></div>
+                        </div>
+                    </div>
+                    `
+                }, '')
+            }
+        </div>
+    </div>
+</section>

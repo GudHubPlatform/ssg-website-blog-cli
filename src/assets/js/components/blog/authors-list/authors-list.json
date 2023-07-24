@@ -1,0 +1,109 @@
+{
+    "type": "array",
+    "id": 1,
+    "childs": [
+        {
+            "type": "property",
+            "id": 3,
+            "property_name": "title",
+            "property_type": "field_value",
+            "field_id": "717953",
+            "interpretation": 1
+        },
+        {
+            "type": "property",
+            "id": 3,
+            "property_name": "h1",
+            "property_type": "field_value",
+            "field_id": "744779",
+            "interpretation": 1
+        },
+        {
+            "type": "property",
+            "id": 4,
+            "property_name": "slug",
+            "property_type": "field_value",
+            "field_id": "717956",
+            "interpretation": 1
+        },
+        {
+            "type": "property",
+            "id": 3,
+            "property_name": "intro_id",
+            "property_type": "field_id",
+            "field_id": "717955",
+            "interpretation": 0
+        },
+        {
+            "type": "property",
+            "id": 3,
+            "property_name": "id",
+            "property_type": "variable",
+            "variable_type": "current_item"
+        },
+        {
+            "type": "property",
+            "id": 5,
+            "property_name": "thumbnail",
+            "property_type": "field_value",
+            "field_id": "717961",
+            "interpretation": 1
+        },
+        {
+            "type": "property",
+            "id": 6,
+            "property_name": "thumbnail_src",
+            "property_type": "field_value",
+            "field_id": "717964",
+            "interpretation": 1
+        },
+        {
+            "type": "property",
+            "id": 11,
+            "property_name": "description",
+            "property_type": "field_value",
+            "field_id": "717954",
+            "interpretation": 1
+        },
+        {
+            "type": "property",
+            "id": 8,
+            "property_name": "thumbnail_title",
+            "property_type": "field_value",
+            "field_id": "717962",
+            "interpretation": 1
+        },
+        {
+            "type": "property",
+            "id": 7,
+            "property_name": "thumbnail_alt",
+            "property_type": "field_value",
+            "field_id": "717963",
+            "interpretation": 1
+        }
+    ],
+    "property_name": "authors",
+    "app_id": "31595",
+    "filter": [
+        {
+            "field_id": 717952,
+            "data_type": "radio_button",
+            "valuesArray": [
+                "1"
+            ],
+            "search_type": "equal_or",
+            "$$hashKey": "object:2499",
+            "selected_search_option_variable": "Value"
+        },
+        {
+            "field_id": 717957,
+            "data_type": "radio_button",
+            "valuesArray": [
+                "1"
+            ],
+            "search_type": "equal_or",
+            "$$hashKey": "object:2541",
+            "selected_search_option_variable": "Value"
+        }
+    ]
+}

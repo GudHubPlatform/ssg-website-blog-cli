@@ -1,0 +1,31 @@
+<div class="get-in-touch-form">
+    <form class="get-in-touch" onsubmit="sendEmail()" action="#">
+        <div class="form_flex">
+            <div class="required_input">
+                <input type="text" name="name" placeholder="Name" required>
+                <span class="unfocus">(Required)</span>
+            </div>
+            <input type="text" name="company" placeholder="Company">
+        </div>
+        <div class="form_flex">
+            <div class="required_input">
+                <input name="email" placeholder="Email address" required>
+                <span class="unfocus">(Required)</span>
+                <span class="email-error">Please enter valid email address</span>
+            </div>
+            <div class="tel">
+                <input type="text" name="phone" placeholder="Phone">
+                <span class="phone-error">Please enter valid phone</span>
+            </div>
+        </div>
+        <textarea name="message" placeholder="Message" cols="30" rows="10"></textarea>
+        <button type="submit" class="btn">${buttonText}</button>
+        ${popup == 'success-only' ? `
+            <div class="popup_shadow success_only" onclick="closePopupSuccess()">
+                <popup-success></popup-success>
+            </div>
+        ` : `
+            <popup-success></popup-success>
+        `}
+    </form>
+</div>

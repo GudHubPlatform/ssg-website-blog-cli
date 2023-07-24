@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style data-webpack-style="true">
+        posts-template section {
+            padding-top: 45px;
+        }
+        @media screen and (max-width: 900px) {
+            posts-template {
+                padding-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <title-tag data-chapter="blog"></title-tag>
+    <canonical-component data-chapter="blog"></canonical-component>
+    <author-schema></author-schema>
+    <meta-index></meta-index>
+    <organization-schema></organization-schema>
+    <meta-tag og type="title" data-chapter="blog"></meta-tag>
+    <meta-tag twitter type="title" data-twitter-name="@Strand" data-chapter="blog"></meta-tag>
+    <meta-tag type="description" data-chapter="blog"></meta-tag>
+    <meta-tag og type="description" data-chapter="blog"></meta-tag>
+    <meta-tag twitter type="description" data-chapter="blog"></meta-tag>
+
+    <header-component></header-component>
+
+    <author-page></author-page>
+
+    <posts-template data-type="author"></posts-template>
+
+    <get-in-touch-block></get-in-touch-block>
+    <footer-component></footer-component>
+
+    <cookies-popup></cookies-popup>
+<script src="/assets/js/main.js"></script>
+ 
+</body>
+</html>

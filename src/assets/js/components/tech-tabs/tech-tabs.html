@@ -1,0 +1,40 @@
+<section class="tabs">
+    <div class="container">
+        <h2 gh-id="${ghId}.title"> TITLE </h2>
+        <p class="subtitle" gh-id="${ghId}.subtitle"> SUBTITLE </p>
+        <div class="tab_items">
+            ${
+                
+                tabs.reduce((acc, item, index) => {
+                    return acc + `
+                    <div class="tab_item ${index === 0 ? 'active' : ''}" >
+                        <div class="tab_header" onclick="openTab()">
+                            <div class="tab_item_left">
+                                <h3 gh-id="${ghId}.tabs.${index}.title">Security and Reliability</h3>
+                            </div>
+                        </div>
+                        <div class="tab_content">
+                            <p class="content_text" gh-id="${ghId}.tabs.${index}.text"></p>
+                            <div class="green_support" gh-id="${ghId}.tabs.${index}.upper_images_text"></div>
+                            <div class="images_wrapper">
+                                ${
+                                    item.images.reduce((acc, image, index) => {
+                                        return acc + `
+                                            <div class="item_wrapper">
+                                                <div class="image">
+                                                    <image-component lazyload src="${image.src}" alt="${image.alt}" title="${image.title}"></image-component>
+                                                </div>
+                                                <div class="text">${image.text}</div>
+                                            </div>
+                                        `
+                                    }, '')
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    `
+                }, '')
+            }
+        </div>
+    </div>
+</section>

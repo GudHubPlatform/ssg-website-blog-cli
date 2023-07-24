@@ -1,0 +1,137 @@
+[
+    {
+        "type": "array",
+        "id": 1,
+        "childs": [
+            {
+                "type": "property",
+                "id": 4,
+                "property_name": "name",
+                "property_type": "field_value",
+                "field_id": "720862",
+                "interpretation": 1,
+                "$$hashKey": "object:17051"
+            },
+            {
+                "type": "property",
+                "id": 5,
+                "property_name": "email",
+                "property_type": "field_value",
+                "field_id": "720873",
+                "interpretation": 1,
+                "$$hashKey": "object:17052"
+            },
+            {
+                "type": "property",
+                "id": 6,
+                "property_name": "text",
+                "property_type": "field_value",
+                "field_id": "720864",
+                "interpretation": 1,
+                "$$hashKey": "object:17053"
+            },
+            {
+                "type": "property",
+                "id": 7,
+                "property_name": "id",
+                "property_type": "variable",
+                "variable_type": "current_item",
+                "$$hashKey": "object:17054"
+            },
+            {
+                "type": "property",
+                "id": 8,
+                "property_name": "date",
+                "property_type": "field_value",
+                "field_id": "720867",
+                "$$hashKey": "object:17055"
+            },
+            {
+                "type": "property",
+                "id": 9,
+                "property_name": "reply_to",
+                "property_type": "field_value",
+                "field_id": "720870",
+                "$$hashKey": "object:17056"
+            }
+        ],
+        "is_static": 0,
+        "property_name": "replies",
+        "app_id": "31680",
+        "filter": [
+            {
+                "field_id": 720868,
+                "data_type": "radio_button",
+                "valuesArray": [
+                    "0"
+                ],
+                "search_type": "equal_or",
+                "selected_search_option_variable": "Value"
+            },
+            {
+                "field_id": 720870,
+                "data_type": "item_ref",
+                "valuesArray": [],
+                "search_type": "equal_or",
+                "selected_search_option_variable": "Variable",
+                "input_type": "variable",
+                "input_value": "current_item"
+            }
+        ]
+    },
+    {
+        "type": "property",
+        "id": 3,
+        "property_name": "name",
+        "property_type": "field_value",
+        "field_id": "720862",
+        "interpretation": 1
+    },
+    {
+        "type": "property",
+        "id": 3,
+        "property_name": "reply_to",
+        "property_type": "field_value",
+        "field_id": "720870",
+        "interpretation": 0
+    },
+    {
+        "type": "property",
+        "id": 3,
+        "property_name": "email",
+        "property_type": "field_value",
+        "field_id": "720873",
+        "interpretation": 1
+    },
+    {
+        "type": "property",
+        "id": 3,
+        "property_name": "id",
+        "property_type": "variable",
+        "variable_type": "current_item"
+    },
+    {
+        "type": "property",
+        "id": 4,
+        "property_name": "text",
+        "property_type": "field_value",
+        "field_id": "720864",
+        "interpretation": 1
+    },
+    {
+        "type": "property",
+        "id": 5,
+        "property_name": "article",
+        "property_type": "field_value",
+        "field_id": "720865",
+        "interpretation": 0
+    },
+    {
+        "type": "property",
+        "id": 3,
+        "property_name": "date",
+        "property_type": "field_value",
+        "field_id": "720867",
+        "interpretation": 0
+    }
+]

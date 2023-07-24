@@ -1,0 +1,53 @@
+{
+    "type": "object",
+    "id": 3,
+    "childs": [
+        {
+            "type": "array",
+            "id": 1,
+            "childs": [
+                {
+                    "type": "property",
+                    "id": 4,
+                    "property_name": "slug",
+                    "property_type": "field_value",
+                    "field_id": "717956",
+                    "interpretation": 1,
+                    "$$hashKey": "object:42995"
+                },
+                {
+                    "type": "property",
+                    "id": 3,
+                    "property_name": "title",
+                    "property_type": "field_value",
+                    "field_id": "744779",
+                    "interpretation": 1,
+                    "$$hashKey": "object:42996"
+                },
+                {
+                    "type": "property",
+                    "id": 3,
+                    "property_name": "category_id",
+                    "property_type": "variable",
+                    "field_id": "717953",
+                    "interpretation": 1,
+                    "variable_type": "current_item"
+                }
+            ],
+            "property_name": "categories",
+            "app_id": "31595",
+            "filter": [
+                {
+                    "field_id": 717952,
+                    "data_type": "radio_button",
+                    "valuesArray": [
+                        "2"
+                    ],
+                    "search_type": "equal_or",
+                    "selected_search_option_variable": "Value"
+                }
+            ]
+        }
+    ],
+    "property_name": "categories"
+}
