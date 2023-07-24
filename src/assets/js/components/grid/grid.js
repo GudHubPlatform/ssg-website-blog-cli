@@ -14,14 +14,7 @@ class Grid extends GHComponent {
 
         const json = await super.getGhData(this.ghId);
 
-        this.icons = json.items[0].icon || null;
         this.jsonData = json;
-
-        const itemPadding = this.hasAttribute('data-item-padding') ? this.getAttribute('data-item-padding') : '20px';
-        this.style.setProperty('--itemPadding', itemPadding);
-
-        const iconSize = this.hasAttribute('data-icon-size') ? this.getAttribute('data-icon-size') : '30px';
-        this.style.setProperty('--iconSize', iconSize);
 
         this.backgroundImage = this.hasAttribute('data-background-image') ? this.getAttribute('data-background-image') : false;
         if (this.backgroundImage) {

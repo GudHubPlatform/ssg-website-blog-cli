@@ -27,12 +27,12 @@
             <div class="bottom_text">
                 <${ !isService ? `h2` : 'div'} class="h2" gh-id="${ghId}.title"> TITLE </${ !isService ? `h2` : 'div'}>
                 <p class="subtitle" gh-id="${ghId}.subtitle"> SUBTITLE </p>
-                <a class="btn" href="${button.link}" gh-id="${ghId}.button.text"> BUTTON LINK </a>
+                <a class="button" href="${button.link}" gh-id="${ghId}.button.text"> BUTTON LINK </a>
             </div>
         ` : ''}
         ${type === "bottomButton" ? `
             <div class="bottom_text">
-                <a class="btn" href="${button.link}" gh-id="${ghId}.button.text"> BUTTON LINK </a>
+                <a class="button" href="${button.link}" gh-id="${ghId}.button.text"> BUTTON LINK </a>
             </div>
         ` : ''}
     </div>

@@ -1,3 +1,5 @@
+import generalInfo from '/src/general-info.json';
+
 class MetaTag extends GHComponent {
     constructor() {
         super();
@@ -11,7 +13,7 @@ class MetaTag extends GHComponent {
         const appId = this.hasAttribute('data-appId') ? this.getAttribute('data-appId') : false;
         const itemId = this.hasAttribute('data-itemId') ? this.getAttribute('data-itemId') : false;
         const chapter = this.hasAttribute('data-chapter') ? this.getAttribute('data-chapter') : 'pages';
-        console.log(window.constants.info)
+        console.log(generalInfo)
         if (appId && itemId) {
             this.addTag(appId, itemId, false, chapter);
         } else {
@@ -72,7 +74,7 @@ class MetaTag extends GHComponent {
                 const metaSiteName = document.createElement('meta');
                 const name = 'og:site_name';
                 metaSiteName.setAttribute('property', name);
-                metaSiteName.setAttribute('content', window.constants.info.name);
+                metaSiteName.setAttribute('content', generalInfo.name);
                 document.querySelector('head').prepend(metaSiteName);
             }
             if (this.type == 'meta_image_src') {

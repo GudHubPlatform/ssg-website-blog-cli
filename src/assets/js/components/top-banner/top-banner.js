@@ -29,7 +29,7 @@ class TopBanner extends GHComponent {
             
             this.image = this.json.image || false;
         }
-        this.backgroundImage = this.hasAttribute('data-background-image') ? this.getAttribute('data-background-image') : false;
+        this.backgroundImage = this.hasAttribute('data-background-image');
         if (this.backgroundImage) {
             this.style.backgroundImage = `url(${this.json.background_image})`;
             this.style.setProperty('--breadcrumbsColor', '#DBE2E7');

@@ -16,7 +16,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Roboto, sans-serif;
-    padding-top: 96px;
+    padding-top: 80px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -86,8 +86,8 @@ h3 {
 .button {
     align-items: center;
     background-color: transparent;
-    border: 1px solid #2b60fa;
-    color: #2b60fa;
+    border: 1px solid #8BB7DC;
+    color: #fff;
     display: flex;
     font-size: 18px;
     height: 45px;

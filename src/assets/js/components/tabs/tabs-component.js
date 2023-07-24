@@ -11,11 +11,7 @@ class TabsComponent extends GHComponent {
         
         const json = await super.getGhData(this.ghId);
 
-        this.tabs = json.tabs;
-
-        this.icons = this.hasAttribute("data-icons") ? this.getAttribute("data-icons") : 'true';
-
-        
+        this.tabs = json.tabs;        
 
         super.render(html);
     }

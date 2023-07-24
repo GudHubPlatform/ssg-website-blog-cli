@@ -5,11 +5,6 @@ export const auth_key = "44UPpq/r2htUVcZDYgN0/F8DIgwZbA8F1DsgPQnpnbkF2lrOoGSM71y
 
 export const index_sitemap = true;
 
-export const info = {
-    name: "Template Blog",
-    legalName: "Template Blog Inc."
-}
-
 export const redirects = [
     {
         from: '/web-application-development-experience-matches-your-need/',
@@ -325,10 +320,6 @@ export const components_list = [
     {
         tag: 'staff-cards',
         src: '/src/assets/js/components/staff-cards/staff-cards.js',
-    },
-    {
-        tag: 'non-standart-grid',
-        src: '/src/assets/js/components/non-standart-grid/non-standart-grid.js'
     },
     {
         tag: 'fullscreen-image-and-text',

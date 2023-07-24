@@ -10,7 +10,8 @@
     "logo": "https://atlasiko.com/assets/images/logo.svg",
     "foundingDate": "2015",
     "founders": "Jhon Doe",
-    "address":{
+    "fullAddress": "Philadelphia, Pennsylvania, 100 N 18th St #361, PA 19103",
+    "separatedAddress":{
         "streetAddress": "100 N 18th St #361",
         "addressLocality": "Philadelphia",
         "addressRegion": "PA",

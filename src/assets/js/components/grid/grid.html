@@ -14,9 +14,6 @@
                 return acc + `
                 <div class="grid_item ${backgroundImage != 'none' ? 'transparentBackground' : ''}" onclick="openItem()">
                     <div class="absolute_wrap">
-                        ${icons ? `
-                            <img class="grid_icon" src="${jsonData.items[index].icon.src}" alt="${jsonData.items[index].icon.alt}" title="${jsonData.items[index].icon.title}">
-                        ` : ''}
                         <div class="absolute_wrap_top">
                             ${ type.includes('number') ? `
                             <div class="number">${index + 1}</div>

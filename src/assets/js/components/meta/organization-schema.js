@@ -1,3 +1,4 @@
+import generalInfo from '/src/general-info.json';
 class OrganizationSchema extends GHComponent {
     constructor() {
         super();
@@ -7,8 +8,8 @@ class OrganizationSchema extends GHComponent {
         const schema = {
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": window.constants.info.name,
-            "legalName": window.constants.info.legalName,
+            "name": generalInfo.name,
+            "legalName": generalInfo.legalName,
             "url": `${window.MODE === 'production' ? 'https' : 'http'}://${window.constants.website}`,
             "logo": `${window.MODE === 'production' ? 'https' : 'http'}://${window.constants.website}/assets/images/logo.svg`,
             "foundingDate": "1979",

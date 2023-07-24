@@ -1,6 +1,8 @@
 import html from './footer.html';
 import './footer.scss';
 
+import generalInfo from '/src/general-info.json';
+
 class FooterComponent extends GHComponent {
     
     constructor() {
@@ -15,6 +17,10 @@ class FooterComponent extends GHComponent {
         allPages = allPages.pages;
 
         this.services = allPages;
+
+        this.info = generalInfo;
+
+        this.hrefPhone = this.info.phone.replace(/[ ()+-]/g, '');
          
 
         super.render(html);

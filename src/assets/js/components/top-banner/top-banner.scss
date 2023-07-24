@@ -1,8 +1,14 @@
 top-banner {
-    &[data-background-image=true] {
+    &[data-background-image] {
         background-image: var(--backgroundImage);
         background-repeat: no-repeat;
         background-size: cover;
+        .button {
+            background-color: #8BB7DC;
+            &:hover {
+                border-color: #fff;
+            }
+        }
         .top_banner {
             padding: 120px 0;
             padding-top: 70px;
@@ -26,7 +32,7 @@ top-banner {
         .main_subtitle {
             margin-bottom: 45px;
         }
-        .btn {
+        .button {
             margin: 0 auto;
         }
     }

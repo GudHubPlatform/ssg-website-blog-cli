@@ -1,3 +1,4 @@
+import generalInfo from '/src/general-info.json';
 class ServiceSchema extends GHComponent {
     constructor() {
         super();
@@ -22,7 +23,7 @@ class ServiceSchema extends GHComponent {
             "url": `${window.MODE === 'production' ? 'https' : 'http'}://${window.constants.website}${serviceSlug}`,
             "provider": {
                 "@type": "Organization",
-                "name": window.constants.info.name
+                "name": generalInfo.name
             },
             "serviceType": "IT Development Services",
             "areaServed": [
