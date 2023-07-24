@@ -302,10 +302,6 @@ export const components_list = [
         src: '/src/assets/js/components/recent-posts/recent-posts.js'
     },
     {
-        tag: 'tech-block',
-        src: '/src/assets/js/components/tech-block/tech-block.js'
-    },
-    {
         tag: 'grid-component',
         src: '/src/assets/js/components/grid/grid.js'
     },
@@ -318,68 +314,24 @@ export const components_list = [
         src: '/src/assets/js/components/image-component/image-component.js'
     },
     {
-        tag: 'staff-cards',
-        src: '/src/assets/js/components/staff-cards/staff-cards.js',
-    },
-    {
         tag: 'fullscreen-image-and-text',
         src: '/src/assets/js/components/fullscreen-image-and-text/fullscreen-image-and-text.js'
-    },
-    {
-        tag: 'fullscreen-image-and-accordeon',
-        src: '/src/assets/js/components/fullscreen-image-and-accordeon/fullscreen-image-and-accordeon.js'
-    },
-    {
-        tag: 'two-blocks',
-        src: '/src/assets/js/components/two-blocks/two-blocks.js'
     },
     {
         tag: 'contact-us-block',
         src: '/src/assets/js/components/contact-us-block/contact-us-block.js'
     },
     {
-        tag: 'text-with-shadow',
-        src: '/src/assets/js/components/text-with-shadow/text-with-shadow.js'
-    },
-    {
         tag: 'service-banner',
         src: '/src/assets/js/components/service-banner/service-banner.js'
-    },
-    {
-        tag: 'cards-component',
-        src: '/src/assets/js/components/cards/cards-component.js'
     },
     {
         tag: 'tabs-component',
         src: '/src/assets/js/components/tabs/tabs-component.js'
     },
     {
-        tag: 'fullscreen-image-and-ticks',
-        src: '/src/assets/js/components/fullscreen-image-and-ticks/fullscreen-image-and-ticks.js'
-    },
-    {
-        tag: 'grid-list',
-        src: '/src/assets/js/components/grid-list/grid-list.js'
-    },
-    {
-        tag: 'stack-component',
-        src: '/src/assets/js/components/stack/stack-component.js'
-    },
-    {
         tag: 'faq-component',
         src: '/src/assets/js/components/faq/faq.js'
-    },
-    {
-        tag: 'ticks-list',
-        src: '/src/assets/js/components/ticks-list/ticks-list.js'
-    },
-    {
-        tag: 'grid-stats',
-        src: '/src/assets/js/components/grid-stats/grid-stats.js'
-    },
-    {
-        tag: 'horizontal-tabs',
-        src: '/src/assets/js/components/horizontal-tabs/horizontal-tabs.js'
     },
     {
         tag: 'posts-template',
@@ -407,14 +359,6 @@ export const components_list = [
         src: '/src/assets/js/components/text-only/text-only.js'
     },
     {
-        tag: 'tech-tabs',
-        src: '/src/assets/js/components/tech-tabs/tech-tabs.js'
-    },
-    {
-        tag: 'services-tech',
-        src: '/src/assets/js/components/services-tech/services-tech.js'
-    },
-    {
         tag: 'categories-list',
         src: '/src/assets/js/components/blog/categories-list/categories-list.js'
     },
@@ -432,10 +376,6 @@ export const components_list = [
         src: '/src/assets/js/components/blog/contents/contents.js'
     },
     {
-        tag: 'pricing-cards',
-        src: '/src/assets/js/components/pricing-cards/pricing-cards.js'
-    },
-    {
         tag: 'reviews-slider',
         src: '/src/assets/js/components/reviews-slider/reviews-slider.js'
     },
@@ -450,10 +390,6 @@ export const components_list = [
     {
         tag: 'popup-form',
         src: '/src/assets/js/components/popup/popup-form/popup-form.js'
-    },
-    {
-        tag: 'flex-accordeon',
-        src: '/src/assets/js/components/flex-accordeon/flex-accordeon.js'
     },
     {
         tag: 'cookies-popup',

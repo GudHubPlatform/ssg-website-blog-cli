@@ -86,7 +86,7 @@ h3 {
 .button {
     align-items: center;
     background-color: transparent;
-    border: 1px solid #8BB7DC;
+    border: 1px solid #2b60fa;
     color: #fff;
     display: flex;
     font-size: 18px;
@@ -96,6 +96,11 @@ h3 {
     transition: all .2s ease;
     width: 170px;
 }
+.button.dark {
+    border-color: #2b60fa;
+    color: #2b60fa;
+}
+
 .button span {
     color: #2b60fa;
 }
