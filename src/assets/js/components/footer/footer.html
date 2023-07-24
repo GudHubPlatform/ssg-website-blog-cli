@@ -4,7 +4,7 @@
             <div class="footer_left">
                 <div class="logo">
                     <a href="/">
-                        <img src="/assets/images/logo.svg" width="160" height="43" alt="Logo" title="Strand Managment Solutions, Inc.">
+                        <img src="/assets/images/logo-white.svg" width="160" height="43" alt="Logo" title="Strand Managment Solutions, Inc.">
                     </a>
                 </div>
             </div>
@@ -32,21 +32,7 @@
                             services.reduce((acc, service) => {
                                 return acc + `
                                     <li class="service__item">
-                                        <a href="${service.slug}">${ service.h1 }</a>
-                                    </li>
-                                `
-                            }, '')
-                        }
-                    </ul>
-                </div>
-                <div class="column">
-                    <div class="like_a_title">Company</div>
-                    <ul>
-                        ${
-                            companyPages.reduce((acc, companyPage) => {
-                                return acc + `
-                                    <li class="companyPage__item">
-                                        <a href="${companyPage.slug}">${ companyPage.h1 }</a>
+                                        <a href="${service.slug}">${ service.title }</a>
                                     </li>
                                 `
                             }, '')
@@ -64,29 +50,6 @@
                     <div class="footer_contact_item">
                         <a href="https://goo.gl/maps/oUZgBEC3zQ8gHTuk6" target="_blank" rel="noreferrer noopener nofollow"><span>Address:</span> 3525 Quakerbridge Road Suite 6325 Hamilton, NJ 08619</a>
                     </div>
-                </div>
-            </div>
-            <div class="footer_cities">
-                <div class="top_title">States we operate in</div>
-                <div class="city">New Jersey</div>
-                <div class="city_services">
-                    ${
-                        newJerseyServices.reduce((acc, service) => {
-                            return acc + `
-                                <a href="${service.slug}">${ service.h1 }</a>
-                            `
-                        }, '')
-                    }
-                </div>
-                <div class="city">New York</div>
-                <div class="city_services">
-                    ${
-                        newYorkServices.reduce((acc, service) => {
-                            return acc + `
-                                <a href="${service.slug}">${ service.h1 }</a>
-                            `
-                        }, '')
-                    }
                 </div>
             </div>
         </div>
