@@ -1,20 +1,21 @@
-<header>
+<header class="header">
     <div class="container">
-        <div class="header_left">
-            <a href="/" class="logo">
-                <img src="/assets/images/logo.svg" width="160" height="43" alt="Logo" title="Strand Managment Solutions, Inc.">
+        <div class="header__wrapper">
+            <div class="hamburger" onclick="toogleMenu()">
+                <div></div>
+            </div>
+            <a class="header__logo" href="/" >
+                <img width="156" height="55" src="/assets/images/logo.svg" alt="Template" title="Teamplate">
             </a>
-        </div>
-        <div class="header_right">
-            <nav>
-                <ul class="menu">
-                    ${
-                        menu.reduce((acc, item) => {
-                            return acc + `
-                                <li class="menu__item ${item.childs ? 'megamenu' : ''}">
-                                    <${item.link ? `a href="${item.link}"` : 'span'} ${item.childs ? `onclick='openChild()'` : ''}>${ item.name }</${item.link ? `a` : 'span'}>
-                                    ${ item.childs ? `
-                                        <div class="megamenu_wrapper item_${item.name.toLowerCase()}">
+            <ul class="header__menu move_part">
+                ${
+                    menu.reduce((acc, item) => {
+                        return acc + `
+                            <li class=" ${item.childs ? 'has_child' : ''}">
+                                <${item.link ? `a href="${item.link}"` : 'span'} ${item.childs ? `onclick='openChild()'` : ''}>${ item.name }</${item.link ? `a` : 'span'}>
+                                ${ item.childs ? `
+                                    <div class="megamenu megamenu_services item_${item.name.toLowerCase()}">
+                                        <div class="left">
                                             <div class="menu_title">${item.name}</div>
                                             <div class="childs_wrapper">
                                                 <ul class="child">
@@ -30,16 +31,25 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                    ` : ''}
-                                </li>
-                            `
-                        }, '')
-                    }
-                </ul>
-            </nav>
-        </div>
-        <div class="hamburger" onclick="toogleMenu()">
-            <div></div>
+                                        <div class="right megamenu_contact">
+                                            <div class="heading-megamenu">Let's work on reaching success together</div>
+                                            <div class="contact_flex">
+                                                <div class="contact_text">
+                                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio dicta tempora dolor, cupiditate quis impedit quidem minima consectetur facilis. Dolorem quis magnam corrupti iure alias?</p>    
+                                                    <a href="/contact-us/" class="button">
+                                                        <span>Contact Us</span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M1 8.33333L8.5 14.8148L16 8.33333M8.5 15L8.5 0" stroke="#2B61FA" stroke-width="2"></path></svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ` : ''}
+                            </li>
+                        `
+                    }, '')
+                }
+            </ul>
         </div>
     </div>
 </header>
