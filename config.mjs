@@ -184,11 +184,11 @@ export const chapters = {
         }
     },
     blog: {
-        app_id: 31595,
-        slug_field_id: 717956,
-        title_field_id: 717953,
-        heading_field_id: 744779,
-        description_field_id: 717954,
+        app_id: 33361,
+        slug_field_id: 794804,
+        title_field_id: 794784,
+        heading_field_id: 794783,
+        description_field_id: 794785,
         sitemap: {
             frequency: 'weekly',
             priority: 0.6,

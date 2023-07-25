@@ -1,6 +1,8 @@
 import html from './contact-us-block.html';
 import './contact-us-block.scss';
 
+import generalInfo from '/src/general-info.json';
+
 class ContactUsBlock extends GHComponent {
 
     constructor() {
@@ -9,6 +11,10 @@ class ContactUsBlock extends GHComponent {
 
     async onServerRender() {
         this.ghId = this.getAttribute('data-gh-id') || null;
+
+        this.info = generalInfo;
+
+        this.hrefPhone = this.info.phone.replace(/[ ()+-]/g, '');
         
         super.render(html);
     }

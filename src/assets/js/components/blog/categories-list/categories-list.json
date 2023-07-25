@@ -4,50 +4,49 @@
     "childs": [
         {
             "type": "property",
-            "id": 4,
-            "property_name": "id",
-            "property_type": "variable",
-            "field_id": "717953",
-            "variable_type": "current_item"
-        },
-        {
-            "type": "property",
             "id": 3,
             "property_name": "title",
             "property_type": "field_value",
-            "field_id": "744779",
+            "field_id": "794783",
+            "interpretation": 1
+        },
+        {
+            "type": "property",
+            "id": 4,
+            "property_name": "slug",
+            "property_type": "field_value",
+            "field_id": "794804",
             "interpretation": 1
         },
         {
             "type": "property",
             "id": 5,
-            "property_name": "slug",
-            "property_type": "field_value",
-            "field_id": "717956",
-            "interpretation": 1
+            "property_name": "id",
+            "property_type": "variable",
+            "variable_type": "current_item"
         }
     ],
     "property_name": "categories",
-    "app_id": "31595",
+    "app_id": "33361",
     "filter": [
         {
-            "field_id": 717952,
+            "field_id": 794787,
             "data_type": "radio_button",
             "valuesArray": [
                 "2"
             ],
             "search_type": "equal_or",
-            "$$hashKey": "object:1420",
+            "$$hashKey": "object:17515",
             "selected_search_option_variable": "Value"
         },
         {
-            "field_id": 717957,
+            "field_id": 794803,
             "data_type": "radio_button",
             "valuesArray": [
                 "1"
             ],
             "search_type": "equal_or",
-            "$$hashKey": "object:1462",
+            "$$hashKey": "object:17557",
             "selected_search_option_variable": "Value"
         }
     ]
