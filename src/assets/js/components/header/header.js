@@ -7,11 +7,15 @@ class Header extends GHComponent {
     }
 
     onServerRender() {
+        // List of objects like a nested-list for generating menu in header
         this.menu = [
+            { name: 'Home', link: '/' },
             { name: 'Services', childs: [
                 { name: 'Web Development', link: '/services/web-development/' }
             ] },
-            { name: 'Blog', link: '/blog/' },
+            { name: 'Blog', link: '/blog/', childs: [
+                { name: 'Web Development', link: '/services/web-dev/' }
+            ] },
             { name: 'Contact Us', link: '/contact-us/' }
         ];
 

@@ -1,6 +1,9 @@
 import html from './top-banner.html';
 import './top-banner.scss';
 class TopBanner extends GHComponent {
+    /**
+     * If you set attribute - data-background-image you can write a pass to image like a value for property "background_image" in json object of this component on GudHub
+     */
     
     constructor() {
         super();
@@ -9,6 +12,7 @@ class TopBanner extends GHComponent {
         let url = new URL(window.location.href);
         url = url.searchParams.get('path');
         this.slug = url;
+        // if this a pagination page (/blog/page/2/), set in the breadcrumbs only one item (Home > Blog)
         if (url.includes('/page/')) {
             this.page = true;
             this.breadcrumbs = JSON.stringify([{"title": "Blog"}])

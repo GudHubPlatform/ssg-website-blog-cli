@@ -28,7 +28,7 @@ class PostsTemplate extends GHComponent {
         let articles;
 
         let categories = await gudhub.jsonConstructor(categoriesObject);
-        categories = categories.categories.categories;
+        categories = categories.categories;
 
         this.empty = false;
 
@@ -41,6 +41,7 @@ class PostsTemplate extends GHComponent {
             const category = url.searchParams.get('category');
             this.currentCategory = categories.find(iterationCategory => iterationCategory.slug == `/blog/${category}/`);
             const categoryId = this.currentCategory.category_id;
+            console.log('categoryId',categoryId)
             articlesAndComments = await gudhub.jsonConstructor(
                 {
                     "type": "object",
@@ -55,15 +56,14 @@ class PostsTemplate extends GHComponent {
                                     "id": 3,
                                     "property_name": "article_id",
                                     "property_type": "field_value",
-                                    "field_id": "720865",
-                                    "$$hashKey": "object:2205"
-                                }
+                                    "field_id": "794821"
+                                  }
                             ],
                             "property_name": "comments",
-                            "app_id": "31680",
+                            "app_id": "33362",
                             "filter": [
                                 {
-                                    "field_id": 720868,
+                                    "field_id": 794824,
                                     "data_type": "radio_button",
                                     "valuesArray": [
                                         "0"
@@ -78,41 +78,41 @@ class PostsTemplate extends GHComponent {
                             "id": 1,
                             "childs": articlesObject,
                             "property_name": "articles",
-                            "app_id": "31595",
+                            "app_id": "33361",
                             "filter": [
                                 {
-                                    "field_id": 717952,
+                                    "field_id": 794787,
                                     "data_type": "radio_button",
                                     "valuesArray": [
-                                        "0"
+                                      "0"
                                     ],
                                     "search_type": "equal_or",
-                                    "$$hashKey": "object:1192",
+                                    "$$hashKey": "object:945",
                                     "selected_search_option_variable": "Value"
-                                },
-                                {
-                                    "field_id": 717957,
+                                  },
+                                  {
+                                    "field_id": 794803,
                                     "data_type": "radio_button",
                                     "valuesArray": [
-                                        "1"
+                                      "1"
                                     ],
                                     "search_type": "equal_or",
-                                    "$$hashKey": "object:1240",
+                                    "$$hashKey": "object:987",
                                     "selected_search_option_variable": "Value"
-                                },
-                                {
-                                    "field_id": 717969,
+                                  },
+                                  {
+                                    "field_id": 794788,
                                     "data_type": "item_ref",
                                     "valuesArray": [
-                                        categoryId
+                                      categoryId
                                     ],
                                     "search_type": "equal_or",
-                                    "$$hashKey": "object:1492",
+                                    "$$hashKey": "object:1225",
                                     "selected_search_option_variable": "Value"
-                                }
+                                  }
                             ],
                             "isSortable": 1,
-                            "field_id_to_sort": "717958",
+                            "field_id_to_sort": "794791",
                             "sortType": "desc"
                         }
                     ],
@@ -120,7 +120,7 @@ class PostsTemplate extends GHComponent {
                 }
             );
             articles = articlesAndComments.articlesAndComments;
-
+                console.log(articlesAndComments)
             if (articles.articles.length === 0) {
                 this.empty = 'category';
             }
@@ -144,15 +144,14 @@ class PostsTemplate extends GHComponent {
                                     "id": 3,
                                     "property_name": "article_id",
                                     "property_type": "field_value",
-                                    "field_id": "720865",
-                                    "$$hashKey": "object:2205"
-                                }
+                                    "field_id": "794821"
+                                  }
                             ],
                             "property_name": "comments",
-                            "app_id": "31680",
+                            "app_id": "33361",
                             "filter": [
                                 {
-                                    "field_id": 720868,
+                                    "field_id": 794824,
                                     "data_type": "radio_button",
                                     "valuesArray": [
                                         "0"
@@ -167,41 +166,41 @@ class PostsTemplate extends GHComponent {
                             "id": 1,
                             "childs": articlesObject,
                             "property_name": "articles",
-                            "app_id": "31595",
+                            "app_id": "33361",
                             "filter": [
                                 {
-                                    "field_id": 717952,
+                                    "field_id": 794787,
                                     "data_type": "radio_button",
                                     "valuesArray": [
-                                        "0"
+                                      "0"
                                     ],
                                     "search_type": "equal_or",
-                                    "$$hashKey": "object:4211",
+                                    "$$hashKey": "object:945",
                                     "selected_search_option_variable": "Value"
-                                },
-                                {
-                                    "field_id": 717968,
+                                  },
+                                  {
+                                    "field_id": 794803,
+                                    "data_type": "radio_button",
+                                    "valuesArray": [
+                                      "1"
+                                    ],
+                                    "search_type": "equal_or",
+                                    "$$hashKey": "object:987",
+                                    "selected_search_option_variable": "Value"
+                                  },
+                                  {
+                                    "field_id": 794789,
                                     "data_type": "item_ref",
                                     "valuesArray": [
-                                        author_id
+                                      author_id
                                     ],
                                     "search_type": "equal_or",
-                                    "$$hashKey": "object:4613",
+                                    "$$hashKey": "object:1025",
                                     "selected_search_option_variable": "Value"
-                                },
-                                {
-                                    "field_id": 717957,
-                                    "data_type": "radio_button",
-                                    "valuesArray": [
-                                        "1"
-                                    ],
-                                    "search_type": "equal_or",
-                                    "$$hashKey": "object:4865",
-                                    "selected_search_option_variable": "Value"
-                                }
+                                  }
                             ],
                             "isSortable": 1,
-                            "field_id_to_sort": "717958",
+                            "field_id_to_sort": "794791",
                             "sortType": "desc"
                         }
                     ],
@@ -231,15 +230,14 @@ class PostsTemplate extends GHComponent {
                                     "id": 3,
                                     "property_name": "article_id",
                                     "property_type": "field_value",
-                                    "field_id": "720865",
-                                    "$$hashKey": "object:2205"
-                                }
+                                    "field_id": "794821"
+                                  }
                             ],
                             "property_name": "comments",
-                            "app_id": "31680",
+                            "app_id": "33361",
                             "filter": [
                                 {
-                                    "field_id": 720868,
+                                    "field_id": 794824,
                                     "data_type": "radio_button",
                                     "valuesArray": [
                                         "0"
@@ -254,31 +252,31 @@ class PostsTemplate extends GHComponent {
                             "id": 1,
                             "childs": articlesObject,
                             "property_name": "articles",
-                            "app_id": "31595",
+                            "app_id": "33361",
                             "filter": [
                                 {
-                                    "field_id": 717952,
+                                    "field_id": 794787,
                                     "data_type": "radio_button",
                                     "valuesArray": [
                                         "0"
                                     ],
                                     "search_type": "equal_or",
-                                    "$$hashKey": "object:1192",
+                                    "$$hashKey": "object:17515",
                                     "selected_search_option_variable": "Value"
                                 },
                                 {
-                                    "field_id": 717957,
+                                    "field_id": 794803,
                                     "data_type": "radio_button",
                                     "valuesArray": [
                                         "1"
                                     ],
                                     "search_type": "equal_or",
-                                    "$$hashKey": "object:1240",
+                                    "$$hashKey": "object:17557",
                                     "selected_search_option_variable": "Value"
                                 }
                             ],
                             "isSortable": 1,
-                            "field_id_to_sort": "717958",
+                            "field_id_to_sort": "794791",
                             "sortType": "desc"
                         }
                     ],
@@ -311,7 +309,7 @@ class PostsTemplate extends GHComponent {
             post.category = [];
             for (let category in post.categories) {
                 let categoryName = this.articles[article].categories[category].fields.find(field => field.field_id == window.constants.chapters.blog.heading_field_id).field_value;
-                let categorySlug = this.articles[article].categories[category].fields.find(field => field.field_id == 717956).field_value;
+                let categorySlug = this.articles[article].categories[category].fields.find(field => field.field_id == window.constants.chapters.blog.slug_field_id).field_value;
                 let categoryObject = {
                     "name": categoryName,
                     "slug": categorySlug

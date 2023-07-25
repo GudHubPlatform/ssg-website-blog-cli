@@ -19,6 +19,7 @@ class TitleTag extends GHComponent {
                     await this.findTitle(appId, false, slug);
                 } else {
                     let ids = await super.findIds(chapter);
+                    console.log(ids)
                     await this.findTitle(ids.appId, ids.itemId, false);
                 }
             } else {

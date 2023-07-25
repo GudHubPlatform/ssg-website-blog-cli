@@ -10,8 +10,6 @@ class TextOnly extends GHComponent {
     async onServerRender() {
         this.ghId = this.getAttribute('data-gh-id') || null;
 
-        const json = await super.getGhData(this.ghId);
-
         super.render(html);
     }
 

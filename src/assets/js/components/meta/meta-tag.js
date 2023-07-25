@@ -64,13 +64,13 @@ class MetaTag extends GHComponent {
             if (this.type != 'meta_image_src') {
                 const meta = document.createElement('meta');
                 console.log(this.type)
-                let type = this.type === "meta_title" ? "title" : this.type
+                let type = this.type === this.type
                 const name = 'og:' + type;
                 meta.setAttribute('property', name);
                 meta.setAttribute('content', value);
                 document.querySelector('head').prepend(meta);
             }
-            if (this.type == 'meta_title') {
+            if (this.type == 'title') {
                 const metaSiteName = document.createElement('meta');
                 const name = 'og:site_name';
                 metaSiteName.setAttribute('property', name);
@@ -87,14 +87,14 @@ class MetaTag extends GHComponent {
         } else if (this.twitter) {
             if (this.type != 'meta_image_src') {
                 const meta = document.createElement('meta');
-                let type = this.type === "meta_title" ? "title" : this.type;
+                let type = this.type === this.type;
                 const name = 'twitter:' + type;
                 meta.setAttribute('name', name);
                 meta.setAttribute('content', value);
                 document.querySelector('head').prepend(meta);
             }
             
-            if (this.type == 'meta_title') {
+            if (this.type == 'title') {
                 const metaCard = document.createElement('meta');
                 metaCard.setAttribute('name', 'twitter:card');
                 metaCard.setAttribute('content', 'summary_large_image');
@@ -119,7 +119,7 @@ class MetaTag extends GHComponent {
         } else {
             const meta = document.createElement('meta');
             let name;
-            if (this.type == "meta_title") {
+            if (this.type == "title") {
                 name = "title"
             } else if (this.type == "meta_image_src") {
                 name = "image"

@@ -12,6 +12,7 @@ class AuthorPage extends GHComponent {
     async onServerRender() {
         const url = new URL(window.location.href);
         const authorSlug = url.searchParams.get('path');
+        console.log(authorSlug)
 
         this.author = await gudhub.jsonConstructor(
             {
@@ -19,31 +20,42 @@ class AuthorPage extends GHComponent {
                 "id": 1,
                 "childs": authorObject,
                 "property_name": "author",
-                "app_id": "31595",
+                "app_id": "33361",
                 "filter": [
-                    {
-                        "field_id": 717952,
-                        "data_type": "radio_button",
-                        "valuesArray": [
-                            "1"
-                        ],
-                        "search_type": "equal_or",
-                        "$$hashKey": "object:946",
-                        "selected_search_option_variable": "Value"
-                    },
-                    {
-                        "field_id": 717956,
-                        "data_type": "text",
-                        "valuesArray": [
-                            authorSlug
-                        ],
-                        "search_type": "contain_or",
-                        "$$hashKey": "object:1240",
-                        "selected_search_option_variable": "Value"
-                    }
+                  {
+                    "field_id": 794787,
+                    "data_type": "radio_button",
+                    "valuesArray": [
+                      "1"
+                    ],
+                    "search_type": "equal_or",
+                    "$$hashKey": "object:3722",
+                    "selected_search_option_variable": "Value"
+                  },
+                  {
+                    "field_id": 794803,
+                    "data_type": "radio_button",
+                    "valuesArray": [
+                      "1"
+                    ],
+                    "search_type": "equal_or",
+                    "$$hashKey": "object:3764",
+                    "selected_search_option_variable": "Value"
+                  },
+                  {
+                    "field_id": 794804,
+                    "data_type": "text",
+                    "valuesArray": [
+                      authorSlug
+                    ],
+                    "search_type": "contain_or",
+                    "$$hashKey": "object:3802",
+                    "selected_search_option_variable": "Value"
+                  }
                 ]
-            }
+              }
         )
+        console.log(this.author)
         this.author = this.author.author[0];
 
         const ogSiteImage = document.createElement('meta');
@@ -58,8 +70,8 @@ class AuthorPage extends GHComponent {
 
         let readableCategories = [];
         for (let category in  this.author.categories) {
-            let slug = this.author.categories[category].fields.find(field => field.field_id == 717956).field_value;
-            let title = this.author.categories[category].fields.find(field => field.field_id == 717953).field_value;
+            let slug = this.author.categories[category].fields.find(field => field.field_id == window.constants.chapters.blog.slug_field_id).field_value;
+            let title = this.author.categories[category].fields.find(field => field.field_id == window.constants.chapters.blog.heading_field_id).field_value;
             let categoriesObject = {
                 "title": title,
                 "slug": slug
