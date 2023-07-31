@@ -13,7 +13,7 @@ class MetaTag extends GHComponent {
         const appId = this.hasAttribute('data-appId') ? this.getAttribute('data-appId') : false;
         const itemId = this.hasAttribute('data-itemId') ? this.getAttribute('data-itemId') : false;
         const chapter = this.hasAttribute('data-chapter') ? this.getAttribute('data-chapter') : 'pages';
-        console.log(generalInfo)
+
         if (appId && itemId) {
             this.addTag(appId, itemId, false, chapter);
         } else {
@@ -52,8 +52,7 @@ class MetaTag extends GHComponent {
             }
             value = item.field_value;
         }
-        console.log(this.type)
-        // fieldId = app.field_list.find(findedField => findedField.name_space === this.type).field_id;
+
         fieldId = app.field_list.find(findedField => findedField.name_space === this.type);
         fieldId = fieldId.field_id;
         value = item.fields.find(findedField => findedField.field_id == fieldId).field_value;
@@ -63,7 +62,6 @@ class MetaTag extends GHComponent {
         if (this.og) {
             if (this.type != 'meta_image_src') {
                 const meta = document.createElement('meta');
-                console.log(this.type)
                 let type = this.type === this.type
                 const name = 'og:' + type;
                 meta.setAttribute('property', name);

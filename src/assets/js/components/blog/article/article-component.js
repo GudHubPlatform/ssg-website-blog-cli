@@ -217,7 +217,6 @@ class ArticleComponent extends GHComponent {
                 ],
                 "property_name": "articlesAndComments"
             });
-            console.log('articleAndComments',articleAndComments)
         let comments = articleAndComments.articlesAndComments.comments;
         this.article = articleAndComments.articlesAndComments.article[0];
 
@@ -242,11 +241,9 @@ class ArticleComponent extends GHComponent {
         this.articleReference = this.article.id;
 
         const authors = await gudhub.jsonConstructor(authorsObject);
-        console.log('authors',authors)
         this.authors = authors.authors;
         
         const categories = await gudhub.jsonConstructor(categoriesObject);
-        console.log('categories',categories)
 
 
         // CATEGORIES
@@ -290,11 +287,9 @@ class ArticleComponent extends GHComponent {
 
         const articleId = this.article.id.split('.')[1];
         const authorId = this.author.author_id.split('.')[1];
-console.log(articleId)
         this.author.description = await gudhub.getInterpretationById(window.constants.chapters.blog.app_id, authorId, window.constants.chapters.blog.intro_field_id, 'html');
-        console.log('this.author.description', this.author.description)
         this.content = await gudhub.getInterpretationById(window.constants.chapters.blog.app_id, articleId, window.constants.chapters.blog.content_field_id, 'html');
-console.log('this.content',this.content)
+
         const getContent = (link) => {
             return new Promise(async (resolve) => {
                 const response = await fetch(link);
@@ -304,7 +299,7 @@ console.log('this.content',this.content)
                 resolve(div.innerText);
             });
         }
-        console.log('this.author.position',this.author.position)
+
         this.author.position = await getContent(this.author.position);
 
         // SIDEBAR
@@ -317,7 +312,7 @@ console.log('this.content',this.content)
         }
 
         this.articles = await gudhub.jsonConstructor(allArticles);
-        console.log('this.articles',this.articles)
+
         for (let article = 0; article < this.articles.all_articles.length; article++) {
             if (this.article.slug == this.articles.all_articles[article].slug) {
                 this.articles.all_articles.splice(article, 1)
@@ -433,7 +428,6 @@ console.log('this.content',this.content)
             `;
 
         }
-        console.log(9)
     }
     async onClientReady () {
         let ratings = {};

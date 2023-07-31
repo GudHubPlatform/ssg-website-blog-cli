@@ -24,10 +24,9 @@ class AuthorSchema extends GHComponent {
                     div.insertAdjacentHTML('beforeend', content);
                     resolve(div.innerText);
                 });
-                }
+            }
                 
-                author.description = await getContent(author.description)
-                console.log(author.name.split(' ')[1])
+            author.description = await getContent(author.description)
             let schema = {
                 "@context": "https://schema.org",
                 "@id": `${window.MODE === 'production' ? 'https' : 'http'}://${window.constants.website}` + author.slug,

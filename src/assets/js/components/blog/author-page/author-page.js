@@ -12,7 +12,6 @@ class AuthorPage extends GHComponent {
     async onServerRender() {
         const url = new URL(window.location.href);
         const authorSlug = url.searchParams.get('path');
-        console.log(authorSlug)
 
         this.author = await gudhub.jsonConstructor(
             {
@@ -55,7 +54,6 @@ class AuthorPage extends GHComponent {
                 ]
               }
         )
-        console.log(this.author)
         this.author = this.author.author[0];
 
         const ogSiteImage = document.createElement('meta');

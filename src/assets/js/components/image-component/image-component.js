@@ -25,9 +25,7 @@ class ImageComponent extends GHComponent {
         
         this.width = this.hasAttribute('width') ? this.getAttribute('width') : false;
         this.height = this.hasAttribute('height') ? this.getAttribute('height') : false;
-        console.log('this',this)
-        console.log('this.dataSrc',this.dataSrc)
-        console.log('this.dataSrc',this.dataUrl)
+
         await new Promise(async (resolve) => {
             if(this.dataSrc && this.dataUrl && !window.disableImagesRegeneration) {
                 await fetch(this.dataSrc + '?source=' + this.dataUrl + '&mode=ssr');
@@ -63,8 +61,6 @@ class ImageComponent extends GHComponent {
     }
 
     clientRender() {
-        console.log(this.path)
-        console.log(this.extension)
         this.innerHTML = /*html*/`
         <picture data-natural-width="${this.imageWidth}">
             ${ (this.imageWidth < 1200) && (this.imageWidth > 600) ? `

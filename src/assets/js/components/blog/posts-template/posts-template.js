@@ -44,7 +44,6 @@ class PostsTemplate extends GHComponent {
             const category = url.searchParams.get('category');
             this.currentCategory = categories.find(iterationCategory => iterationCategory.slug == `/blog/${category}/`);
             const categoryId = this.currentCategory.category_id;
-            console.log('categoryId',categoryId)
             articlesAndComments = await gudhub.jsonConstructor(
                 {
                     "type": "object",
@@ -123,7 +122,6 @@ class PostsTemplate extends GHComponent {
                 }
             );
             articles = articlesAndComments.articlesAndComments;
-                console.log(articlesAndComments)
             if (articles.articles.length === 0) {
                 this.empty = 'category';
             }
@@ -476,10 +474,8 @@ class PostsTemplate extends GHComponent {
     async fetchArticles(item) {
         let searchTarget = item;
         searchTarget.addEventListener('input', this.loadingCallback);
-        console.log('1')
         const response = await fetch(`https://gudhub.com/api/services/prod/api/33364/articles`);
         const data = await response.json();
-        console.log('data', data)
         let articles = data.articlesAndComments.articles;
         let comments = data.articlesAndComments.comments;
         for (let article = 0; article < articles.length; article++) {
