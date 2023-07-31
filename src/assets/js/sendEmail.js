@@ -8,10 +8,10 @@ export async function sendEmail(form, formName="Get in touch") {
 
 
         const template = {
-            to: 'dkrumholz@strandmanagement.com',
-            from: 'strandmanagement',
+            to: 'atlasiko',
+            from: 'atlasiko',
             replyTo: email,
-            subject: `STRAND ${formName}`,
+            subject: `LOREM ${formName}`,
             html: "<!DOCTYPE html>" +
                 "<html>" +
                 "<head>" +
