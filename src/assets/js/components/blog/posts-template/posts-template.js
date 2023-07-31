@@ -4,7 +4,6 @@ import './posts-template.scss';
 import articlesObject from './articles.json';
 import categoriesObject from './categories.json';
 import authorsObject from './authors-object.json';
-// import generalInfo from '/src/general-info.json';
 
 class PostsTemplate extends GHComponent {
 
