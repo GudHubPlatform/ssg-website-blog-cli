@@ -14,6 +14,7 @@ class ArticleComponent extends GHComponent {
     async onServerRender() {
         const url = new URL(window.location.href);
         const articleSlug = url.searchParams.get('path');
+
         let articleAndComments = await gudhub.jsonConstructor(
             {
                 "type": "object",
@@ -28,20 +29,21 @@ class ArticleComponent extends GHComponent {
                                 "id": 3,
                                 "property_name": "article_id",
                                 "property_type": "field_value",
-                                "field_id": "720865",
-                                "$$hashKey": "object:2205"
+                                "field_id": "794821",
+                                "interpretation": 0
                             }
                         ],
                         "property_name": "comments",
-                        "app_id": "31680",
+                        "app_id": "33362",
                         "filter": [
                             {
-                                "field_id": 720868,
+                                "field_id": 794824,
                                 "data_type": "radio_button",
                                 "valuesArray": [
-                                    "0"
+                                    "1"
                                 ],
                                 "search_type": "equal_or",
+                                "$$hashKey": "object:3549",
                                 "selected_search_option_variable": "Value"
                             }
                         ]
@@ -52,162 +54,156 @@ class ArticleComponent extends GHComponent {
                         "childs": [
                             {
                                 "type": "property",
-                                "id": 9,
+                                "id": 3,
                                 "property_name": "title",
                                 "property_type": "field_value",
-                                "field_id": "717953",
+                                "field_id": "794784",
                                 "interpretation": 1
-                            },
-                            {
-                                "type": "property",
-                                "id": 9,
-                                "property_name": "h1",
-                                "property_type": "field_value",
-                                "field_id": "744779",
-                                "interpretation": 1
-                            },
-                            {
-                                "type": "property",
-                                "id": 10,
-                                "property_name": "slug",
-                                "property_type": "field_value",
-                                "field_id": "717956",
-                                "interpretation": 1
-                            },
-                            {
-                                "type": "property",
-                                "id": 3,
-                                "property_name": "category",
-                                "property_type": "field_value",
-                                "field_id": "717969"
-                            },
-                            {
-                                "type": "property",
-                                "id": 19,
-                                "property_name": "ratings",
-                                "property_type": "function",
-                                "function": "function(item, appId) {\n  const app = await gudhub.getApp(appId)\n  let ratings = item.fields.find(field => field.field_id == 717965);\n  let summ = 0;\n  if(ratings) {\n    ratings = ratings.field_value.split(',');\n    ratings.forEach(item => summ += Number(item));\n  }\n  return {\n    count: ratings.length || 0,\n    avg: summ / ratings.length\n  };\n}"
                             },
                             {
                                 "type": "property",
                                 "id": 4,
-                                "property_name": "time_to_read",
+                                "property_name": "h1",
                                 "property_type": "field_value",
-                                "field_id": "717959",
-                                "interpretation": 1
-                            },
-                            {
-                                "type": "property",
-                                "id": 14,
-                                "property_name": "thumbnail",
-                                "property_type": "field_value",
-                                "field_id": "717961",
-                                "interpretation": 1
-                            },
-                            {
-                                "type": "property",
-                                "id": 18,
-                                "property_name": "id",
-                                "property_type": "variable",
-                                "variable_type": "current_item"
-                            },
-                            {
-                                "type": "property",
-                                "id": 15,
-                                "property_name": "thumbnail_src",
-                                "property_type": "field_value",
-                                "field_id": "717964",
-                                "interpretation": 1
-                            },
-                            {
-                                "type": "property",
-                                "id": 17,
-                                "property_name": "thumbnail_title",
-                                "property_type": "field_value",
-                                "field_id": "717962",
-                                "interpretation": 1
-                            },
-                            {
-                                "type": "property",
-                                "id": 16,
-                                "property_name": "thumbnail_alt",
-                                "property_type": "field_value",
-                                "field_id": "717963",
+                                "field_id": "794783",
                                 "interpretation": 1
                             },
                             {
                                 "type": "property",
                                 "id": 5,
+                                "property_name": "slug",
+                                "property_type": "field_value",
+                                "field_id": "794804",
+                                "interpretation": 1
+                            },
+                            {
+                                "type": "property",
+                                "id": 21,
+                                "property_name": "content",
+                                "property_type": "field_value",
+                                "field_id": "794796",
+                                "interpretation": 1
+                            },
+                            {
+                                "type": "property",
+                                "id": 20,
+                                "property_name": "views",
+                                "property_type": "field_value",
+                                "field_id": "794802",
+                                "interpretation": 1
+                            },
+                            {
+                                "type": "property",
+                                "id": 19,
+                                "property_name": "description",
+                                "property_type": "field_value",
+                                "field_id": "794785",
+                                "interpretation": 1
+                            },
+                            {
+                                "type": "property",
+                                "id": 18,
+                                "property_name": "posted_at",
+                                "property_type": "field_value",
+                                "field_id": "794791",
+                                "interpretation": 0
+                            },
+                            {
+                                "type": "property",
+                                "id": 17,
+                                "property_name": "updated_at",
+                                "property_type": "field_value",
+                                "field_id": "794790"
+                            },
+                            {
+                                "type": "property",
+                                "id": 14,
                                 "property_name": "author",
                                 "property_type": "field_value",
-                                "field_id": "717968",
+                                "field_id": "794789",
                                 "interpretation": 1
+                            },
+                            {
+                                "type": "property",
+                                "id": 15,
+                                "property_name": "author_id",
+                                "property_type": "field_value",
+                                "field_id": "794789"
+                            },
+                            {
+                                "type": "property",
+                                "id": 16,
+                                "property_name": "categories",
+                                "property_type": "function",
+                                "function": "function(item, appId) {\n  const app = await gudhub.getApp(appId);\n  const categoryField = item.fields.find(field => field.field_id == 794788);\n  if(categoryField) {\n    const categoryItems = categoryField.field_value.split(',');\n    const categoryItemsIds = categoryItems.map(item => Number(item.split('.')[1]));\n    return app.items_list.filter(item => categoryItemsIds.includes(Number(item.item_id)));\n  }\n  return null;\n}"
                             },
                             {
                                 "type": "property",
                                 "id": 11,
-                                "property_name": "author_id",
+                                "property_name": "thumbnail_src",
                                 "property_type": "field_value",
-                                "field_id": "717968"
-                            },
-                            {
-                                "type": "property",
-                                "id": 6,
-                                "property_name": "categories",
-                                "property_type": "function",
-                                "function": "function(item, appId) {\n  const app = await gudhub.getApp(appId);\n  const categoryField = item.fields.find(field => field.field_id == 717969);\n  if(categoryField) {\n    const categoryItems = categoryField.field_value.split(',');\n    const categoryItemsIds = categoryItems.map(item => Number(item.split('.')[1]));\n    return app.items_list.filter(item => categoryItemsIds.includes(Number(item.item_id)));\n  }\n  return null;\n}"
-                            },
-                            {
-                                "type": "property",
-                                "id": 12,
-                                "property_name": "updated_at",
-                                "property_type": "field_value",
-                                "field_id": "717985"
-                            },
-                            {
-                                "type": "property",
-                                "id": 13,
-                                "property_name": "posted_at",
-                                "property_type": "field_value",
-                                "field_id": "717958"
-                            },
-                            {
-                                "type": "property",
-                                "id": 7,
-                                "property_name": "description",
-                                "property_type": "field_value",
-                                "field_id": "717954",
+                                "field_id": "794800",
                                 "interpretation": 1
                             },
                             {
                                 "type": "property",
-                                "id": 3,
+                                "id": 13,
+                                "property_name": "thumbnail_alt",
+                                "property_type": "field_value",
+                                "field_id": "794799",
+                                "interpretation": 1
+                            },
+                            {
+                                "type": "property",
+                                "id": 10,
                                 "property_name": "id",
                                 "property_type": "variable",
                                 "variable_type": "current_item"
                             },
                             {
                                 "type": "property",
-                                "id": 8,
-                                "property_name": "views",
+                                "id": 12,
+                                "property_name": "thumbnail_title",
                                 "property_type": "field_value",
-                                "field_id": "717966",
+                                "field_id": "794798",
                                 "interpretation": 1
                             },
                             {
                                 "type": "property",
-                                "id": 3,
-                                "property_name": "content",
+                                "id": 9,
+                                "property_name": "thumbnail",
                                 "property_type": "field_value",
-                                "field_id": "717960",
+                                "field_id": "794797",
+                                "interpretation": 1
+                            },
+                            {
+                                "type": "property",
+                                "id": 6,
+                                "property_name": "category",
+                                "property_type": "field_value",
+                                "field_id": "794788"
+                            },
+                            {
+                                "type": "property",
+                                "id": 7,
+                                "property_name": "ratings",
+                                "property_type": "function",
+                                "function": "function(item, appId) {\n  const app = await gudhub.getApp(appId)\n  let ratings = item.fields.find(field => field.field_id == 794801);\n  let summ = 0;\n  if(ratings) {\n    ratings = ratings.field_value.split(',');\n    ratings.forEach(item => summ += Number(item));\n  }\n  return {\n    count: ratings.length || 0,\n    avg: summ / ratings.length\n  };\n}"
+                            },
+                            {
+                                "type": "property",
+                                "id": 8,
+                                "property_name": "time_to_read",
+                                "property_type": "field_value",
+                                "field_id": "794795",
                                 "interpretation": 1
                             }
                         ],
                         "property_name": "article",
-                        "app_id": "31595",
+                        "app_id": "33361",
                         "filter": [
                             {
-                                "field_id": 717956,
+                                "field_id": 794804,
                                 "data_type": "text",
                                 "valuesArray": [
                                     articleSlug
@@ -221,7 +217,7 @@ class ArticleComponent extends GHComponent {
                 ],
                 "property_name": "articlesAndComments"
             });
-
+            console.log('articleAndComments',articleAndComments)
         let comments = articleAndComments.articlesAndComments.comments;
         this.article = articleAndComments.articlesAndComments.article[0];
 
@@ -246,9 +242,11 @@ class ArticleComponent extends GHComponent {
         this.articleReference = this.article.id;
 
         const authors = await gudhub.jsonConstructor(authorsObject);
+        console.log('authors',authors)
         this.authors = authors.authors;
-
+        
         const categories = await gudhub.jsonConstructor(categoriesObject);
+        console.log('categories',categories)
 
 
         // CATEGORIES
@@ -257,7 +255,7 @@ class ArticleComponent extends GHComponent {
         post.category = [];
         for (let category in post.categories) {
             let categoryName = post.categories[category].fields.find(field => field.field_id == window.constants.chapters.blog.heading_field_id).field_value;
-            let categorySlug = post.categories[category].fields.find(field => field.field_id == 717956).field_value;
+            let categorySlug = post.categories[category].fields.find(field => field.field_id == window.constants.chapters.blog.slug_field_id).field_value;
             let categoryObject = {
                 "name": categoryName,
                 "slug": categorySlug
@@ -292,10 +290,11 @@ class ArticleComponent extends GHComponent {
 
         const articleId = this.article.id.split('.')[1];
         const authorId = this.author.author_id.split('.')[1];
-
-        this.author.description = await gudhub.getInterpretationById(window.constants.chapters.blog.app_id, authorId, 717955, 'html');
-        this.content = await gudhub.getInterpretationById(window.constants.chapters.blog.app_id, articleId, 717960, 'html');
-
+console.log(articleId)
+        this.author.description = await gudhub.getInterpretationById(window.constants.chapters.blog.app_id, authorId, window.constants.chapters.blog.intro_field_id, 'html');
+        console.log('this.author.description', this.author.description)
+        this.content = await gudhub.getInterpretationById(window.constants.chapters.blog.app_id, articleId, window.constants.chapters.blog.content_field_id, 'html');
+console.log('this.content',this.content)
         const getContent = (link) => {
             return new Promise(async (resolve) => {
                 const response = await fetch(link);
@@ -305,7 +304,7 @@ class ArticleComponent extends GHComponent {
                 resolve(div.innerText);
             });
         }
-
+        console.log('this.author.position',this.author.position)
         this.author.position = await getContent(this.author.position);
 
         // SIDEBAR
@@ -318,17 +317,19 @@ class ArticleComponent extends GHComponent {
         }
 
         this.articles = await gudhub.jsonConstructor(allArticles);
+        console.log('this.articles',this.articles)
         for (let article = 0; article < this.articles.all_articles.length; article++) {
             if (this.article.slug == this.articles.all_articles[article].slug) {
                 this.articles.all_articles.splice(article, 1)
             }
         }
+
         this.articles = this.articles.all_articles.slice(0, 3);
         for (let article in this.articles) {
             let postrCategories = [];
             for (let category in this.articles[article].categories) {
                 let categoryName = this.articles[article].categories[category].fields.find(field => field.field_id == window.constants.chapters.blog.heading_field_id).field_value;
-                let categorySlug = this.articles[article].categories[category].fields.find(field => field.field_id == 717956).field_value;
+                let categorySlug = this.articles[article].categories[category].fields.find(field => field.field_id == window.constants.chapters.blog.slug_field_id).field_value;
                 let categoryObject = {
                     "name": categoryName,
                     "slug": categorySlug
@@ -338,7 +339,6 @@ class ArticleComponent extends GHComponent {
             this.articles[article].categories = postrCategories;
         }
 
-        
         super.render(html);
         const images = this.querySelector('.content').querySelectorAll('img:not(img.gif)');
 
@@ -366,7 +366,6 @@ class ArticleComponent extends GHComponent {
                 }
             }
         });
-
         const h2 = this.querySelector('.content').querySelectorAll('h2');
 
         h2.forEach(title => {
@@ -434,6 +433,7 @@ class ArticleComponent extends GHComponent {
             `;
 
         }
+        console.log(9)
     }
     async onClientReady () {
         let ratings = {};

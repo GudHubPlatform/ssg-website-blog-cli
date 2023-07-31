@@ -5,71 +5,66 @@
         "childs": [
             {
                 "type": "property",
-                "id": 4,
+                "id": 3,
                 "property_name": "name",
                 "property_type": "field_value",
-                "field_id": "720862",
-                "interpretation": 1,
-                "$$hashKey": "object:17051"
-            },
-            {
+                "field_id": "794818",
+                "interpretation": 1
+              },
+              {
                 "type": "property",
-                "id": 5,
+                "id": 4,
                 "property_name": "email",
                 "property_type": "field_value",
-                "field_id": "720873",
-                "interpretation": 1,
-                "$$hashKey": "object:17052"
-            },
-            {
+                "field_id": "794817",
+                "interpretation": 1
+              },
+              {
                 "type": "property",
-                "id": 6,
+                "id": 5,
                 "property_name": "text",
                 "property_type": "field_value",
-                "field_id": "720864",
-                "interpretation": 1,
-                "$$hashKey": "object:17053"
-            },
-            {
+                "field_id": "794819",
+                "interpretation": 1
+              },
+              {
                 "type": "property",
                 "id": 7,
-                "property_name": "id",
-                "property_type": "variable",
-                "variable_type": "current_item",
-                "$$hashKey": "object:17054"
-            },
-            {
-                "type": "property",
-                "id": 8,
                 "property_name": "date",
                 "property_type": "field_value",
-                "field_id": "720867",
-                "$$hashKey": "object:17055"
-            },
-            {
+                "field_id": "794823"
+              },
+              {
                 "type": "property",
-                "id": 9,
+                "id": 8,
                 "property_name": "reply_to",
                 "property_type": "field_value",
-                "field_id": "720870",
-                "$$hashKey": "object:17056"
-            }
+                "field_id": "794822",
+                "interpretation": 0
+              },
+              {
+                "type": "property",
+                "id": 6,
+                "property_name": "id",
+                "property_type": "variable",
+                "variable_type": "current_item"
+              }
         ],
         "is_static": 0,
         "property_name": "replies",
-        "app_id": "31680",
+        "app_id": "33362",
         "filter": [
             {
-                "field_id": 720868,
+                "field_id": 794824,
                 "data_type": "radio_button",
                 "valuesArray": [
-                    "0"
+                    "1"
                 ],
                 "search_type": "equal_or",
                 "selected_search_option_variable": "Value"
             },
             {
-                "field_id": 720870,
+                "field_id": 794822,
                 "data_type": "item_ref",
                 "valuesArray": [],
                 "search_type": "equal_or",
@@ -84,54 +79,52 @@
         "id": 3,
         "property_name": "name",
         "property_type": "field_value",
-        "field_id": "720862",
+        "field_id": "794818",
         "interpretation": 1
-    },
-    {
+      },
+      {
         "type": "property",
-        "id": 3,
-        "property_name": "reply_to",
-        "property_type": "field_value",
-        "field_id": "720870",
-        "interpretation": 0
-    },
-    {
-        "type": "property",
-        "id": 3,
+        "id": 4,
         "property_name": "email",
         "property_type": "field_value",
-        "field_id": "720873",
+        "field_id": "794817",
         "interpretation": 1
-    },
-    {
+      },
+      {
         "type": "property",
-        "id": 3,
+        "id": 9,
+        "property_name": "article",
+        "property_type": "field_value",
+        "field_id": "794821"
+      },
+      {
+        "type": "property",
+        "id": 5,
+        "property_name": "text",
+        "property_type": "field_value",
+        "field_id": "794819",
+        "interpretation": 1
+      },
+      {
+        "type": "property",
+        "id": 7,
+        "property_name": "date",
+        "property_type": "field_value",
+        "field_id": "794823"
+      },
+      {
+        "type": "property",
+        "id": 8,
+        "property_name": "reply_to",
+        "property_type": "field_value",
+        "field_id": "794822",
+        "interpretation": 0
+      },
+      {
+        "type": "property",
+        "id": 6,
         "property_name": "id",
         "property_type": "variable",
         "variable_type": "current_item"
-    },
-    {
-        "type": "property",
-        "id": 4,
-        "property_name": "text",
-        "property_type": "field_value",
-        "field_id": "720864",
-        "interpretation": 1
-    },
-    {
-        "type": "property",
-        "id": 5,
-        "property_name": "article",
-        "property_type": "field_value",
-        "field_id": "720865",
-        "interpretation": 0
-    },
-    {
-        "type": "property",
-        "id": 3,
-        "property_name": "date",
-        "property_type": "field_value",
-        "field_id": "720867",
-        "interpretation": 0
-    }
+      }
 ]

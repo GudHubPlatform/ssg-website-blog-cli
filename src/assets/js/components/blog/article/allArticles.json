@@ -7,7 +7,7 @@
             "id": 3,
             "property_name": "slug",
             "property_type": "field_value",
-            "field_id": "717956",
+            "field_id": "794804",
             "interpretation": 1
         },
         {
@@ -15,81 +15,82 @@
             "id": 4,
             "property_name": "title",
             "property_type": "field_value",
-            "field_id": "717953",
+            "field_id": "794784",
             "interpretation": 1
         },
         {
             "type": "property",
-            "id": 4,
-            "property_name": "h1",
+            "id": 9,
+            "property_name": "thumbnail_alt",
             "property_type": "field_value",
-            "field_id": "744779",
+            "field_id": "794799",
             "interpretation": 1
         },
         {
             "type": "property",
-            "id": 5,
-            "property_name": "thumbnail",
-            "property_type": "field_value",
-            "interpretation": 1,
-            "field_id": "717961"
-        },
-        {
-            "type": "property",
-            "id": 6,
-            "property_name": "thumbnail_src",
-            "property_type": "field_value",
-            "field_id": "717964",
-            "interpretation": 1
+            "id": 11,
+            "property_name": "categories",
+            "property_type": "function",
+            "function": "function(item, appId) {\n  const app = await gudhub.getApp(appId);\n  const categoryField = item.fields.find(field => field.field_id == 717969);\n  if(categoryField) {\n    const categoryItems = categoryField.field_value.split(',');\n    const categoryItemsIds = categoryItems.map(item => Number(item.split('.')[1]));\n    return app.items_list.filter(item => categoryItemsIds.includes(Number(item.item_id)));\n  }\n  return null;\n}"
         },
         {
             "type": "property",
             "id": 8,
             "property_name": "thumbnail_title",
             "property_type": "field_value",
-            "field_id": "717962",
+            "field_id": "794798",
+            "interpretation": 1
+        },
+        {
+            "type": "property",
+            "id": 6,
+            "property_name": "thumbnail",
+            "field_id": "794797",
+            "property_type": "field_value",
             "interpretation": 1
         },
         {
             "type": "property",
             "id": 7,
-            "property_name": "thumbnail_alt",
+            "property_name": "thumbnail_src",
             "property_type": "field_value",
-            "field_id": "717963",
+            "field_id": "794800",
             "interpretation": 1
         },
         {
             "type": "property",
-            "id": 9,
-            "property_name": "categories",
-            "property_type": "function",
-            "function": "function(item, appId) {\n  const app = await gudhub.getApp(appId);\n  const categoryField = item.fields.find(field => field.field_id == 717969);\n  if(categoryField) {\n    const categoryItems = categoryField.field_value.split(',');\n    const categoryItemsIds = categoryItems.map(item => Number(item.split('.')[1]));\n    return app.items_list.filter(item => categoryItemsIds.includes(Number(item.item_id)));\n  }\n  return null;\n}"
+            "id": 5,
+            "property_name": "h1",
+            "field_id": "794783",
+            "property_type": "field_value",
+            "interpretation": 1
         }
     ],
     "property_name": "all_articles",
-    "app_id": "31595",
+    "app_id": "33361",
     "filter": [
         {
-            "field_id": 717952,
+            "field_id": 794787,
             "data_type": "radio_button",
             "valuesArray": [
                 "0"
             ],
             "search_type": "equal_or",
-            "$$hashKey": "object:5741",
+            "$$hashKey": "object:872",
             "selected_search_option_variable": "Value"
         },
         {
-            "field_id": 717957,
+            "field_id": 794803,
             "data_type": "radio_button",
             "valuesArray": [
                 "1"
             ],
             "search_type": "equal_or",
-            "$$hashKey": "object:5783",
+            "$$hashKey": "object:914",
             "selected_search_option_variable": "Value"
         }
     ],
     "isSortable": 1,
+    "field_id_to_sort": "794791",
     "sortType": "desc"
 }

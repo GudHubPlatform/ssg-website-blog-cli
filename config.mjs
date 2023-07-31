@@ -189,6 +189,8 @@ export const chapters = {
         title_field_id: 794784,
         heading_field_id: 794783,
         description_field_id: 794785,
+        intro_field_id: 794786,
+        content_field_id: 794796,
         sitemap: {
             frequency: 'weekly',
             priority: 0.6,

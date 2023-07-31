@@ -16,20 +16,20 @@ class CommentsComponent extends GHComponent {
                 "id": 1,
                 "childs": commentsObject,
                 "property_name": "comments",
-                "app_id": "31680",
+                "app_id": "33362",
                 "filter": [
                     {
-                        "field_id": 720868,
+                        "field_id": 794824,
                         "data_type": "radio_button",
                         "valuesArray": [
-                            "0"
+                            "1"
                         ],
                         "search_type": "equal_or",
                         "selected_search_option_variable": "Value",
                         "$$hashKey": "object:17104"
                     },
                     {
-                        "field_id": 720870,
+                        "field_id": 794822,
                         "data_type": "item_ref",
                         "valuesArray": [
                             "false"
@@ -39,7 +39,7 @@ class CommentsComponent extends GHComponent {
                         "selected_search_option_variable": "Value"
                     },
                     {
-                        "field_id": 720865,
+                        "field_id": 794821,
                         "data_type": "item_ref",
                         "valuesArray": [
                             this.articleReference
@@ -50,7 +50,7 @@ class CommentsComponent extends GHComponent {
                     }
                 ],
                 "isSortable": 1,
-                "field_id_to_sort": "720867",
+                "field_id_to_sort": "794823",
                 "sortType": "desc"
             }
         )
