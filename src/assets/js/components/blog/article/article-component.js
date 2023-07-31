@@ -443,7 +443,7 @@ console.log('this.content',this.content)
             let currentRating = 6 - ratings[window.location.pathname];
             this.renderRating(currentRating);
         }
-        fetch('https://gudhub.com/api/services/prod/api/31596/increase-views', {
+        fetch('https://gudhub.com/api/services/prod/api/33364/views', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -480,7 +480,7 @@ console.log('this.content',this.content)
     
             const customerRating = 6 - grade;
             
-            fetch('https://gudhub.com/api/services/prod/api/31596/add-rating-test', {
+            fetch('https://gudhub.com/api/services/prod/api/33364/ratings', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

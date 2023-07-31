@@ -4,6 +4,7 @@ import './posts-template.scss';
 import articlesObject from './articles.json';
 import categoriesObject from './categories.json';
 import authorsObject from './authors-object.json';
+// import generalInfo from '/src/general-info.json';
 
 class PostsTemplate extends GHComponent {
 
@@ -12,13 +13,15 @@ class PostsTemplate extends GHComponent {
         this.allArticles;
         this.fetchingNow = false;
         this.firstLoad = true;
-        this.currentCategory;
+        this.currentCategory; 
         this.type = this.hasAttribute('data-type') ? this.getAttribute('data-type') : 'blog';
         this.start = 0;
         this.postsPerPage = 10;
         this.index = 0;
+        this.headingFieldId = 794783;
+        this.slugFieldId = 794804;
     }
-
+    
     async onServerRender() {
 
         this.mainPost = this.hasAttribute('data-main-post');
@@ -308,8 +311,8 @@ class PostsTemplate extends GHComponent {
             const post = this.articles[article];
             post.category = [];
             for (let category in post.categories) {
-                let categoryName = this.articles[article].categories[category].fields.find(field => field.field_id == window.constants.chapters.blog.heading_field_id).field_value;
-                let categorySlug = this.articles[article].categories[category].fields.find(field => field.field_id == window.constants.chapters.blog.slug_field_id).field_value;
+                let categoryName = this.articles[article].categories[category].fields.find(field => field.field_id == this.headingFieldId).field_value;
+                let categorySlug = this.articles[article].categories[category].fields.find(field => field.field_id == this.slugFieldId).field_value;
                 let categoryObject = {
                     "name": categoryName,
                     "slug": categorySlug
@@ -449,7 +452,7 @@ class PostsTemplate extends GHComponent {
         if (allArticles) {
             let search = inputValue.toLowerCase();
             let searchedArticles = allArticles.filter(article => {
-                let title = article.title.toLowerCase();
+                let title = article.h1.toLowerCase();
                 if (title.includes(search)) {
                     return true;
                 }
@@ -473,8 +476,10 @@ class PostsTemplate extends GHComponent {
     async fetchArticles(item) {
         let searchTarget = item;
         searchTarget.addEventListener('input', this.loadingCallback);
-        const response = await fetch(`https://gudhub.com/api/services/prod/api/31596/articles`);
+        console.log('1')
+        const response = await fetch(`https://gudhub.com/api/services/prod/api/33364/articles`);
         const data = await response.json();
+        console.log('data', data)
         let articles = data.articlesAndComments.articles;
         let comments = data.articlesAndComments.comments;
         for (let article = 0; article < articles.length; article++) {
@@ -483,8 +488,8 @@ class PostsTemplate extends GHComponent {
             const post = articles[article];
             post.category = [];
             for (let category in post.categories) {
-                let categoryName = articles[article].categories[category].fields.find(field => field.field_id == 744779).field_value;
-                let categorySlug = articles[article].categories[category].fields.find(field => field.field_id == 717956).field_value;
+                let categoryName = articles[article].categories[category].fields.find(field => field.field_id ==  this.headingFieldId).field_value;
+                let categorySlug = articles[article].categories[category].fields.find(field => field.field_id == this.slugFieldId).field_value;
                 let categoryObject = {
                     "name": categoryName,
                     "slug": categorySlug
@@ -496,7 +501,7 @@ class PostsTemplate extends GHComponent {
         }
 
         if (this.type === 'category') {
-            const categoriesResponse = await fetch('https://gudhub.com/api/services/prod/api/31596/categories')
+            const categoriesResponse = await fetch('https://gudhub.com/api/services/prod/api/33364/categories')
             let categories = await categoriesResponse.json();
             categories = categories.categories;
             let category = window.location.pathname;
@@ -526,7 +531,7 @@ class PostsTemplate extends GHComponent {
             return articles;
         }
         if (this.type === 'author') {
-            const authorsResponse = await fetch('https://gudhub.com/api/services/prod/api/31596/authors')
+            const authorsResponse = await fetch('https://gudhub.com/api/services/prod/api/33364/authors')
             let authors = await authorsResponse.json();
             authors = authors.authors;
             const author = window.location.pathname;
@@ -570,7 +575,7 @@ class PostsTemplate extends GHComponent {
 
     async fetchIntro(posts) {
         const fetchData = async (index, item_id) => {
-            const responseIntro = await fetch(`https://gudhub.com/api/services/prod/api/31596/get-intro?app_id=31595&item_id=${item_id}&element_id=717955`);
+            const responseIntro = await fetch(`https://gudhub.com/api/services/prod/api/33364/get-intro?app_id=33361&item_id=${item_id}&element_id=794786`);
             const dataIntro = await responseIntro.json();
             let introItems = JSON.parse(dataIntro.data).blocks[0].data;
             posts[index].intro = introItems;
@@ -628,7 +633,7 @@ class PostsTemplate extends GHComponent {
             
             if (!articles[0].author_slug) {
                 
-                const authorsResponse = await fetch('https://gudhub.com/api/services/prod/api/31596/authors')
+                const authorsResponse = await fetch('https://gudhub.com/api/services/prod/api/33364/authors')
                 authors = await authorsResponse.json();
                 authors = authors.authors;
             }
