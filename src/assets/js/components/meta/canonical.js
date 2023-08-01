@@ -9,11 +9,13 @@ class CanonicalComponent extends GHComponent {
         if (appId && itemId) {
             this.findCanonical(appId, itemId, false);
         } else {
+
             const chapter = this.hasAttribute('data-chapter') ? this.getAttribute('data-chapter') : 'pages';
             if (chapter == 'blog' && !itemId) {
                 const url = new URL(window.location.href);
                 const category = url.searchParams.get('category');
                 const path = url.searchParams.get('path');
+                // If this is pagination page for finding canonical will use slug without /page/2/
                 if (path.includes('/page/')) {
                     let slug = `/blog/${category}/`;
                     await this.findCanonical(appId, false, slug);
@@ -37,6 +39,7 @@ class CanonicalComponent extends GHComponent {
         let value;
         if (!slug) {
             item = items.find(findedItem => findedItem.item_id == itemId);
+            console.log(item)
         } else {
             for (let findedItem in items) {
                 
@@ -45,7 +48,8 @@ class CanonicalComponent extends GHComponent {
                     item = items[findedItem];
                 }
             }
-            value = item.field_value;
+            
+            console.log(value)
         }
         fieldId = app.field_list.find(findedField => findedField.name_space === 'slug').field_id;
         value = item.fields.find(findedField => findedField.field_id == fieldId).field_value;

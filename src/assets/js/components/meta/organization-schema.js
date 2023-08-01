@@ -12,31 +12,28 @@ class OrganizationSchema extends GHComponent {
             "legalName": generalInfo.legalName,
             "url": `${window.MODE === 'production' ? 'https' : 'http'}://${window.constants.website}`,
             "logo": `${window.MODE === 'production' ? 'https' : 'http'}://${window.constants.website}/assets/images/logo.svg`,
-            "foundingDate": "1979",
+            "foundingDate": generalInfo.foundingDate,
             "founders": [
                 {
                     "@type": "Person",
-                    "name": "David R. Krumholz"
+                    "name": generalInfo.founders
                 }
             ],
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "3525 Quakerbridge Road Suite 6325 Hamilton",
-                "addressLocality": "New Jersey",
-                "addressRegion": "NJ",
-                "postalCode": "08619",
-                "addressCountry": "USA"
+                "streetAddress": generalInfo.separatedAddress.streetAddress,
+                "addressLocality": generalInfo.separatedAddress.addressLocality,
+                "addressRegion": generalInfo.separatedAddress.addressRegion,
+                "postalCode": generalInfo.separatedAddress.postalCode,
+                "addressCountry": generalInfo.separatedAddress.addressCountry
             },
             "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": "customer support",
-                "telephone": "[+609-731-6629]",
-                "email": "dkrumholz@strandmanagement.com"
+                "telephone": `[${generalInfo.phone}]`,
+                "email": generalInfo.email
             },
-            "sameAs": [
-                "https://www.linkedin.com/company/strand-management-solutions-inc./",
-                "https://www.facebook.com/strandmanagementsolutions/"
-            ]
+            "sameAs": [generalInfo.socLinks.linkedin, generalInfo.socLinks.facebook]
         }
 
         if (!document.head.querySelector('#organizationSchema')) {

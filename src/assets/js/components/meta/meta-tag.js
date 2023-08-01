@@ -50,7 +50,7 @@ class MetaTag extends GHComponent {
                     item = items[findedItem];
                 }
             }
-            value = item.field_value;
+            
         }
 
         fieldId = app.field_list.find(findedField => findedField.name_space === this.type);

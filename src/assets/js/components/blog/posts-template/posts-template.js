@@ -15,7 +15,7 @@ class PostsTemplate extends GHComponent {
         this.currentCategory; 
         this.type = this.hasAttribute('data-type') ? this.getAttribute('data-type') : 'blog';
         this.start = 0;
-        this.postsPerPage = 10;
+        this.postsPerPage = 1;
         this.index = 0;
         this.headingFieldId = 794783;
         this.slugFieldId = 794804;
@@ -38,7 +38,7 @@ class PostsTemplate extends GHComponent {
         this.authors = authors.authors;
 
         if (this.type === "category") {
-
+            // If this page type is category we fetch articles only of this category by using filter in jsonConstructor
             const url = new URL(window.location.href);
             const category = url.searchParams.get('category');
             this.currentCategory = categories.find(iterationCategory => iterationCategory.slug == `/blog/${category}/`);
@@ -125,6 +125,7 @@ class PostsTemplate extends GHComponent {
                 this.empty = 'category';
             }
         } else if (this.type === "author") {
+            // If this page type is author we fetch articles only of this author by using filter in jsonConstructor
             this.currentCategory = false;
             const url = new URL(window.location.href);
             const pageSlug = url.searchParams.get('path');
@@ -215,6 +216,7 @@ class PostsTemplate extends GHComponent {
             }
         }
         else {
+            // Fetch all articles
             this.currentCategory = false;
             articlesAndComments = await gudhub.jsonConstructor(
                 {
@@ -288,7 +290,7 @@ class PostsTemplate extends GHComponent {
         }
 
         let comments = articlesAndComments.articlesAndComments.comments;
-
+        // Countings comments
         articles = articles.articles
         for (let article in articles) {
             let commentsQuantity = 0;
@@ -369,18 +371,20 @@ class PostsTemplate extends GHComponent {
         let postForPage;
         let lastPost;
         this.numberOfPage = 1;
-        let postCount = 0;
-        postCount = 0;
         const url = new URL(window.location.href);
         this.page = url.searchParams.get('page');
         if (this.type != 'author') {
-            
+            // Using pagination everywhere but not on author's page
             if (!this.page) {
                 this.numberOfPage = 1;
             } else {
                 this.numberOfPage = Number(this.page);
                 this.mainPost = false;
             }
+            // Get how much posts on 1 page, check index of first post on this page 
+            // (if we need 10 posts per page, on 1 page first post has index - 0, on 2 page first post has index 10)
+            // then slice object with all posts from index of first post on this page to last post (last post = page number * posts per page)
+            // page number getting from url
             let firstPost = (this.numberOfPage - 1) * this.postsPerPage;
             lastPost = this.numberOfPage * this.postsPerPage;
             articles = this.articles;

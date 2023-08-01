@@ -254,11 +254,6 @@ export const components_list = [
         serverOnly: true
     },
     {
-        tag: 'local-business-schema',
-        src: '/src/assets/js/components/meta/local-business-schema.js',
-        serverOnly: true
-    },
-    {
         tag: 'blog-schema',
         src: '/src/assets/js/components/meta/blog-schema.js',
         serverOnly: true

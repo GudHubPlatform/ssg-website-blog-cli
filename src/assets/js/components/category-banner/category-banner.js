@@ -11,7 +11,6 @@ class CategoryBanner extends GHComponent {
         let url = new URL(window.location.href);
         let route = url.searchParams.get('path');
         let slug;
-        let currentPage;
         if (route.includes('/page/')) {
             route = route.slice(1, route.length - 1);
             route = route.split('/');
@@ -19,6 +18,8 @@ class CategoryBanner extends GHComponent {
         } else {
             slug = false;
         }
+
+        // This algorithm with findIds we use because pagination pages is not exist in gudhub application and can't get data from their items
         let ids = await super.findIds(chapter, slug);
         const items = await gudhub.getItems(ids.appId);
         const item = items.find(item => item.item_id == ids.itemId);

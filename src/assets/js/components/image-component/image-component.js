@@ -25,7 +25,7 @@ class ImageComponent extends GHComponent {
         
         this.width = this.hasAttribute('width') ? this.getAttribute('width') : false;
         this.height = this.hasAttribute('height') ? this.getAttribute('height') : false;
-
+        // Download image from gudhub (this.dataUrl ) to cache (this.dataSrc)
         await new Promise(async (resolve) => {
             if(this.dataSrc && this.dataUrl && !window.disableImagesRegeneration) {
                 await fetch(this.dataSrc + '?source=' + this.dataUrl + '&mode=ssr');
@@ -40,6 +40,7 @@ class ImageComponent extends GHComponent {
         })
         
         await new Promise(async (resolve) => {
+            // Use new Image to have ability get params like from real image, for example naturalWidth
             this.image = new Image();
         
             this.image.addEventListener('load', () => {

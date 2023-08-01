@@ -95,8 +95,7 @@ class CommentsComponent extends GHComponent {
     }
 
     async sendForm(item) {
-        item.articleReference = this.getAttribute('data-article-reference')
-        const form = item;
+        item.articleReference = this.getAttribute('data-article-reference');
         event.preventDefault();
 
         const comment = {

@@ -33,7 +33,7 @@ class Grid extends GHComponent {
 
     onClientReady() {
 
-        if (window.innerWidth < 600) {
+        if (window.innerWidth < 600 || this.beSlider) {
             this.connectSwiper();
         }
     }

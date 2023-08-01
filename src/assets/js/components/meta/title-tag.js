@@ -37,14 +37,12 @@ class TitleTag extends GHComponent {
         if (!slug) {
             item = items.find(findedItem => findedItem.item_id == itemId);
         } else {
-            for (let findedItem in items) {
-                
-                let iterationItem = items[findedItem].fields.find(field => field.field_value == slug)
+            items.forEach(findedItem => {
+                let iterationItem = findedItem.fields.find(field => field.field_value == slug)
                 if (iterationItem) {
-                    item = items[findedItem];
+                    item = findedItem;
                 }
-            }
-            value = item.field_value;
+            });
         }
         fieldId = app.field_list.find(findedField => findedField.name_space === 'title').field_id;
         value = item.fields.find(findedField => findedField.field_id == fieldId).field_value;

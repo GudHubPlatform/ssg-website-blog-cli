@@ -31,22 +31,11 @@ class ServiceSchema extends GHComponent {
                     "@type": "Place",
                     "address": {
                         "@type": "PostalAddress",
-                        "streetAddress": "3525 Quakerbridge Road Suite 6325 Hamilton",
-                        "addressLocality": "New Jersey",
-                        "addressRegion": "NJ",
-                        "postalCode": "08619",
-                        "addressCountry": "USA"
-                    }
-                },
-                {
-                    "@type": "Place",
-                    "address": {
-                        "@type": "PostalAddress",
-                        "streetAddress": "100 E 173rd St Bronx",
-                        "addressLocality": "New York",
-                        "addressRegion": "NY",
-                        "postalCode": "10457",
-                        "addressCountry": "USA"
+                        "streetAddress": generalInfo.separatedAddress.streetAddress,
+                        "addressLocality": generalInfo.separatedAddress.addressLocality,
+                        "addressRegion": generalInfo.separatedAddress.addressRegion,
+                        "postalCode": generalInfo.separatedAddress.postalCode,
+                        "addressCountry": generalInfo.separatedAddress.addressCountry
                     }
                 }
             ],

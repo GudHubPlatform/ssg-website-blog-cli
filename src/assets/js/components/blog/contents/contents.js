@@ -40,7 +40,6 @@ class ContentsComponent extends GHComponent {
         let anchorSections = document.querySelectorAll('article h2, article h3');
 
         let anchors = document.querySelectorAll('.aside_wrapper contents-component .h_list li a');
-        let anchorItems = document.querySelectorAll('.aside_wrapper contents-component .h_list li');
 
         function changeLinkState() {
             

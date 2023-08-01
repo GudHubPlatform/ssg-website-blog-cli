@@ -242,14 +242,14 @@ class ArticleComponent extends GHComponent {
 
         const authors = await gudhub.jsonConstructor(authorsObject);
         this.authors = authors.authors;
-        
-        const categories = await gudhub.jsonConstructor(categoriesObject);
 
 
         // CATEGORIES
         this.article.ratings.avg = Number(this.article.ratings.avg.toFixed(1))
         const post = this.article;
         post.category = [];
+
+        // Now in post.categories is only appId.itemId, so we need to add in post's object property with array of category's names and slugs
         for (let category in post.categories) {
             let categoryName = post.categories[category].fields.find(field => field.field_id == window.constants.chapters.blog.heading_field_id).field_value;
             let categorySlug = post.categories[category].fields.find(field => field.field_id == window.constants.chapters.blog.slug_field_id).field_value;
@@ -335,6 +335,7 @@ class ArticleComponent extends GHComponent {
         }
 
         super.render(html);
+        // Search img tags in content of article and replace it to image-component
         const images = this.querySelector('.content').querySelectorAll('img:not(img.gif)');
 
             images.forEach(image => {
@@ -361,6 +362,8 @@ class ArticleComponent extends GHComponent {
                 }
             }
         });
+
+        // Prepare headings for contents
         const h2 = this.querySelector('.content').querySelectorAll('h2');
 
         h2.forEach(title => {
@@ -382,7 +385,7 @@ class ArticleComponent extends GHComponent {
                     "url": `${window.MODE === 'production' ? 'https' : 'http'}://${window.constants.website}${this.article.author_slug}`
                 }
             ];
-            // 
+
             const schema = {
                 "@context": "https://schema.org",
                 "@type": "Article",

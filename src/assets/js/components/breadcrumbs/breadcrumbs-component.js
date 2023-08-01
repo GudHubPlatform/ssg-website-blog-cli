@@ -35,14 +35,14 @@ class BreadcrumbsComponent extends GHComponent {
                     schema.itemListElement.push({
                         "@type": "ListItem",
                         "position": (realIndex == 0 ? 1 : realIndex) + 1,
-                        "name": bc.title ? bc.title : bc.title,
+                        "name": bc.title,
                         "item": `${window.MODE === 'production' ? 'https' : 'http'}://${window.constants.website}` + bc.slug
                     })
                 } else {
                     schema.itemListElement.push({
                         "@type": "ListItem",
                         "position": (realIndex == 0 ? 1 : realIndex) + 1,
-                        "name": bc.title ? bc.title : bc.title,
+                        "name": bc.title,
                     })
                 }
             });

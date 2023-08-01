@@ -75,11 +75,6 @@ class ReviewsSlider extends GHComponent {
               },
         });
 
-        // Timeout because I need get height of slide when slide is open (transition: 0.5s)
-        // setTimeout(() => {
-        //     let height = this.querySelector('.review_item.swiper-slide-next').offsetHeight;
-        //     this.querySelector('.reviews_wrapper').style.height = `${height}px`;
-        // }, 600);
     }
 
     setActive(item) {
