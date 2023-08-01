@@ -2,7 +2,10 @@ import html from './counter.html';
 import './counter.scss';
 
 class CounterComponent extends GHComponent {
-    
+    /**
+     * data-margin - set value of this attribute like margin in css (0 auto, 20px, 0 20px etc.), default - 0 20px
+     * data-type = bottomText / bottomButton
+     */
     constructor() {
         super();
     }

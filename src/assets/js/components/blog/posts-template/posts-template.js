@@ -6,6 +6,14 @@ import categoriesObject from './categories.json';
 import authorsObject from './authors-object.json';
 
 class PostsTemplate extends GHComponent {
+    /*
+    * data-type = blog/author/category. default - blog.
+    * data-type = "author" - on author page
+    * data-type = "category" - on category page
+    * 
+    * 
+    * data-main-post - set this attribute if you need big first post
+    */
 
     constructor() {
         super();

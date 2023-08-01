@@ -3,7 +3,11 @@ import './form.scss';
 import { sendEmail } from '../../sendEmail.js';
 
 class FormComponent extends GHComponent {
-
+    /**
+     * data-button-text - value is a string which will display on form submit button
+     * data-form-name - string with name of form (for sending)
+     * data-no-flex - its no flex for inputs in form
+     */
     constructor() {
         super();
         this.formName = this.hasAttribute('data-form-name') ? this.getAttribute('data-form-name') : "Get in touch";

@@ -2,7 +2,9 @@ import html from './breadcrumbs.html';
 import './breadcrumbs.scss';
 
 class BreadcrumbsComponent extends GHComponent {
-    
+    /**
+     * data-items - in this attribute need set stringified object with items of list of breadcrumbs
+     */
     constructor() {
         super();
     }

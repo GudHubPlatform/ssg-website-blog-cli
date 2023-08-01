@@ -1,5 +1,8 @@
 import generalInfo from '/src/general-info.json';
 class ServiceSchema extends GHComponent {
+    /**
+     * data-chapter - chapter, default - pages
+     */
     constructor() {
         super();
     }

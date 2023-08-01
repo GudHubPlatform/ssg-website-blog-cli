@@ -2,6 +2,9 @@ import html from './category-banner.html';
 import './category-banner.scss';
 
 class CategoryBanner extends GHComponent {
+    /**
+     * data-chapter - blog, default - page
+     */
     constructor() {
         super();
     }

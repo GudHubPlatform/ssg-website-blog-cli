@@ -1,4 +1,7 @@
 class BlogSchema extends GHComponent {
+    /*
+     * data-chapter - chapter, default pages 
+     */
     constructor() {
         super();
     }

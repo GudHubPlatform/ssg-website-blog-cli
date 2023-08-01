@@ -2,6 +2,16 @@ import html from './grid.html';
 import './grid.scss';
 
 class Grid extends GHComponent {
+    /**
+     * data-subtitle - boolean , default true
+     * data-background-image - path to image on background
+     * data-collapse = plus for special icon, use with data-type="etc"
+     * data-type = number / shadow / icons / border / etc
+     * be-slider without value - with this attribute grid-component will be slider on mobile
+     * 
+     * 
+     * class = centered / dark_theme / centered_items
+     */
     constructor() {
         super();
         this.ghId = this.getAttribute('data-gh-id') || null;

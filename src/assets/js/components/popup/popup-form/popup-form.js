@@ -2,6 +2,9 @@ import html from './popup-form.html';
 import './popup-form.scss';
 
 class PopupForm extends GHComponent {
+    /**
+     * data-form-name - string with name of form (for sending)
+     */
     constructor() {
         super();
     }

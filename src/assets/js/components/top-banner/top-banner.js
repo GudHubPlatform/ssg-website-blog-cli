@@ -2,7 +2,8 @@ import html from './top-banner.html';
 import './top-banner.scss';
 class TopBanner extends GHComponent {
     /**
-     * If you set attribute - data-background-image you can write a pass to image like a value for property "background_image" in json object of this component on GudHub
+     * data-background-image - without value
+     * If you set attribute - data-background-image you can write a path to image like a value for property "background_image" in json object of this component on GudHub
      */
     
     constructor() {

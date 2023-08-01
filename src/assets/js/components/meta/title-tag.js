@@ -1,4 +1,9 @@
 class TitleTag extends GHComponent {
+    /**
+     *  data-chapter - chapter, default - pages
+     *  data-appId - app id of application with this page
+     *  data-itemId - item id of item with this page
+     */
     constructor() {
         super();
     }

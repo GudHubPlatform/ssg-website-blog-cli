@@ -1,7 +1,17 @@
 import html from './image-component.html';
 
 class ImageComponent extends GHComponent {
-
+    /*
+     * src - path to static image 
+     * alt - alternative text
+     * title - title
+     * lazyload - if image must have loading="lazy" 
+     * dataSrc - url to image on gudhub (for dynamic images like a thumbnail of articles)
+     * dataUrl - path to place where image from dataSrc will be save (for dynamic images like a thumbnail of articles)
+     * data-rerender - for rerendering this component on client
+     * width - width
+     * height - height
+     */
     constructor() {
         super();
     }

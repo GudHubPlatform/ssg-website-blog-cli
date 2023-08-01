@@ -1,6 +1,15 @@
 import generalInfo from '/src/general-info.json';
 
 class MetaTag extends GHComponent {
+    /**
+     * type = title / ddescription / meta_image_src - every value generate different meta tag
+     * og - generate open graph meta tag with type you set
+     * twitter - generate meta tag of twitter card with type you set
+     * data-twitter-name - name of your twitter account (@Template)
+     * data-chapter - chapter, default - pages
+     * data-appId - app id of application with this page
+     * data-itemId - item id of item with this page
+     */
     constructor() {
         super();
     }

@@ -2,6 +2,10 @@ import html from './tabs.html';
 import './tabs.scss';
 
 class TabsComponent extends GHComponent {
+    /**
+     * data-icons="false" - if no icons in headings of tabs
+     * class="text-align-left"
+     */
     constructor() {
         super();
     }

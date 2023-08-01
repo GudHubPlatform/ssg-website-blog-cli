@@ -2,6 +2,9 @@ import html from './faq.html';
 import './faq.scss';
 
 class Faq extends GHComponent {
+    /**
+     * data-background - set background color in hex or rgb/a
+     */
     constructor() {
         super();
     }

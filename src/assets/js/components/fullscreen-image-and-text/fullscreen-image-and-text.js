@@ -2,7 +2,10 @@ import html from './fullscreen-image-and-text.html';
 import './fullscreen-image-and-text.scss';
 
 class FullscreenImageAndText extends GHComponent {
-    
+    /**
+     * class="light_theme", default theme is dark
+     * class="reverse" reverse blocks
+     */
     constructor() {
         super();
     }
