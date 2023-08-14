@@ -93,7 +93,6 @@ class ImageComponent extends GHComponent {
                 <source media="(min-width: 1200px)" srcset="${this.path}${this.extension}" type="image/${this.extension.substring(1, this.extension.length)}">
             ` : ''}
             ${ this.imageWidth <= 600 ? `
-                <source srcset="${this.src}.webp" type="image/webp" />
                 <source srcset="${this.src}" type="image/${this.src.split('.')[this.src.split('.').length - 1]}" />
             ` : ''}
             <source srcset="${this.src}.webp" type="image/webp">
