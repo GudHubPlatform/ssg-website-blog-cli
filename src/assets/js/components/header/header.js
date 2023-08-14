@@ -14,7 +14,7 @@ class Header extends GHComponent {
                 { name: 'Web Development', link: '/services/web-development/' }
             ] },
             { name: 'Blog', link: '/blog/', childs: [
-                { name: 'Web Development', link: '/services/web-dev/' }
+                { name: 'Web Development', link: '/blog/web-dev/' }
             ] },
             { name: 'Contact Us', link: '/contact-us/' }
         ];

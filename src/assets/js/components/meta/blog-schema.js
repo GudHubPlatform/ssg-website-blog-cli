@@ -1,3 +1,4 @@
+import generalInfo from '/src/general-info.json';
 class BlogSchema extends GHComponent {
     /*
      * data-chapter - chapter, default pages 
@@ -65,7 +66,7 @@ class BlogSchema extends GHComponent {
                 "publisher": {
                     "@type": "Organization",
                     "@id": `${window.MODE === 'production' ? 'https' : 'http'}://${window.constants.website}`,
-                    "name": window.constants.info.name,
+                    "name": generalInfo.name,
                     "logo": {
                         "@type": "ImageObject",
                         "@id": `${window.MODE === 'production' ? 'https' : 'http'}://${window.constants.website}` + blogImage,

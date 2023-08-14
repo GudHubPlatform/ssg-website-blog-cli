@@ -2,7 +2,8 @@ import html from './article-component.html';
 import './article-component.scss';
 import authorsObject from './authors-object.json';
 import allArticles from './allArticles.json';
-import categoriesObject from './categories-object.json';
+
+import generalInfo from '/src/general-info.json';
 
 class ArticleComponent extends GHComponent {
 
@@ -421,7 +422,7 @@ class ArticleComponent extends GHComponent {
                 "ratingCount": this.article.ratings.count,
                 "bestRating": 5,
                 "worstRating": 1,
-                "author": window.constants.info.legalName,
+                "author": generalInfo.legalName,
                 "item": this.article.h1
             }
         }
