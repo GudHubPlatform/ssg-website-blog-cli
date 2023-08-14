@@ -1,5 +1,5 @@
 import html from './recent-posts.html';
-import recentPostsObject from './recent-posts.json';
+import { generateArticlesAndCommentsObject } from '../../generateArticlesAndCommentsObject.js';
 import authorObject from './author-object.json';
 import './recent-posts.scss';
 
@@ -9,7 +9,7 @@ class RecentPosts extends GHComponent {
     }
     
     async onServerRender() {
-        let articlesAndComments = await gudhub.jsonConstructor(recentPostsObject);
+        let articlesAndComments = await gudhub.jsonConstructor(await generateArticlesAndCommentsObject());
         let articles = articlesAndComments.articlesAndComments.articles;
         let comments = articlesAndComments.articlesAndComments.comments;
 

@@ -1,9 +1,10 @@
 import html from './posts-template.html';
 import './posts-template.scss';
 
-import articlesObject from './articles.json';
 import categoriesObject from './categories.json';
 import authorsObject from './authors-object.json';
+
+import { generateArticlesAndCommentsObject } from '../../../generateArticlesAndCommentsObject.js';
 
 class PostsTemplate extends GHComponent {
     /*
@@ -51,84 +52,10 @@ class PostsTemplate extends GHComponent {
             const category = url.searchParams.get('category');
             this.currentCategory = categories.find(iterationCategory => iterationCategory.slug == `/blog/${category}/`);
             const categoryId = this.currentCategory.category_id;
-            articlesAndComments = await gudhub.jsonConstructor(
-                {
-                    "type": "object",
-                    "id": 3,
-                    "childs": [
-                        {
-                            "type": "array",
-                            "id": 1,
-                            "childs": [
-                                {
-                                    "type": "property",
-                                    "id": 3,
-                                    "property_name": "article_id",
-                                    "property_type": "field_value",
-                                    "field_id": "794821"
-                                  }
-                            ],
-                            "property_name": "comments",
-                            "app_id": "33362",
-                            "filter": [
-                                {
-                                    "field_id": 794824,
-                                    "data_type": "radio_button",
-                                    "valuesArray": [
-                                        "0"
-                                    ],
-                                    "search_type": "equal_or",
-                                    "selected_search_option_variable": "Value"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "array",
-                            "id": 1,
-                            "childs": articlesObject,
-                            "property_name": "articles",
-                            "app_id": "33361",
-                            "filter": [
-                                {
-                                    "field_id": 794787,
-                                    "data_type": "radio_button",
-                                    "valuesArray": [
-                                      "0"
-                                    ],
-                                    "search_type": "equal_or",
-                                    "$$hashKey": "object:945",
-                                    "selected_search_option_variable": "Value"
-                                  },
-                                  {
-                                    "field_id": 794803,
-                                    "data_type": "radio_button",
-                                    "valuesArray": [
-                                      "1"
-                                    ],
-                                    "search_type": "equal_or",
-                                    "$$hashKey": "object:987",
-                                    "selected_search_option_variable": "Value"
-                                  },
-                                  {
-                                    "field_id": 794788,
-                                    "data_type": "item_ref",
-                                    "valuesArray": [
-                                      categoryId
-                                    ],
-                                    "search_type": "equal_or",
-                                    "$$hashKey": "object:1225",
-                                    "selected_search_option_variable": "Value"
-                                  }
-                            ],
-                            "isSortable": 1,
-                            "field_id_to_sort": "794791",
-                            "sortType": "desc"
-                        }
-                    ],
-                    "property_name": "articlesAndComments"
-                }
-            );
+            articlesAndComments = await gudhub.jsonConstructor(await generateArticlesAndCommentsObject('category', categoryId));
+            console.log(articlesAndComments)
             articles = articlesAndComments.articlesAndComments;
+            console.log('articles',articles)
             if (articles.articles.length === 0) {
                 this.empty = 'category';
             }
@@ -139,83 +66,7 @@ class PostsTemplate extends GHComponent {
             const pageSlug = url.searchParams.get('path');
             let currentAuthor = this.authors.find(author => author.slug == pageSlug);
             let author_id = currentAuthor.author_id;
-            articlesAndComments = await gudhub.jsonConstructor(
-                {
-                    "type": "object",
-                    "id": 3,
-                    "childs": [
-                        {
-                            "type": "array",
-                            "id": 1,
-                            "childs": [
-                                {
-                                    "type": "property",
-                                    "id": 3,
-                                    "property_name": "article_id",
-                                    "property_type": "field_value",
-                                    "field_id": "794821"
-                                  }
-                            ],
-                            "property_name": "comments",
-                            "app_id": "33361",
-                            "filter": [
-                                {
-                                    "field_id": 794824,
-                                    "data_type": "radio_button",
-                                    "valuesArray": [
-                                        "0"
-                                    ],
-                                    "search_type": "equal_or",
-                                    "selected_search_option_variable": "Value"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "array",
-                            "id": 1,
-                            "childs": articlesObject,
-                            "property_name": "articles",
-                            "app_id": "33361",
-                            "filter": [
-                                {
-                                    "field_id": 794787,
-                                    "data_type": "radio_button",
-                                    "valuesArray": [
-                                      "0"
-                                    ],
-                                    "search_type": "equal_or",
-                                    "$$hashKey": "object:945",
-                                    "selected_search_option_variable": "Value"
-                                  },
-                                  {
-                                    "field_id": 794803,
-                                    "data_type": "radio_button",
-                                    "valuesArray": [
-                                      "1"
-                                    ],
-                                    "search_type": "equal_or",
-                                    "$$hashKey": "object:987",
-                                    "selected_search_option_variable": "Value"
-                                  },
-                                  {
-                                    "field_id": 794789,
-                                    "data_type": "item_ref",
-                                    "valuesArray": [
-                                      author_id
-                                    ],
-                                    "search_type": "equal_or",
-                                    "$$hashKey": "object:1025",
-                                    "selected_search_option_variable": "Value"
-                                  }
-                            ],
-                            "isSortable": 1,
-                            "field_id_to_sort": "794791",
-                            "sortType": "desc"
-                        }
-                    ],
-                    "property_name": "articlesAndComments"
-                }
-            );
+            articlesAndComments = await gudhub.jsonConstructor(await generateArticlesAndCommentsObject('author', author_id));
 
             articles = articlesAndComments.articlesAndComments;
 
@@ -226,73 +77,7 @@ class PostsTemplate extends GHComponent {
         else {
             // Fetch all articles
             this.currentCategory = false;
-            articlesAndComments = await gudhub.jsonConstructor(
-                {
-                    "type": "object",
-                    "id": 3,
-                    "childs": [
-                        {
-                            "type": "array",
-                            "id": 1,
-                            "childs": [
-                                {
-                                    "type": "property",
-                                    "id": 3,
-                                    "property_name": "article_id",
-                                    "property_type": "field_value",
-                                    "field_id": "794821"
-                                  }
-                            ],
-                            "property_name": "comments",
-                            "app_id": "33361",
-                            "filter": [
-                                {
-                                    "field_id": 794824,
-                                    "data_type": "radio_button",
-                                    "valuesArray": [
-                                        "0"
-                                    ],
-                                    "search_type": "equal_or",
-                                    "selected_search_option_variable": "Value"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "array",
-                            "id": 1,
-                            "childs": articlesObject,
-                            "property_name": "articles",
-                            "app_id": "33361",
-                            "filter": [
-                                {
-                                    "field_id": 794787,
-                                    "data_type": "radio_button",
-                                    "valuesArray": [
-                                        "0"
-                                    ],
-                                    "search_type": "equal_or",
-                                    "$$hashKey": "object:17515",
-                                    "selected_search_option_variable": "Value"
-                                },
-                                {
-                                    "field_id": 794803,
-                                    "data_type": "radio_button",
-                                    "valuesArray": [
-                                        "1"
-                                    ],
-                                    "search_type": "equal_or",
-                                    "$$hashKey": "object:17557",
-                                    "selected_search_option_variable": "Value"
-                                }
-                            ],
-                            "isSortable": 1,
-                            "field_id_to_sort": "794791",
-                            "sortType": "desc"
-                        }
-                    ],
-                    "property_name": "articlesAndComments"
-                }
-            );
+            articlesAndComments = await gudhub.jsonConstructor(await generateArticlesAndCommentsObject());
 
             articles = articlesAndComments.articlesAndComments;
         }
@@ -314,6 +99,7 @@ class PostsTemplate extends GHComponent {
 
         for (let article = 0; article < this.articles.length; article++) {
             // CATEGORIES
+            console.log(this.articles[article])
             this.articles[article].rating.avg = Number(this.articles[article].rating.avg.toFixed(1));
             const post = this.articles[article];
             post.category = [];
