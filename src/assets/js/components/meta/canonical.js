@@ -44,7 +44,6 @@ class CanonicalComponent extends GHComponent {
         let value;
         if (!slug) {
             item = items.find(findedItem => findedItem.item_id == itemId);
-            console.log(item)
         } else {
             for (let findedItem in items) {
                 
@@ -53,8 +52,6 @@ class CanonicalComponent extends GHComponent {
                     item = items[findedItem];
                 }
             }
-            
-            console.log(value)
         }
         fieldId = app.field_list.find(findedField => findedField.name_space === 'slug').field_id;
         value = item.fields.find(findedField => findedField.field_id == fieldId).field_value;

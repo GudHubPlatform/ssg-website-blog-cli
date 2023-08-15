@@ -49,6 +49,20 @@ export async function generateArticlesAndCommentsObject(filter, value) {
             },
             {
                 "type": "property",
+                "id": 3,
+                "property_name": "intro",
+                "property_type": "field_value",
+                "field_id": "794786"
+            },
+            { 
+                "type": "property", 
+                "id": 3, 
+                "property_name": "intro_id", 
+                "property_type": "field_id", 
+                "field_id": "794786" 
+            },
+            {
+                "type": "property",
                 "id": 5,
                 "property_name": "slug",
                 "property_type": "field_value",
@@ -203,11 +217,11 @@ export async function generateArticlesAndCommentsObject(filter, value) {
             }
         ]
     };
-    
+
 
     switch (filter) {
         case "slug":
-          articles.filter.push({
+            articles.filter.push({
                 "field_id": 794804,
                 "data_type": "text",
                 "valuesArray": [
@@ -243,12 +257,6 @@ export async function generateArticlesAndCommentsObject(filter, value) {
             });
             break;
     }
-    //slug
-    
-    //category
-    
-    //author
-    
 
     let object = {
         "type": "object",
@@ -259,6 +267,6 @@ export async function generateArticlesAndCommentsObject(filter, value) {
         ],
         "property_name": "articlesAndComments"
     };
-    console.log('object',object)
+
     return object;
 }

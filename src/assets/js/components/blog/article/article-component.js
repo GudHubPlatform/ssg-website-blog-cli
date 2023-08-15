@@ -3,7 +3,7 @@ import './article-component.scss';
 import authorsObject from './authors-object.json';
 import allArticles from './allArticles.json';
 
-import { generateArticlesAndCommentsObject } from '../../../generateArticlesAndCommentsObject.js';
+import { generateArticlesAndCommentsObject } from '../../../generate-articles-and-comments-object.js';
 
 import generalInfo from '/src/general-info.json';
 
@@ -19,10 +19,10 @@ class ArticleComponent extends GHComponent {
         const articleSlug = url.searchParams.get('path');
 
         let articleAndComments = await gudhub.jsonConstructor(await generateArticlesAndCommentsObject('slug', articleSlug));
-        console.log(articleAndComments)
+
         let comments = articleAndComments.articlesAndComments.comments;
         this.article = articleAndComments.articlesAndComments.articles[0];
-        console.log(this.article)
+        
         const ogSiteImage = document.createElement('meta');
         ogSiteImage.setAttribute('property', 'og:image');
         ogSiteImage.setAttribute('content', `${window.MODE === 'production' ? 'https' : 'http'}://${window.constants.website}${this.article.thumbnail_src}`);

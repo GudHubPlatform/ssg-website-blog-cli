@@ -1,0 +1,102 @@
+{
+  "type": "object",
+  "id": 2,
+  "childs": [
+    {
+        "type": "array",
+        "id": 1,
+        "childs": [
+            {
+                "type": "property",
+                "id": 3,
+                "property_name": "name",
+                "property_type": "field_value",
+                "field_id": "794762",
+                "interpretation": 1
+            },
+            {
+                "type": "property",
+                "id": 4,
+                "property_name": "link",
+                "property_type": "field_value",
+                "field_id": "794760",
+                "interpretation": 1
+            }
+        ],
+        "property_name": "pages",
+        "app_id": "33360",
+        "filter": [
+            {
+                "field_id": 794760,
+                "data_type": "text",
+                "valuesArray": [
+                    "/authors/"
+                ],
+                "search_type": "not_contain_or",
+                "$$hashKey": "object:1871",
+                "selected_search_option_variable": "Value"
+            },
+            {
+                "field_id": 794761,
+                "data_type": "radio_button",
+                "valuesArray": [
+                    "1"
+                ],
+                "search_type": "equal_or",
+                "$$hashKey": "object:1921",
+                "selected_search_option_variable": "Value"
+            }
+        ],
+        "isSortable": 0
+    },
+    {
+      "type": "array",
+      "id": 1,
+      "childs": [
+        {
+          "type": "property",
+          "id": 3,
+          "property_name": "name",
+          "property_type": "field_value",
+          "field_id": "794783",
+          "interpretation": 1,
+          "$$hashKey": "object:18333"
+        },
+        {
+          "type": "property",
+          "id": 4,
+          "property_name": "link",
+          "property_type": "field_value",
+          "field_id": "794804",
+          "interpretation": 1,
+          "$$hashKey": "object:18334"
+        }
+      ],
+      "property_name": "categories",
+      "app_id": "33361",
+      "filter": [
+        {
+          "field_id": 794803,
+          "data_type": "radio_button",
+          "boolean_strategy": "and",
+          "valuesArray": [
+            "1"
+          ],
+          "search_type": "equal_or",
+          "selected_search_option_variable": "Value"
+        },
+        {
+          "field_id": 794787,
+          "data_type": "radio_button",
+          "boolean_strategy": "and",
+          "valuesArray": [
+            "2"
+          ],
+          "search_type": "equal_or",
+          "selected_search_option_variable": "Value"
+        }
+      ]
+    }
+  ],
+  "property_name": "allPages"
+}

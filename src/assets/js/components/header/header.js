@@ -1,24 +1,33 @@
 import html from './header.html';
 import './header.scss';
 
+import pagesObject from './pages-object.json';
+
 class Header extends GHComponent {
     constructor() {
         super();
     }
 
-    onServerRender() {
+    async onServerRender() {
         // List of objects like a nested-list for generating menu in header
-        this.menu = [
-            { name: 'Home', link: '/' },
-            { name: 'Services', childs: [
-                { name: 'Web Development', link: '/services/web-development/' }
-            ] },
-            { name: 'Blog', link: '/blog/', childs: [
-                { name: 'Web Development', link: '/blog/web-dev/' }
-            ] },
-            { name: 'Contact Us', link: '/contact-us/' }
-        ];
 
+        let mainPages = await gudhub.jsonConstructor(pagesObject);
+
+        let pages = mainPages.allPages.pages;
+
+        let categories = mainPages.allPages.categories;
+
+        let allPages = pages.concat(categories)
+        
+        let services = allPages.filter(page => page.link.includes('/services/'));
+        let anotherPages = allPages.filter(page => !page.link.includes('/services/') && !page.link.includes('/blog/'));
+        
+        // Method to creating nested list in any queue
+        anotherPages.splice(1, 0, {name: "Services", childs: services})
+        anotherPages.splice(3, 0, {name: "Blog", link: "/blog/", childs: categories})
+
+        this.menu = anotherPages;
+        
         super.render(html);
     }
     

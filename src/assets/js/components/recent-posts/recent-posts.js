@@ -1,5 +1,5 @@
 import html from './recent-posts.html';
-import { generateArticlesAndCommentsObject } from '../../generateArticlesAndCommentsObject.js';
+import { generateArticlesAndCommentsObject } from '../../generate-articles-and-comments-object.js';
 import authorObject from './author-object.json';
 import './recent-posts.scss';
 

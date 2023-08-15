@@ -4,7 +4,7 @@ import './posts-template.scss';
 import categoriesObject from './categories.json';
 import authorsObject from './authors-object.json';
 
-import { generateArticlesAndCommentsObject } from '../../../generateArticlesAndCommentsObject.js';
+import { generateArticlesAndCommentsObject } from '../../../generate-articles-and-comments-object.js';
 
 class PostsTemplate extends GHComponent {
     /*
@@ -24,7 +24,7 @@ class PostsTemplate extends GHComponent {
         this.currentCategory; 
         this.type = this.hasAttribute('data-type') ? this.getAttribute('data-type') : 'blog';
         this.start = 0;
-        this.postsPerPage = 1;
+        this.postsPerPage = 10;
         this.index = 0;
         this.headingFieldId = 794783;
         this.slugFieldId = 794804;
@@ -53,9 +53,9 @@ class PostsTemplate extends GHComponent {
             this.currentCategory = categories.find(iterationCategory => iterationCategory.slug == `/blog/${category}/`);
             const categoryId = this.currentCategory.category_id;
             articlesAndComments = await gudhub.jsonConstructor(await generateArticlesAndCommentsObject('category', categoryId));
-            console.log(articlesAndComments)
+
             articles = articlesAndComments.articlesAndComments;
-            console.log('articles',articles)
+
             if (articles.articles.length === 0) {
                 this.empty = 'category';
             }
@@ -99,7 +99,6 @@ class PostsTemplate extends GHComponent {
 
         for (let article = 0; article < this.articles.length; article++) {
             // CATEGORIES
-            console.log(this.articles[article])
             this.articles[article].rating.avg = Number(this.articles[article].rating.avg.toFixed(1));
             const post = this.articles[article];
             post.category = [];
