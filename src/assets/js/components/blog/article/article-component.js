@@ -22,7 +22,7 @@ class ArticleComponent extends GHComponent {
 
         let comments = articleAndComments.articlesAndComments.comments;
         this.article = articleAndComments.articlesAndComments.articles[0];
-        
+
         const ogSiteImage = document.createElement('meta');
         ogSiteImage.setAttribute('property', 'og:image');
         ogSiteImage.setAttribute('content', `${window.MODE === 'production' ? 'https' : 'http'}://${window.constants.website}${this.article.thumbnail_src}`);
@@ -53,6 +53,7 @@ class ArticleComponent extends GHComponent {
         post.category = [];
 
         // Now in post.categories is only appId.itemId, so we need to add in post's object property with array of category's names and slugs
+
         for (let category in post.categories) {
             let categoryName = post.categories[category].fields.find(field => field.field_id == window.constants.chapters.blog.heading_field_id).field_value;
             let categorySlug = post.categories[category].fields.find(field => field.field_id == window.constants.chapters.blog.slug_field_id).field_value;
@@ -63,6 +64,7 @@ class ArticleComponent extends GHComponent {
             post.category.push(categoryObject)
         }
         this.article.categories = post.category;
+        
         delete this.article.category;
 
         this.breadcrumbs = JSON.stringify([
@@ -123,6 +125,7 @@ class ArticleComponent extends GHComponent {
         }
 
         this.articles = this.articles.all_articles.slice(0, 3);
+
         for (let article in this.articles) {
             let postrCategories = [];
             for (let category in this.articles[article].categories) {
