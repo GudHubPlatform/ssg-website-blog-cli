@@ -31,6 +31,21 @@ class Header extends GHComponent {
         super.render(html);
     }
     
+    onClientReady() {
+        window.addEventListener('close-shadow', () => {
+            let allShadows = this.querySelectorAll('.show_shadow');
+            if (allShadows) {
+                for (let shadow = 0; shadow < allShadows.length; shadow++) {
+                    allShadows[shadow].classList.remove('show_shadow');
+                }
+            }
+            let shows = document.querySelectorAll('popup-success.show');
+            for (let popup = 0; popup < shows.length; popup++) {
+                shows[popup].classList.remove('show');
+            }
+        });
+    }
+
     openChild(element) {
         if (window.innerWidth < 1200) {
             event.preventDefault()
@@ -39,6 +54,19 @@ class Header extends GHComponent {
     }
     toogleMenu() {
         this.classList.toggle('active');
+    }
+
+
+    openPopup(item) {
+        if (event.target.classList.contains('popup_button')) {
+            item.querySelector('.popup_shadow').classList.add('show_shadow');
+            item.querySelector('.popup_shadow popup-form').classList.add('show');
+        }
+    }
+    closePopup() {
+        if (event.target.classList.contains('popup_shadow')) {
+            window.dispatchEvent( new CustomEvent('close-shadow'));
+        } 
     }
 
 }
