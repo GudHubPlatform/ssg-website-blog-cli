@@ -30,7 +30,6 @@
                 "/authors/"
             ],
             "search_type": "not_equal_or",
-            "$$hashKey": "object:1871",
             "selected_search_option_variable": "Value"
         },
         {
@@ -40,7 +39,6 @@
                 "1"
             ],
             "search_type": "equal_or",
-            "$$hashKey": "object:1921",
             "selected_search_option_variable": "Value"
         },
         {
@@ -50,7 +48,6 @@
                 "blog"
             ],
             "search_type": "not_contain_or",
-            "$$hashKey": "object:1959",
             "selected_search_option_variable": "Value"
         }
     ],
