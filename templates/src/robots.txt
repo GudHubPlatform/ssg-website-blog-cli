@@ -1,2 +1,6 @@
 User-agent: *
-Disallow: /
+
+Disallow: /components
+
+Host: # https://%YOUR-WEBSITE-ADRESS%/
+Sitemap: # https://%YOUR-WEBSITE-ADRESS%/sitemap.xml

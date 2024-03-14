@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/default-styles.css">
+
+    <style data-webpack-style="true">
+        prices-cards[data-gh-id="prices_cards"] section {
+            padding-bottom: 80px;
+        }
+        prices-cards[data-gh-id="prices_cards"] .secondary-block {
+            --button-secondary-normal-fill-color: transparent;
+            --button-secondary-normal-border-color: #0A79FE;
+            --button-secondary-normal-font-color: #0A79FE;
+            
+            --button-secondary-hover-fill-color: #0A79FE;
+            --button-secondary-hover-border-color: #0A79FE;
+            --button-secondary-hover-font-color: #fff;
+        }
+        @media screen and (min-width: 1050px) {
+            reviews-slider {
+                padding-top: 100px;
+            }
+        }
+        get-in-touch-block#contact-us[data-gh-id="get-in-touch"] h2 {
+            font-size: 44px;
+        }
+    </style>
 </head>
 <body>
     <canonical-component></canonical-component>
@@ -20,33 +43,39 @@
     <meta-tag og type="description"></meta-tag>
     <meta-tag twitter type="description"></meta-tag>
     <meta-tag og type="meta_image_src"></meta-tag>
-    <meta-tag twitter type="meta_image_src"></meta-tag>
-    
-    <header-component></header-component>
-    
-    <top-banner data-background-image data-gh-id="homepage_banner"></top-banner>
-    
-    <counter-component data-gh-id="counter" data-type="bottomButton"></counter-component>
+    <meta-tag twitter type="meta_image_src"></meta-tag> 
 
-    <text-only data-gh-id="text_only"></text-only>
+    <header-component class="dark_white_theme"></header-component>
+    
+    <homepage-banner class="dark_white_theme" data-gh-id="homepage_banner"></homepage-banner>
 
-    <grid-component data-gh-id="grid_with_etc" data-type="etc" data-collapse="plus" class="centered"></grid-component>
+    <counter-section class="white_dark_theme" data-gh-id="counter"></counter-section>
 
-    <tabs-component data-gh-id="horizontal_tabs" data-icons="false" class="text-align-left"></tabs-component>
-    
-    <grid-component data-gh-id="grid_with_number" class="dark_theme" data-type="number" be-slider></grid-component>
-    
-    <grid-component data-gh-id="grid_with_number" data-type="shadow"></grid-component>
-    
-    <grid-component data-gh-id="grid_with_number" data-type="border" class="dark_theme centered_items"></grid-component>
-    
-    <cookies-popup></cookies-popup>
+    <grid-component class="dark_white_theme"  data-items-in-row="3" data-gh-id="ready_to_business" id="solutions"></grid-component>
 
-    <recent-posts></recent-posts>
+    <media-and-text class="dark_white_theme" data-gh-id="development"></media-and-text>
     
-    <faq-component data-gh-id="faq"></faq-component>
+    <media-and-accordion class="white_dark_theme" data-gh-id="abilities"></media-and-accordion>
+    
+    <animation-block class="dark_white_theme" data-gh-id="integrations"></animation-block>
+    
+    <prices-cards class="white_dark_theme" data-gh-id="prices_cards" id="prices"></prices-cards>
 
-    <get-in-touch-block id="get_in_touch_block"></get-in-touch-block>
+    <banner-and-text class="dark_white_theme" data-gh-id="offer_plans"></banner-and-text>
+    
+    <overflow-cards class="white_dark_theme" data-gh-id="cases"></overflow-cards>
+
+    <reviews-slider class="white_dark_theme" data-gh-id="reviews"></reviews-slider>
+
+    <get-in-touch-block class="white_dark_theme" data-gh-id="get-in-touch"></get-in-touch-block>
+    
+    <popup-container class="white_white_theme" data-popup-id="form">
+        <get-in-touch-form data-in-popup data-form-id="popup"></get-in-touch-form>
+    </popup-container>
+
+    <popup-container class="white_white_theme" data-popup-id="bottom-right" data-position="bottom-right" data-no-bg-shadow data-autostart="2000">
+        <get-in-touch-form data-in-popup data-form-id="small bottom-right popup"></get-in-touch-form>
+    </popup-container>
 
     <footer-component></footer-component>
 

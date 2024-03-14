@@ -1,0 +1,114 @@
+/*
+    section - inner tag of every component, so it applyes those styles automatically.
+        Classes to use inside section:
+        .subtitle
+        .text - to apply common color of text
+        .accent-color - to highlight specific text
+        .link - to add color changing on hover
+
+
+    .primary-block - the inner block of the component.
+        Classes to use inside primary-block:
+        .bg-hover - to add bg color changing on block hover (write to the same element on which the ".primary-block" class was applied)
+        .text - to apply common color of text
+        .accent-color - to highlight specific text
+        .link - to add color changing on hover
+
+    .secondary-block - inner block of the primary-block.
+        Classes to use inside secondary-block:
+        .bg-hover - to add bg color changing on block hover (write to the same element on which the ".secondary-block" class was applied)
+        .text - to apply common color of text
+        .accent-color - to highlight specific text
+        .link - to add color changing on hover
+
+
+    .tertiary-block - inner block secondary-block.
+        Classes to use inside tertiary-block:
+        .bg-hover - to add bg color changing on block hover (write to the same element on which the ".tertiary-block" class was applied)
+        .text - to apply common color of text
+        .accent-color - to highlight specific text
+        .link - to add color changing on hover
+
+*/
+
+/*COMPONENT CONTAINER*/
+section {
+    background-color: var(--bg-color);
+}
+section h1, section h2, section h3 {
+    color: var(--h-color);
+}
+section .text {
+    color: var(--block-primary-text-color);
+}
+section .subtitle {
+    color: var(--subtitle-color);
+}
+section .accent-color {
+    color: var(--accent-color);
+}
+section .link:hover {
+    color: var(--link-hover-color);
+}
+
+/*PRIMARY BLOCK*/
+.primary-block {
+    background-color: var(--block-primary-bg-color);
+}
+.primary-block.bg-hover:hover {
+    background-color: var(--block-primary-bg-hover-color);
+}
+.primary-block h1, .primary-block h2, .primary-block h3 {
+    color: var(--block-primary-h-color);
+}
+.primary-block .text {
+    color: var(--block-primary-text-color);
+}
+.primary-block .accent-color {
+    color: var(--block-primary-accent-color);
+}
+.primary-block .link:hover {
+    color: var(--link-hover-color);
+}
+
+/*SECONDARY BLOCK*/
+.secondary-block {
+    background-color: var(--block-secondary-bg-color);
+    box-shadow: var(--block-secondary-box-shadow);
+}
+.secondary-block.bg-hover:hover {
+    background-color: var(--block-secondary-bg-hover-color);
+}
+.secondary-block h1, .secondary-block h2, .secondary-block h3 {
+    color: var(--block-secondary-h-color);
+}
+.secondary-block .text {
+    color: var(--block-secondary-text-color);
+}
+.secondary-block .accent-color {
+    color: var(--block-secondary-accent-color);
+}
+.secondary-block .link:hover {
+    color: var(--link-hover-color);
+}
+
+/*TERTIARY BLOCK*/
+.tertiary-block {
+    background-color: var(--block-tertiary-bg-color);
+    box-shadow: var(--block-tertiary-box-shadow);
+}
+.tertiary-block.bg-hover:hover {
+    background-color: var(--block-tertiary-bg-hover-color);
+}
+.tertiary-block h1, .tertiary-block h2, .tertiary-block h3 {
+    color: var(--block-tertiary-h-color);
+}
+.tertiary-block .text {
+    color: var(--block-tertiary-text-color);
+}
+.tertiary-block .accent-color {
+    color: var(--block-tertiary-accent-color);
+}
+.tertiary-block .link:hover {
+    color: var(--link-hover-color);
+}

@@ -1,0 +1,144 @@
+@import './themes/dark-white.css';
+@import './themes/white-dark.css';
+@import './themes/white-grey.css';
+@import './themes/white-white.css';
+:root {
+    /* Common */
+    --font-family: Roboto, sans-serif;
+
+    /* h1 */
+    --h1-font-size: 60px;
+    --h1-font-weight: 700;
+
+    /* h2 */
+    --h2-font-size: 50px;
+    --h2-font-weight: 700;
+
+    /* h3 */
+    --h3-font-size: 24px;
+    --h3-font-weight: 800;
+
+    /* Subtitle */
+
+    --h1-subtitle-font-size: 20px;
+    --h2-subtitle-font-size: 16px;
+
+    --subtitle-font-weight: 500;
+
+    /* Text */
+    --text-font-size: 16px;
+    --text-font-weight: 400;
+
+    --accent-color: #0A79FE;
+
+    /*Button*/
+    --button-primary-border-radius: 10px;
+    --button-primary-normal-fill-color: #0A79FE;
+    --button-primary-normal-border-color: #0A79FE;
+    --button-primary-normal-font-color: #fff;
+    --button-primary-font-weight: 700;
+
+    --button-primary-hover-fill-color: #fff;
+    --button-primary-hover-border-color: #0A79FE;
+    --button-primary-hover-font-color: #0A79FE;
+
+
+    --button-secondary-border-radius: 10px;
+    --button-secondary-normal-fill-color: transparent;
+    --button-secondary-normal-border-color: #0A79FE;
+    --button-secondary-normal-font-color: #0A79FE;
+    --button-secondary-font-weight: 700;
+    
+    --button-secondary-hover-fill-color: #0A79FE;
+    --button-secondary-hover-border-color: #0A79FE;
+    --button-secondary-hover-font-color: #fff;
+
+    
+    /* PRIMARY STYLES */
+    --bg-color: #fff;
+    --h-color: #05183A;
+    --subtitle-color: #545961;
+    --text-color: #545961;
+    --link-hover-color: #0A79FE;
+    --accent-color: #0A79FE;
+    
+    /* PRIMARY BLOCK STYLES */
+    --block-primary-bg-color: #EFEFEF;
+    --block-primary-bg-hover-color: #ECF3F6;
+    --block-primary-h-color: #05183A;
+    --block-primary-text-color: #545961;
+    --block-primary-link-hover-color: #0A79FE;
+    --block-primary-box-shadow: none;
+    --block-primary-border: solid 1px;
+    --block-primary-border-color: none;
+    --block-primary-border-radius: 30px;
+    --block-primary-accent-color: #0A79FE;
+
+    /* SECONDARY BLOCK STYLES */
+    --block-secondary-bg-color: #fff;
+    --block-secondary-bg-hover-color: none;
+    --block-secondary-h-color: none;
+    --block-secondary-text-color: none;
+    --block-secondary-link-hover-color: none;
+    --block-secondary-box-shadow: none;
+    --block-secondary-border: solid 1px;
+    --block-secondary-border-color: none;
+    --block-secondary-border-radius: 20px;
+    --block-secondary-accent-color: none;
+
+    /* TERTIARY BLOCK STYLES */
+    --block-tertiary-bg-color: none;
+    --block-tertiary-bg-hover-color: none;
+    --block-tertiary-h-color: none;
+    --block-tertiary-text-color: none;
+    --block-tertiary-link-hover-color: none;
+    --block-tertiary-box-shadow: none;
+    --block-tertiary-border: solid 1px;
+    --block-tertiary-border-color: none;
+    --block-tertiary-border-radius: 10px;
+    --block-tertiary-accent-color: none;
+
+
+    /* Input */
+    --input-placeholder-color: #383838;
+    --input-text-color: #05183A;
+    --input-border-color: #fff;
+    --input-bg-color: #fff;
+    --input-active-border-color: #0A79FE;
+    --input-border-radius: 15px;
+
+    /* Image */
+    --image-bg-color: #efefef;
+}
+
+@media screen and (max-width: 1025px) {
+    :root {
+        /* h1 */
+        --h1-font-size: 48px;
+        
+        /* h2 */
+        --h2-font-size: 42px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+    
+        /* h1 */
+        --h1-font-size: 36px;
+    
+        /* h2 */
+        --h2-font-size: 32px;
+    
+        /* h3 */
+        --h3-font-size: 20px;
+    
+        /* Subtitle */
+    
+        --h1-subtitle-font-size: 18px;
+        --h2-subtitle-font-size: 14px;
+    
+        /* Text */
+        --text-font-size: 14px;
+    }
+}

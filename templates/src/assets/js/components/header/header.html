@@ -1,23 +1,30 @@
 <header class="header">
     <div class="container">
-        <div class="header__wrapper">
+        <div class="shared_wrapper hamburger_wrapper">
             <div class="hamburger" onclick="toogleMenu()">
                 <div></div>
             </div>
-            <a class="header__logo" href="/" >
-                <img width="156" height="55" src="/assets/images/logo.svg" alt="Template" title="Template">
-            </a>
-            <ul class="header__menu move_part">
-                ${
-                    menu.reduce((acc, item) => {
-                        return acc + `
-                            <li class=" ${item.childs ? 'has_child' : ''}">
-                                <${item.link ? `a href="${item.link}"` : 'span'} ${item.childs ? `onclick='openChild()'` : ''}>${ item.name }</${item.link ? `a` : 'span'}>
-                                ${ item.childs ? `
-                                    <div class="megamenu megamenu_services item_${item.name.toLowerCase()}">
-                                        <div class="left">
-                                            <div class="menu_title">${item.name}</div>
-                                            <div class="childs_wrapper">
+        </div>
+        <div class="mobileRight">
+        
+            <div class="shared_wrapper logo_wrapper">
+                <div class="header_left">
+                    <a href="/" class="logo">
+                        <img class="logo" src="/assets/images/logo.svg" width="158" height="36" alt="Логотип вебсайту" title="GudHub лого">
+                    </a>
+                </div>
+            </div>
+            <div class="header_center">
+                <nav>
+                    <ul class="menu">
+                        ${
+                            menu.reduce((acc, item) => {
+                                const arrowIcon = '<svg class="arrowIcon" fill="#ffffff" height="12px" width="12px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"></path> </g></svg>';
+                                return acc + `
+                                    <li class="menu__item ${item.childs ? 'megamenu' : ''}">
+                                        <${item.link ? `a href="${item.link}"` : 'span'} ${item.childs ? `onclick='openChild()'` : ''}>${ item.name }${item.childs ? arrowIcon : ''}</${item.link ? `a` : 'span'}>
+                                        ${ item.childs ? `
+                                            <div class="megamenu_wrapper childs_wrapper">
                                                 <ul class="child">
                                                     ${
                                                         item.childs.reduce((acc, item) => {
@@ -30,31 +37,21 @@
                                                     }
                                                 </ul>
                                             </div>
-                                        </div>
-                                        <div class="right megamenu_contact">
-                                            <div class="heading-megamenu">Let's work on reaching success together</div>
-                                            <div class="contact_flex">
-                                                <div class="contact_text">
-                                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio dicta tempora dolor, cupiditate quis impedit quidem minima consectetur facilis. Dolorem quis magnam corrupti iure alias?</p>    
-                                                    <a href="/contact-us/" class="button">
-                                                        <span>Contact Us</span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M1 8.33333L8.5 14.8148L16 8.33333M8.5 15L8.5 0" stroke="#2B61FA" stroke-width="2"></path></svg>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ` : ''}
-                            </li>
-                        `
-                    }, '')
-                }
-            </ul>
-            <div class="button_and_popup" onclick="openPopup()">
-                <div class="popup_button">Get started</div>
-                <div class="popup_shadow" onclick="closePopup()">
-                    <popup-form data-form-name="Header popup"></popup-form>
-                    <popup-success></popup-success>
+                                        ` : ''}
+                                    </li>
+                                `
+                            }, '')
+                        }
+                    </ul>
+                </nav>
+            </div>
+            <div class="shared_wrapper button_wrapper">
+                <div class="header_right">
+                    <button-component data-popup-id="form" data-placement="header">Спробувати</button-component>
+                    <a href="https://gudhub.com/apps" class="btn empty" rel="noreferrer noopener nofollow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"><path d="M15 14.7449C18.3986 14.7449 21.1539 12.0038 21.1539 8.62245C21.1539 5.24111 18.3986 2.5 15 2.5C11.6013 2.5 8.84616 5.24111 8.84616 8.62245C8.84616 12.0038 11.6013 14.7449 15 14.7449Z" fill="white"/><path d="M18.2051 17.2959H11.7949C8.07692 17.2959 5 20.3573 5 24.0562C5 24.949 5.38461 25.7144 6.15385 26.097C7.30769 26.7348 9.8718 27.4999 15 27.4999C20.1283 27.4999 22.6923 26.7348 23.8461 26.097C24.4871 25.7144 25 24.949 25 24.0562C25 20.2297 21.9231 17.2959 18.2051 17.2959Z" fill="white"/></svg>
+                        <span>Log in</span>
+                    </a>
                 </div>
             </div>
         </div>

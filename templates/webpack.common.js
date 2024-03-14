@@ -4,6 +4,8 @@ import path from 'path';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
+import { components_list as GudhubComponents } from '@gudhub/ssg-web-components-library';
+
 export default {
     plugins: [
         new CopyWebpackPlugin({
@@ -78,7 +80,26 @@ export default {
             return obj;
         }, {});
 
-        return entries;
+        // adds entries from @gudhub/ssg-web-components-library
+        const gudhubEntries = (() => {
+            const entries = [];
+            for (const componentConfig of GudhubComponents) {
+                entries.push('./node_modules/' + componentConfig.src);
+            }
+
+            return entries.reduce((obj, el) => {
+                const path = el;
+                const componentsIndex = path.indexOf('/components');
+                obj[path.replace(path.substring(0, componentsIndex), '/assets/js/')] = el;
+                return obj;
+            }, {});
+        })()
+
+
+        return {
+            ...entries,
+            ...gudhubEntries
+        };
     },
     output: {
         path: path.resolve('dist'),

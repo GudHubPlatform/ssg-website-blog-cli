@@ -1,5 +1,17 @@
 import "@gudhub/gh-component";
 
+/* SET URL REFERRER */
+
+window.onload = () => {
+    try {
+        const referrer = new URL(document.referrer);
+        if(referrer.hostname !== 'gudhub.com.ua' && !localStorage.getItem('referrer')) {
+            localStorage.setItem('referrer', referrer.href);
+        }
+    } catch {
+    }
+}
+
 /* CLEARING NON-NECCESSARY STYLES */
 
 window.beforeCaching = function() {
@@ -14,29 +26,16 @@ window.beforeCaching = function() {
     const links = document.querySelectorAll('link');
     if(links) {
         for (let link = 0; link < links.length; link++) {
-            if((/.css/g.test(links[link].href) !== -1) && (links[link].href.indexOf('gudhub.com') !== -1)) { 
+            if((/.css/g.test(links[link].href) !== -1) && (links[link].href.indexOf('gudhub.com/') !== -1)) { 
                 links[link].remove();
             } 
         }
     }  
 };
 
-/* GOODLE TAG MANAGER IMPORT */
+// FORM SUBMIT LISTENER TO PROCESS ADDITIONAL CALLBACKS
+// here you will receive form object after user submitted a form
 
-if (window.location.protocol !== 'file:') {
-    let linkScript = document.createElement('script');
-    linkScript.setAttribute('async', '');
-    linkScript.setAttribute('src', 'https://www.googletagmanager.com/gtag/js?id=G-574QDRGJYT');
- 
-    let codeScript = document.createElement('script');
-    codeScript.setAttribute('async', '');
-    codeScript.innerHTML = /* javascript */`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-574QDRGJYT');
-    `;
-
-    document.head.append(linkScript);
-    document.head.append(codeScript);
-}
+window.addEventListener('submitForm', (event) => {
+    const { formDataObj } = event.detail;
+});

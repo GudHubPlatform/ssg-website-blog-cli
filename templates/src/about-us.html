@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/default-styles.css">
+    
+    <style data-webpack-style="true">
+        animation-block[data-gh-id="they-trust-us"] h2 {
+            margin-bottom: 50px;
+        }
+        about-us-banner[data-gh-id="text-and-banner"] .flex-wrapper {
+            flex-direction: row-reverse;
+        }
+        about-us-banner[data-gh-id="text-and-banner"] .flex-wrapper .text {
+            max-width: calc((100% - 40px) / 2 - 10px);
+        }
+        about-us-image-counter[data-gh-id="they-trust-us"] .primary-block {
+            border-radius: var(--block-primary-border-radius);
+        }
+        @media screen and (min-width: 1051px) {
+            reviews-slider[data-gh-id="reviews"] section {
+                padding-top: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <canonical-component></canonical-component>
+    <meta-index></meta-index>
+    <organization-schema></organization-schema>
+    <title-tag></title-tag>
+    <meta-tag og type="title"></meta-tag>
+    <meta-tag twitter type="title" data-twitter-name="@Template"></meta-tag>
+    <meta-tag type="description"></meta-tag>
+    <meta-tag og type="description"></meta-tag>
+    <meta-tag twitter type="description"></meta-tag>
+    <meta-tag og type="meta_image_src"></meta-tag>
+    <meta-tag twitter type="meta_image_src"></meta-tag> 
+
+    <header-component class="dark_white_theme"></header-component>
+
+    <about-us-banner class="dark_white_theme" data-gh-id="main-banner" h1></about-us-banner>
+    
+    <counter-section-with-text class="white_dark_theme" data-gh-id="counter-section-with-text"></counter-section-with-text>
+
+    <about-us-banner class="dark_white_theme" data-gh-id="text-and-banner"></about-us-banner>
+
+    <about-us-image-counter class="dark_white_theme" data-gh-id="they-trust-us"></about-us-image-counter>
+
+    <about-us-team-members class="white_dark_theme" data-gh-id="team-members"></about-us-team-members>
+
+    <overflow-cards class="dark_white_theme" data-gh-id="cases" id="resources"></overflow-cards>
+
+    <reviews-slider class="dark_white_theme" data-gh-id="reviews"></reviews-slider>
+    
+    <get-in-touch-block class="white_dark_theme" data-gh-id="get-in-touch" id="contact-us"></get-in-touch-block>
+
+    <popup-container class="white_white_theme" data-popup-id="form">
+        <get-in-touch-form data-in-popup data-form-id="popup"></get-in-touch-form>
+    </popup-container>
+
+    <popup-container class="white_white_theme" data-popup-id="bottom-right" data-position="bottom-right" data-no-bg-shadow data-autostart="2000">
+        <get-in-touch-form data-in-popup data-form-id="small bottom-right popup"></get-in-touch-form>
+    </popup-container>
+
+
+    <footer-component></footer-component>
+
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

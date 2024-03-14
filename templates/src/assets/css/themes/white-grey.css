@@ -1,0 +1,71 @@
+.white_grey_theme {
+    /* PRIMARY STYLES */
+    --bg-color: #fff;
+    --h-color: #05183A;
+    --subtitle-color: #545961;
+    --text-color: #545961;
+    --link-hover-color: #0A79FE;
+    --accent-color: #0A79FE;
+    
+    /* PRIMARY BLOCK STYLES */
+    --block-primary-bg-color: #EFEFEF;
+    --block-primary-bg-hover-color: #ECF3F6;
+    --block-primary-h-color: #05183A;
+    --block-primary-text-color: #545961;
+    --block-primary-link-hover-color: #0A79FE;
+    --block-primary-box-shadow: 0px 0px 10.378px 0px rgba(0, 0, 0, 0.10);
+    --block-primary-border: solid 1px;
+    --block-primary-border-color: #DFDFDF;
+    --block-primary-border-radius: 30px;
+    --block-primary-accent-color: #0A79FE;
+
+    /* SECONDARY BLOCK STYLES */
+    --block-secondary-bg-color: #fff;
+    --block-secondary-bg-hover-color: none;
+    --block-secondary-h-color: none;
+    --block-secondary-text-color: none;
+    --block-secondary-link-hover-color: none;
+    --block-secondary-box-shadow: none;
+    --block-secondary-border: solid 1px;
+    --block-secondary-border-color: none;
+    --block-secondary-border-radius: 20px;
+    --block-secondary-accent-color: none;
+
+    /* TERTIARY BLOCK STYLES */
+    --block-tertiary-bg-color: none;
+    --block-tertiary-bg-hover-color: none;
+    --block-tertiary-h-color: none;
+    --block-tertiary-text-color: none;
+    --block-tertiary-link-hover-color: none;
+    --block-tertiary-box-shadow: none;
+    --block-tertiary-border: solid 1px;
+    --block-tertiary-border-color: none;
+    --block-tertiary-border-radius: 10px;
+    --block-tertiary-accent-color: none;
+
+    /*Button*/
+    --button-primary-normal-fill-color: #0A79FE;
+    --button-primary-normal-border-color: #0A79FE;
+    --button-primary-normal-font-color: #fff;
+
+    --button-primary-hover-fill-color: #fff;
+    --button-primary-hover-border-color: #0A79FE;
+    --button-primary-hover-font-color: #0A79FE;
+
+
+    --button-secondary-normal-fill-color: transparent;
+    --button-secondary-normal-border-color: #0A79FE;
+    --button-secondary-normal-font-color: #0A79FE;
+    
+    --button-secondary-hover-fill-color: #0A79FE;
+    --button-secondary-hover-border-color: #0A79FE;
+    --button-secondary-hover-font-color: #fff;
+
+    /* Input */
+    --input-placeholder-color: #383838;
+    --input-text-color: #05183A;
+    --input-border-color: #fff;
+    --input-bg-color: #fff;
+    --input-active-border-color: #0A79FE;
+    --input-border-radius: 15px;
+}

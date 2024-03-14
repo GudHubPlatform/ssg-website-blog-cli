@@ -1,8 +1,7 @@
 import html from './footer.html';
 import './footer.scss';
 
-import generalInfo from '/src/general-info.json';
-import pagesObject from './pages-object.json';
+import generalInfo from '../../../../general-info.json';
 
 class FooterComponent extends GHComponent {
     
@@ -11,18 +10,10 @@ class FooterComponent extends GHComponent {
     }
 
     async onServerRender() {
-        this.menu = [
-            { title: 'Contact Us', slug: '/contact-us/' }
-        ];
-        let allPages = await gudhub.jsonConstructor(pagesObject);
-        allPages = allPages.pages;
-
-        this.services = allPages;
-
+        
         this.info = generalInfo;
 
         this.hrefPhone = this.info.phone.replace(/[ ()+-]/g, '');
-         
 
         super.render(html);
 
