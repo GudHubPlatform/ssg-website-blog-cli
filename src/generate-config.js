@@ -1,11 +1,22 @@
 export function generateConfig(auth_key, apps) {
     return /*javascript*/`
-import { components_list as GudhubComponents } from '@gudhub/ssg-web-components-library';
+export { chapters } from './configs/chapters.mjs';
+export { routes } from './configs/routes.mjs';
+export { components_list } from './configs/components-list.mjs';
+export { blog_config } from './configs/blog-config.mjs';
 
-export const build_folder = 'dist';
-
+// PLACE CONSTANTS UNDER THIS LINE AND ADD COMMENT TO EXPLAIN WHAT YOUR CONSTANT DO
+export const build_folder = 'dist'; // to server have path to build
 export const auth_key = "${auth_key.replace(/\n/g, "\\n")}";    
+export const index_sitemap = true; // if false, server will not generate index sitemap
 
+// ClientConfig
+export * as clientConfig from './client-config.mjs';
+`
+}
+
+export function generateChapters(apps) {
+    return /*javascript*/`
 export const chapters = {
     pages: {
         app_id: ${apps.pages.app_id},
@@ -108,32 +119,5 @@ export const chapters = {
             }
         }
     }
-}
-
-export const index_sitemap = true;
-
-export const components_list = [
-    ...GudhubComponents,
-    {
-        tag: 'contact-us-block',
-        src: '/src/assets/js/components/contact-us-block/contact-us-block.js'
-    },
-    {
-        tag: 'footer-component',
-        src: '/src/assets/js/components/footer/footer.js',
-    },
-    {
-        tag: 'header-component',
-        src: '/src/assets/js/components/header/header.js',
-    },
-    {
-        tag: 'team-component',
-        src: '/src/assets/js/components/team/team.js',
-    },
-    {
-        tag: 'team-person',
-        src: '/src/assets/js/components/team/team-person/team-person.js',
-    }
-]
-`
+}`;
 }

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import fsSync from 'fs';
-import { generateConfig } from './generate-config.js';
+import { generateConfig, generateChapters } from './generate-config.js';
 import cliSpinners from 'cli-spinners';
 import logUpdate from 'log-update';
 const fs = fsSync.promises;
@@ -29,7 +29,8 @@ export async function installGudHubApps(user, targetDirectory) {
             api: data.apps.find(app => app.app_name.indexOf('API') > -1)
         }
 
-        await fs.writeFile(targetDirectory + '/config.mjs', generateConfig(user.auth_key, apps));
+        await fs.writeFile(targetDirectory + '/config.mjs', generateConfig(user.auth_key));
+        await fs.writeFile(targetDirectory + '/config/chapters.mjs', generateChapters(apps));
 
         clearInterval(spinner);
         console.log('GudHub Applications installed successfully!');
