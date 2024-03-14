@@ -1,9 +1,9 @@
 export function generateConfig(auth_key, apps) {
     return /*javascript*/`
-export { chapters } from './configs/chapters.mjs';
-export { routes } from './configs/routes.mjs';
-export { components_list } from './configs/components-list.mjs';
-export { blog_config } from './configs/blog-config.mjs';
+export { chapters } from './config/chapters.mjs';
+export { routes } from './config/routes.mjs';
+export { components_list } from './config/components-list.mjs';
+export { blog_config } from './config/blog-config.mjs';
 
 // PLACE CONSTANTS UNDER THIS LINE AND ADD COMMENT TO EXPLAIN WHAT YOUR CONSTANT DO
 export const build_folder = 'dist'; // to server have path to build
@@ -89,19 +89,19 @@ export const chapters = {
             priority: 0.6,
             cases: [
                 {
-                    case: /^\/blog\/authors\/[^\/]*\/$/,
+                    case: /^\\/blog\\/authors\\/[^\\/]*\\/$/,
                     sitemapName: 'authors',
                     frequency: 'weekly',
                     priority: 0.6
                 },
                 {
-                    case: /^\/blog\/[^\/]*\/[^\/]*$/,
+                    case: /^\\/blog\\/[^\\/]*\\/[^\\/]*$/,
                     sitemapName: 'categories',
                     frequency: 'weekly',
                     priority: 0.6
                 },
                 {
-                    case: /^\/blog\/((?!authors).)[^\/]*\/[^\/]*\/$/,
+                    case: /^\\/blog\\/((?!authors).)[^\\/]*\\/[^\\/]*\\/$/,
                     sitemapName: 'articles',
                     frequency: 'weekly',
                     priority: 0.7
