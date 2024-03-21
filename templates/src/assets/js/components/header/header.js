@@ -8,19 +8,20 @@ class Header extends GHComponent {
 
     async onServerRender() {
         this.menu = [
-            { name: 'Рішення', link: '#solutions',
+            { name: 'Solutions', link: '#solutions',
                 childs: [
-                    {name: 'CRM Для Кол Центру', link: '/crm-koll-tsentr/'},
-                    {name: 'CRM Для Навчального центру', link: '/crm-navchalnyj-tsentr/'},
-                    {name: 'CRM Для Школи', link: '/crm-shkola/'},
-                    {name: 'CRM Для HR', link: '/crm-hr/'},
-                    {name: 'CRM Для Фітнес Клубу', link: '/crm-fitnes-klub/'}
+                    {name: 'Prices', link: '#prices'},
+                    { name: 'Components', link: '/components/' },
+                    { name: 'Blog', link: '/blog/'},
+                    {name: 'About Us', link: '/about-us/'},
+                    {name: 'Contact Us', link: '/contact-us/'}
                 ]
             },
-            { name: 'Ціни', link: '#prices'},
-            { name: 'Блог', link: '/blog/'},
-            { name: 'Про Нас', link: '/about-us/'},
-            { name: 'Контакти', link: '/contact-us/'}
+            { name: 'Prices', link: '#prices'},
+            { name: 'Components', link: '/components/' },
+            { name: 'Blog', link: '/blog/'},
+            { name: 'About Us', link: '/about-us/'},
+            { name: 'Contact Us', link: '/contact-us/'}
         ];
         
         this.theme = this.hasAttribute('data-light-letters');
