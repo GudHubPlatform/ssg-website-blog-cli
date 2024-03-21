@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/default-styles.css">
+    
+    <style data-webpack-style="true">
+        posts-template section {
+            padding-top: 45px;
+        }
+        breadcrumbs-component .breadcrumbs_list {
+            justify-content: center;
+        }
+        @media screen and (max-width: 900px) {
+            posts-template {
+                padding-top: 20px;
+            }
+        }
+        .categories_list a.btn, .category a.btn {
+            border-radius: 30px;
+        }
+        .category a.btn {
+            --button-primary-normal-fill-color: #000;
+            --button-primary-normal-border-color: #000;
+            
+            --button-primary-hover-font-color: #000;
+            --button-primary-hover-border-color: #000;
+        }
+        author-page .image {
+            --block-secondary-border-color: #0A79FE;
+        }
+    </style>
+</head>
+<body>
+    <organization-schema></organization-schema>
+    <meta-index></meta-index>
+    <canonical-component></canonical-component>
+    <meta-tag></meta-tag>
+
+    <header-component class="dark_white_theme"></header-component>
+
+    <author-page class="blog_theme"></author-page>
+
+    <posts-template class="blog_theme" data-type="author"></posts-template>
+
+    <popup-container class="white_white_theme" data-popup-id="form">
+        <get-in-touch-form data-in-popup data-form-id="popup"></get-in-touch-form>
+    </popup-container>
+
+    <popup-container class="white_white_theme" data-popup-id="bottom-right" data-position="bottom-right" data-no-bg-shadow data-autostart="2000">
+        <get-in-touch-form data-in-popup data-form-id="small bottom-right popup"></get-in-touch-form>
+    </popup-container>
+
+    <footer-component data-chapter="blog"></footer-component>
+
+<script src="/assets/js/main.js"></script>
+ 
+</body>
+</html>
