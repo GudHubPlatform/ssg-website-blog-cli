@@ -30,6 +30,11 @@ body {
 a {
     text-decoration: none;
 }
+
+ul, ol {
+    list-style: none;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -37,6 +42,12 @@ img {
 }
 input, textarea {
     font-family: Roboto, sans-serif;
+}
+h1 {
+    font-weight: 600;
+}
+h2, h3, h4, h5 {
+    font-weight: 400;
 }
 .edit-mode-enabled [gh-id]:hover {
     box-shadow: 0 0 3px #2b60fa;
@@ -49,6 +60,12 @@ input, textarea {
 }
 section {
     padding: 80px 0;
+}
+.no-padding-top section {
+    padding-top: 0;
+}
+.no-padding-bottom section {
+    padding-bottom: 0;
 }
 h1 {
     font-size: var(--h1-font-size);
@@ -80,7 +97,7 @@ h2, .h2 {
     margin-bottom: 30px;
     color: var(--subtitle-color);
 }
-h3 {
+h3, .h3 {
     font-size: var(--h3-font-size);
     font-weight: var(--h3-font-weight);
     line-height: 135%;
@@ -111,6 +128,10 @@ h3 {
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.5561 27.5256C21.043 27.5256 27.1123 21.3881 27.1123 13.8172C27.1123 6.24632 21.043 0.108887 13.5561 0.108887C6.06929 0.108887 0 6.24632 0 13.8172C0 21.3881 6.06929 27.5256 13.5561 27.5256ZM13.3578 17.251L18.616 11.7677L17.1724 10.3834L12.6077 15.1436L9.91177 12.5484L8.52475 13.9893L11.9425 17.2793L12.6644 17.9742L13.3578 17.251Z" fill="%230A79FE"/></svg>');
 }
 
+
+
+
+
 button, input, textarea {
     border: none;
     outline: none;
@@ -123,6 +144,10 @@ button, input, textarea {
 }
 [be-slider] .navigation_wrapper {
     display: block;
+}
+
+.transparentBackground {
+    background: transparent !important;
 }
 
 .btn {
@@ -161,6 +186,15 @@ button, input, textarea {
     border-color: var(--button-secondary-hover-border-color);
 }
 
+section *::-webkit-scrollbar {
+    width: 5px;
+}
+section *::-webkit-scrollbar-thumb {
+    background: #2b60fa;
+}
+section *::-webkit-scrollbar-track {
+    background: #fff;
+}
 
 @media screen and (max-width: 1500px) {
     .container {

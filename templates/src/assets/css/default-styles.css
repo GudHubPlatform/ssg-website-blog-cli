@@ -68,7 +68,7 @@ section .link:hover {
     color: var(--block-primary-accent-color);
 }
 .primary-block .link:hover {
-    color: var(--link-hover-color);
+    color: var(--block-primary-link-hover-color);
 }
 
 /*SECONDARY BLOCK*/
@@ -89,7 +89,7 @@ section .link:hover {
     color: var(--block-secondary-accent-color);
 }
 .secondary-block .link:hover {
-    color: var(--link-hover-color);
+    color: var(--block-secondary-link-hover-color);
 }
 
 /*TERTIARY BLOCK*/
@@ -110,5 +110,5 @@ section .link:hover {
     color: var(--block-tertiary-accent-color);
 }
 .tertiary-block .link:hover {
-    color: var(--link-hover-color);
+    color: var(--block-tertiary-link-hover-color);
 }
