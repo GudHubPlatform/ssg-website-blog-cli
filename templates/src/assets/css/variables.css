@@ -2,6 +2,7 @@
 @import './themes/white-dark.css';
 @import './themes/white-grey.css';
 @import './themes/white-white.css';
+@import './themes/blog.css';
 :root {
     /* Common */
     --font-family: Roboto, sans-serif;
