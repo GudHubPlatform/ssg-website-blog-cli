@@ -1,5 +1,5 @@
 // This file mission is to provide data that needs for your components while
-// server rendering or on the user client side. You'll find them in  "window.constants".
+// server rendering or on the user client side. You'll find them in  "window.getConfig()".
 
 // json files must be exported like this: export {default as object_name} from 'relative_path' assert {type: 'json'};.
 
