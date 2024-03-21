@@ -16,14 +16,17 @@ export * as clientConfig from './client-config.mjs';
 }
 
 export function generateChapters(apps) {
+    const slug_field_id = apps.pages.field_list.find(field => field.name_space === 'slug').field_id;
     return /*javascript*/`
 export const chapters = {
     pages: {
         app_id: ${apps.pages.app_id},
-        slug_field_id: ${apps.pages.field_list.find(field => field.name_space === 'slug').field_id},
+        slug_field_id: ${slug_field_id},
         json_field_id: ${apps.pages.field_list.find(field => field.name_space === 'json').field_id},
+        title_field_id: ${apps.pages.field_list.find(field => field.name_space === 'title').field_id},
         heading_field_id: ${apps.pages.field_list.find(field => field.name_space === 'h1').field_id},
         description_field_id: ${apps.pages.field_list.find(field => field.name_space === 'description').field_id},
+        blog_main_page_item_id: ${apps.pages.items_list.find((item) => item.fields.find((field) => field.field_id === slug_field_id && field.field_value === '/blog/')).item_id}, // item_id of blog main page (in application Pages, so this page relate to chapter - pages)
         image_field_id: ${apps.pages.field_list.find(field => field.name_space === 'meta_image_src').field_id},
         sitemap: {
             status_field_id: ${apps.pages.field_list.find(field => field.name_space === 'status').field_id},
@@ -74,6 +77,7 @@ export const chapters = {
 
         article_post_date_field_id:  ${apps.blog.field_list.find(field => field.name_space === 'posted_at').field_id},
         article_authorRef:  ${apps.blog.field_list.find(field => field.name_space === 'author').field_id},
+        article_ratings_field_id: ${apps.blog.field_list.find(field => field.name_space === 'ratings').field_id},
 
         comments_app_id:  ${apps.comments.app_id},
         comments_status_field_id:  ${apps.comments.field_list.find(field => field.name_space === 'status').field_id},
