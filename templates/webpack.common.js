@@ -38,7 +38,7 @@ export default {
                         return new Promise(resolve => {
                             let string = content.toString();
                             let data = string.split('<body>');
-                            let modified = data[0] + '<body><script data-server-only src="https://unpkg.com/@gudhub/core/umd/library.min.js"></script><script data-server-only src="https://unpkg.com/@gudhub/gh-component/dist/main.js"></script>' + data[1];
+                            let modified = data[0] + '<body><script data-server-only src="https://unpkg.com/@gudhub/core@1.2.0/umd/library.min.js"></script><script data-server-only src="https://unpkg.com/@gudhub/gh-component/dist/main.js"></script>' + data[1];
 
                             data = modified.split('<head>');
                             modified = data[0] + '<head><script id="base_write_script">document.write(`<base href="${window.MODE === \'production\' ? \'https\' : \'http\'}://${window.getConfig().website}">`);document.querySelector("#base_write_script").remove();</script>' + data[1];
@@ -71,6 +71,13 @@ export default {
         }),
         new MiniCssExtractPlugin({
             filename: '[name].css'
+        }),
+        new GenerateJsonFromJsPlugin({
+            path: 'config.mjs',
+            filename: 'config.json',
+            data: {
+              description: 'Test generate json from js'
+            }
         })
     ],
     /* BUNDLING WEBCOMPONENTS */

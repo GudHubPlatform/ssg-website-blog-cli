@@ -112,3 +112,7 @@ section .link:hover {
 .tertiary-block .link:hover {
     color: var(--block-tertiary-link-hover-color);
 }
+
+footer-component ~ * section {
+    padding: 0;
+}
