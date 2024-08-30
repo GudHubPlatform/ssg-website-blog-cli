@@ -9,16 +9,18 @@
 
 import { generalInfo } from './config/general-info.mjs';
 import { formConfig } from './config/form-config.mjs';
+import { menuConfig } from './config/menu-config.mjs';
 import { blog_config } from './config/blog-config.mjs';
 
 export const componentsConfigs = {
     generalInfo,
+    menuConfig,
     formConfig,
     blog_config
 };
 
 export const multiLanguage = false;
+export const defaultLanguage = 'uk';
 export const languageList = [
     'uk'
 ];
-export const defaultLanguage = 'uk';

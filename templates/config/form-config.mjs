@@ -1,8 +1,14 @@
 export const formConfig = [
     {
         id: 'main',
-        title: 'Залишити Заявку',
+        langCode: "uk",
+        defaultLang: true,
+        title: 'Розрахунок вартості',
         subtitle: '',
+        button_text: "Розрахувати",
+        titleSuccess: "Успішно",
+        subtitleSuccess: "Ваша форма була успішно відправлена! Будь ласка, перевірте правильність вказаних даних:",
+        titleFail: "Спробуйте Ще Раз!",
         mailConfig: {
             to: 'atlasiko',
             from: 'atlasiko',
@@ -50,8 +56,14 @@ export const formConfig = [
     },
     {
         id: 'popup',
-        title: 'Залишити Заявку',
+        langCode: "uk",
+        defaultLang: true,
+        title: 'Розрахунок вартості',
         subtitle: '',
+        button_text: "Розрахувати",
+        titleSuccess: "Успішно",
+        subtitleSuccess: "Ваша форма була успішно відправлена! Будь ласка, перевірте правильність вказаних даних:",
+        titleFail: "Спробуйте Ще Раз!",
         mailConfig: {
             to: 'atlasiko',
             from: 'atlasiko',
@@ -86,7 +98,13 @@ export const formConfig = [
     {
         id: "small bottom-right popup",
         title: "Отримайте безкоштовну консультацію",
-        subtitle: "",
+        langCode: "uk",
+        defaultLang: true,
+        subtitle: '',
+        button_text: "Розрахувати",
+        titleSuccess: "Успішно",
+        subtitleSuccess: "Ваша форма була успішно відправлена! Будь ласка, перевірте правильність вказаних даних:",
+        titleFail: "Спробуйте Ще Раз!",
         mailConfig: {
             to: "atlasiko",
             from: "atlasiko",
