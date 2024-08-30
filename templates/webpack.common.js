@@ -3,6 +3,7 @@ import path from 'path';
 
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import GenerateJsonFromJsPlugin from './GenerateJsonFromJsPlugin.js'
 
 import { components_list as GudhubComponents } from '@gudhub/ssg-web-components-library';
 
